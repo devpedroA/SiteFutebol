@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formatador de Dados de Clube</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 30px;
+      font-size: 2.5em;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .input-section {
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #34495e;
+      font-size: 1.1em;
+    }
+
+    textarea {
+      width: 100%;
+      height: 300px;
+      padding: 15px;
+      border: 2px solid #e1e8ed;
+      border-radius: 10px;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      background: #f8f9fa;
+      transition: all 0.3s ease;
+      resize: vertical;
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+
+    .button-container {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    button {
+      background: linear-gradient(45deg, #667eea, #764ba2);
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      font-size: 1.1em;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    .output-section {
+      margin-top: 30px;
+    }
+
+    .output-container {
+      background: #f8f9fa;
+      border: 2px solid #e1e8ed;
+      border-radius: 10px;
+      padding: 20px;
+      min-height: 200px;
+      position: relative;
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #28a745;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9em;
+      transition: background 0.3s ease;
+      z-index: 10;
+    }
+
+    .copy-btn:hover {
+      background: #218838;
+    }
+
+    .filter-section {
+      margin: 20px 0;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .filter-input {
+      padding: 8px 12px;
+      border: 1px solid #e1e8ed;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .filter-select {
+      padding: 8px 12px;
+      border: 1px solid #e1e8ed;
+      border-radius: 5px;
+      font-size: 14px;
+      background: white;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    th,
+    td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #e1e8ed;
+    }
+
+    th {
+      background: linear-gradient(45deg, #667eea, #764ba2);
+      color: white;
+      font-weight: bold;
+      position: sticky;
+      top: 0;
+      z-index: 5;
+    }
+
+    tr:hover {
+      background: #f8f9fa;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      background: linear-gradient(45deg, #667eea, #764ba2);
+      color: white;
+      padding: 15px 25px;
+      border-radius: 10px;
+      text-align: center;
+      margin: 5px;
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    }
+
+    .stat-number {
+      font-size: 2em;
+      font-weight: bold;
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 0.9em;
+      opacity: 0.9;
+    }
+
+    .alert {
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    .alert-success {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+
+    .alert-warning {
+      background: #fff3cd;
+      color: #856404;
+      border: 1px solid #ffeaa7;
+    }
+
+    .alert-error {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+
+    .export-buttons {
+      display: flex;
+      gap: 10px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .export-btn {
+      padding: 10px 20px;
+      font-size: 0.9em;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .export-excel {
+      background: #1f7a1f;
+      color: white;
+    }
+
+    .export-csv {
+      background: #0066cc;
+      color: white;
+    }
+
+    .export-pdf {
+      background: #cc0000;
+      color: white;
+    }
+
+    .export-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 4px;
+      background: #e1e8ed;
+      border-radius: 2px;
+      overflow: hidden;
+      margin: 20px 0;
+      display: none;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(45deg, #667eea, #764ba2);
+      transition: width 0.3s ease;
+      width: 0%;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+
+      .stats {
+        flex-direction: column;
+      }
+
+      .stat-item {
+        margin: 10px 0;
+      }
+
+      .filter-section {
+        flex-direction: column;
+      }
+
+      .filter-input,
+      .filter-select {
+        width: 100%;
+      }
+
+      .export-buttons {
+        flex-direction: column;
+      }
+
+      .export-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>⚽ Formatador de Dados de Clube</h1>
+
+    <div class="input-section">
+      <label for="inputData">Cole os dados do clube aqui:</label>
+      <textarea id="inputData" placeholder="Cole aqui os dados do clube no formato que você me enviou..."></textarea>
+    </div>
+
+    <div class="button-container">
+      <button onclick="processData()">🔄 Processar Dados</button>
+    </div>
+
+    <div class="progress-bar" id="progressBar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div id="alertContainer"></div>
+
+    <div class="output-section">
+      <label>Resultado formatado:</label>
+
+      <div class="filter-section" id="filterSection" style="display: none;">
+        <input type="text" id="nameFilter" class="filter-input" placeholder="Filtrar por nome...">
+        <select id="roleFilter" class="filter-select">
+          <option value="">Todas as funções</option>
+          <option value="Presidente">Presidente</option>
+          <option value="Técnico">Técnico</option>
+          <option value="Auxiliar Técnico">Auxiliar Técnico</option>
+          <option value="Massagista">Massagista</option>
+          <option value="Jogador">Jogador</option>
+        </select>
+        <button onclick="clearFilters()" class="export-btn" style="background: #6c757d;">Limpar Filtros</button>
+      </div>
+
+      <div class="export-buttons" id="exportButtons" style="display: none;">
+        <button onclick="exportToExcel()" class="export-btn export-excel">📊 Exportar Excel</button>
+        <button onclick="exportToCSV()" class="export-btn export-csv">📄 Exportar CSV</button>
+        <button onclick="copyToClipboard()" class="export-btn" style="background: #28a745;">📋 Copiar Tabela</button>
+      </div>
+
+      <div class="output-container">
+        <div id="output">Os dados processados aparecerão aqui...</div>
+      </div>
+    </div>
+
+    <div id="statsContainer"></div>
+  </div>
+
+  <script>
+    let processedData = [];
+    let filteredData = [];
+
+    function showAlert(message, type = 'success') {
+      const container = document.getElementById('alertContainer');
+      const alert = document.createElement('div');
+      alert.className = `alert alert-${type}`;
+      alert.textContent = message;
+      container.innerHTML = '';
+      container.appendChild(alert);
+
+      setTimeout(() => {
+        alert.remove();
+      }, 5000);
+    }
+
+    function showProgress(show = true) {
+      const progressBar = document.getElementById('progressBar');
+      const progressFill = document.getElementById('progressFill');
+
+      if (show) {
+        progressBar.style.display = 'block';
+        progressFill.style.width = '0%';
+
+        let progress = 0;
+        const interval = setInterval(() => {
+          progress += 10;
+          progressFill.style.width = progress + '%';
+
+          if (progress >= 100) {
+            clearInterval(interval);
+            setTimeout(() => {
+              progressBar.style.display = 'none';
+            }, 500);
+          }
+        }, 100);
+      } else {
+        progressBar.style.display = 'none';
+      }
+    }
+
+    function maskCPF(cpf) {
+      if (!cpf) return '-----';
+      return cpf.substring(0, 3) + '.***.**-**';
+    }
+
+    function validateCPF(cpf) {
+      const cleanCPF = cpf.replace(/\D/g, '');
+      return cleanCPF.length === 11;
+    }
+
+    function extractClubName(data) {
+      const lines = data.split('\n');
+      const clubPatterns = [
+        { pattern: 'SPORT CLUB', suffix: 'SPORT CLUB' },
+        { pattern: 'ARSENAL', suffix: 'ARSENAL F.C' },
+        { pattern: 'GILEADE', suffix: 'GILEADE F.C' },
+        { pattern: 'MOTTA', suffix: 'MOTTA F.C' },
+        { pattern: 'LOS COYUDOS', suffix: 'LOS COYUDOS F.C' },
+        { pattern: 'EUCALIPTUS', suffix: 'EUCALIPTUS F.C' },
+        { pattern: 'AMERICA CAMPINENSE FUTEBOL CLUBE', suffix: 'AMERICA C.F.C' },
+        { pattern: 'PANELINHA CAMPINA', suffix: 'PANELINHA C.' },
+        { pattern: 'HOOKAH', suffix: 'HOOKAH F.C' },
+        { pattern: 'ESTRELA CAMPINA', suffix: 'ESTRELA C.' },
+        { pattern: 'ENTRE PARENTS', suffix: 'ENTRE PARENTS F.C' },
+        { pattern: 'BRAGUENSE ESPORTE CLUBE - BRAGA B', suffix: 'BRAGUENSE E.C' },
+        { pattern: 'MARFRAN', suffix: 'MARFRAN E.C' },
+        { pattern: 'VILA SAPO', suffix: 'VILA SAPO F.C' },
+        { pattern: 'DEPORTIVO CAMPINA', suffix: 'DEPORTIVO C.F.C' },
+        { pattern: 'REDBULL CAMPINA', suffix: 'REDBULL C.' },
+        { pattern: 'PARMA CAMPINA', suffix: 'PARMA C.' },
+        { pattern: 'SANTA ROSA', suffix: 'SANTA ROSA' }
+      ];
+
+      for (let line of lines) {
+        // Primeiro verifica se é uma linha com nome de time (geralmente começa com número)
+        if (/^\d+\t/.test(line)) {
+          const parts = line.split('\t');
+          if (parts.length > 1) {
+            return parts[1].trim();
+          }
+        }
+
+        // Depois verifica os padrões específicos
+        for (const club of clubPatterns) {
+          if (line.includes(club.pattern)) {
+            return club.suffix;
+          }
+        }
+      }
+
+      // Se não encontrou, tenta pegar a primeira palavra antes de um tab
+      for (let line of lines) {
+        const parts = line.split('\t');
+        if (parts.length > 1 && parts[1].trim() !== '') {
+          return parts[1].trim();
+        }
+      }
+
+      return 'CLUBE NÃO IDENTIFICADO';
+    }
+
+    function extractPersonData(data, title) {
+      const nameLineRegex = new RegExp(`Nome Completo do ${title}\\*?\\s+(.+)`, 'i');
+      const cpfLineRegex = new RegExp(`CPF do ${title}\\*?\\s+(\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2})`, 'i');
+
+      let name = '-----';
+      let cpf = '-----';
+
+      const nameMatch = data.match(nameLineRegex);
+      const cpfMatch = data.match(cpfLineRegex);
+
+      if (nameMatch) {
+        name = nameMatch[1].trim();
+        name = name.replace(/\s*CPF\s+do\s+.*/i, '').trim();
+      }
+
+      if (cpfMatch) {
+        cpf = cpfMatch[1];
+      }
+
+      return { name, cpf };
+    }
+
+    function extractPlayersData(data) {
+      const players = [];
+
+      // Extrai jogadores reais
+      for (let i = 1; i <= 50; i++) {
+        const nameLineRegex = new RegExp(`Nome Completo do Jogador ${i}\\*?\\s+(.+)`, 'i');
+        const cpfLineRegex = new RegExp(`CPF do Jogador ${i}\\*?\\s+(\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2})`, 'i');
+
+        const nameMatch = data.match(nameLineRegex);
+        const cpfMatch = data.match(cpfLineRegex);
+
+        if (nameMatch && cpfMatch) {
+          let playerName = nameMatch[1].trim();
+
+          playerName = playerName.replace(/\s*CPF\s+do\s+.*/i, '').trim();
+          playerName = playerName.replace(/\s*Documentos\s+do\s+.*/i, '').trim();
+          playerName = playerName.replace(/\s*\([^)]*\)\s*/g, '').trim();
+
+          if (playerName && validateCPF(cpfMatch[1])) {
+            players.push({
+              name: playerName,
+              cpf: cpfMatch[1],
+              number: i
+            });
+          }
+        }
+      }
+
+      // Adiciona jogadores placeholder se necessário
+      while (players.length < 25) {
+        players.push({
+          name: `Jogador ${players.length + 1} (Não Informado)`,
+          cpf: '000.000.000-00',
+          number: players.length + 1
+        });
+      }
+
+      return players.sort((a, b) => a.name.localeCompare(b.name));
+    }
+
+    function processData() {
+      const inputData = document.getElementById('inputData').value;
+
+      if (!inputData.trim()) {
+        showAlert('Por favor, cole os dados do clube!', 'error');
+        return;
+      }
+
+      showProgress(true);
+
+      try {
+        const clubName = extractClubName(inputData);
+
+        const presidente = extractPersonData(inputData, 'PRESIDENTE');
+        const tecnico = extractPersonData(inputData, 'TÉCNICO');
+        const auxTecnico = extractPersonData(inputData, 'AUX\\. TÉCNICO');
+        const massagista = extractPersonData(inputData, 'MASSAGISTA');
+
+        const players = extractPlayersData(inputData);
+
+        // Criar array de dados processados
+        processedData = [];
+
+        const staff = [
+          { role: 'Presidente', data: presidente },
+          { role: 'Técnico', data: tecnico },
+          { role: 'Auxiliar Técnico', data: auxTecnico },
+          { role: 'Massagista', data: massagista }
+        ];
+
+        staff.forEach(member => {
+          processedData.push({
+            club: clubName,
+            role: member.role,
+            name: member.data.name,
+            cpf: member.data.cpf,
+            maskedCPF: maskCPF(member.data.cpf)
+          });
+        });
+
+        players.forEach(player => {
+          processedData.push({
+            club: clubName,
+            role: 'Jogador',
+            name: player.name,
+            cpf: player.cpf,
+            maskedCPF: maskCPF(player.cpf),
+            number: player.number
+          });
+        });
+
+        filteredData = [...processedData];
+        renderTable();
+        updateStats();
+
+        document.getElementById('filterSection').style.display = 'flex';
+        document.getElementById('exportButtons').style.display = 'flex';
+
+        showAlert('Dados processados com sucesso!', 'success');
+
+      } catch (error) {
+        showAlert('Erro ao processar os dados. Verifique o formato.', 'error');
+        console.error('Erro:', error);
+      }
+    }
+
+    function renderTable() {
+      let tableHTML = `
+                <table>
+                   
+                    <tbody>
+            `;
+
+      filteredData.forEach(person => {
+        tableHTML += `
+                    <tr>
+                        <td>${person.club}</td>
+                        <td>${person.role}</td>
+                        <td>${person.name}</td>
+                        <td>${person.maskedCPF}</td>
+                    </tr>
+                `;
+      });
+
+      tableHTML += `
+                    </tbody>
+                </table>
+            `;
+
+      document.getElementById('output').innerHTML = tableHTML;
+    }
+
+    function updateStats() {
+      const playerCount = filteredData.filter(p => p.role === 'Jogador').length;
+      const staffCount = filteredData.filter(p => p.role !== 'Jogador').length;
+
+      const statsHTML = `
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number">${playerCount}</span>
+                        <span class="stat-label">Jogadores</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">${staffCount}</span>
+                        <span class="stat-label">Staff</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">${filteredData.length}</span>
+                        <span class="stat-label">Total</span>
+                    </div>
+                </div>
+            `;
+
+      document.getElementById('statsContainer').innerHTML = statsHTML;
+    }
+
+    function filterData() {
+      const nameFilter = document.getElementById('nameFilter').value.toLowerCase();
+      const roleFilter = document.getElementById('roleFilter').value;
+
+      filteredData = processedData.filter(person => {
+        const matchesName = person.name.toLowerCase().includes(nameFilter);
+        const matchesRole = !roleFilter || person.role === roleFilter;
+        return matchesName && matchesRole;
+      });
+
+      renderTable();
+      updateStats();
+    }
+
+    function clearFilters() {
+      document.getElementById('nameFilter').value = '';
+      document.getElementById('roleFilter').value = '';
+      filteredData = [...processedData];
+      renderTable();
+      updateStats();
+    }
+
+    function copyToClipboard() {
+      if (filteredData.length === 0) {
+        showAlert('Nenhum dado para copiar!', 'error');
+        return;
+      }
+
+      let textToCopy = "";
+
+      filteredData.forEach(person => {
+        textToCopy += `${person.club}\t${person.role}\t${person.name}\t${person.maskedCPF}\n`;
+      });
+
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        showAlert('Tabela copiada! Cole no Excel com Ctrl+V', 'success');
+      }).catch(() => {
+        showAlert('Erro ao copiar. Tente selecionar manualmente.', 'error');
+      });
+    }
+
+    function exportToCSV() {
+      if (filteredData.length === 0) {
+        showAlert('Nenhum dado para exportar!', 'error');
+        return;
+      }
+
+      let csvContent = "Clube,Função,Nome Completo,CPF Mascarado\n";
+
+      filteredData.forEach(person => {
+        csvContent += `"${person.club}","${person.role}","${person.name}","${person.maskedCPF}"\n`;
+      });
+
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'dados_clube.csv';
+      link.click();
+
+      showAlert('Arquivo CSV exportado!', 'success');
+    }
+
+    function exportToExcel() {
+      if (filteredData.length === 0) {
+        showAlert('Nenhum dado para exportar!', 'error');
+        return;
+      }
+
+      let excelContent = "Clube\tFunção\tNome Completo\tCPF Mascarado\n";
+
+      filteredData.forEach(person => {
+        excelContent += `${person.club}\t${person.role}\t${person.name}\t${person.maskedCPF}\n`;
+      });
+
+      const blob = new Blob([excelContent], { type: 'application/vnd.ms-excel' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'dados_clube.xls';
+      link.click();
+
+      showAlert('Arquivo Excel exportado!', 'success');
+    }
+
+    // Event listeners
+    document.getElementById('nameFilter').addEventListener('input', filterData);
+    document.getElementById('roleFilter').addEventListener('change', filterData);
+
+    // Drag and drop
+    const textarea = document.getElementById('inputData');
+
+    textarea.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      textarea.style.borderColor = '#667eea';
+    });
+
+    textarea.addEventListener('dragleave', (e) => {
+      e.preventDefault();
+      textarea.style.borderColor = '#e1e8ed';
+    });
+
+    textarea.addEventListener('drop', (e) => {
+      e.preventDefault();
+      textarea.style.borderColor = '#e1e8ed';
+
+      const files = e.dataTransfer.files;
+      if (files.length > 0) {
+        const file = files[0];
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          textarea.value = e.target.result;
+          processData();
+        };
+        reader.readAsText(file);
+      }
+    });
+
+    // Auto-process on paste
+    textarea.addEventListener('paste', () => {
+      setTimeout(() => {
+        if (textarea.value.trim()) {
+          processData();
+        }
+      }, 100);
+    });
+  </script>
+</body>
+
+</html>

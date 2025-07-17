@@ -1,0 +1,273 @@
+body {
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  background: linear-gradient(120deg, #f8fafc 0%, #e0f7fa 100%);
+  min-height: 100vh;
+}
+
+main {
+  padding-top: 2rem;
+}
+
+.card-container {
+  background: #fff;
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 1.5px 4px rgba(0,0,0,0.04);
+  margin-bottom: 2rem;
+  padding: 2rem 1.5rem;
+  transition: box-shadow 0.2s;
+}
+
+.card-container:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.card-banner {
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+h5.text-green {
+  color: #1b8f3c;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.btn, .card-container button {
+  border-radius: 2rem !important;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 4px rgba(27,143,60,0.08);
+}
+
+.btn-success, .table-success {
+  background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%) !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+.btn-danger, .table-danger {
+  background: linear-gradient(90deg, #fa709a 0%, #fee140 100%) !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+#series-buttons .btn.active {
+  background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 2px 8px rgba(67,233,123,0.15);
+}
+
+#series-buttons .btn {
+  margin: 0 0.5rem 0.5rem 0;
+  font-size: 1.1rem;
+  min-width: 120px;
+}
+
+#prev-rodada, #next-rodada {
+  font-size: 1.5rem;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e0f7fa;
+  border: 2px solid #43e97b;
+  color: #1b8f3c;
+  margin: 0 0.5rem;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+#prev-rodada:hover, #next-rodada:hover {
+  background: #43e97b;
+  color: #fff;
+  border: 2px solid #1b8f3c;
+}
+
+#rodada-atual {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1b8f3c;
+  background: #e0f7fa;
+  border-radius: 1rem;
+  padding: 0.5rem 1.5rem;
+}
+
+#rodada-select {
+  border-radius: 2rem;
+  border: 2px solid #43e97b;
+  font-weight: 700;
+  color: #1b8f3c;
+  background: #e0f7fa;
+  padding: 0.5rem 1.2rem;
+  box-shadow: 0 1px 4px rgba(67,233,123,0.08);
+  min-width: 120px;
+  max-width: 180px;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+#rodada-select:focus {
+  outline: none;
+  border: 2px solid #1b8f3c;
+  box-shadow: 0 2px 8px rgba(67,233,123,0.15);
+}
+@media (max-width: 768px) {
+  #rodada-select {
+    width: 100%;
+    min-width: 0;
+    margin: 0.5rem 0;
+  }
+}
+
+.table {
+  background: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+.table th {
+  background: #e0f7fa;
+  color: #1b8f3c;
+  font-weight: 700;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.table-success td {
+  background: #e6ffe6 !important;
+  color: #1b8f3c !important;
+  font-weight: 600;
+}
+
+.table-danger td {
+  background: #ffeaea !important;
+  color: #c82333 !important;
+  font-weight: 600;
+}
+
+.table .relegation-row td {
+  color: #dc3545;
+}
+
+.table .relegation-row .position {
+  color: #dc3545;
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    padding: 1rem !important;
+    margin: 0.5rem 0 !important;
+  }
+  .table td,
+  .table th {
+    padding: 0.5rem !important;
+    font-size: 0.95rem !important;
+  }
+  .card-banner {
+    margin-top: 0.5rem !important;
+  }
+  #series-buttons {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  #series-buttons .btn {
+    font-size: 1rem;
+    padding: 0.4rem 1rem;
+  }
+  .card-content {
+    padding: 0.75rem !important;
+  }
+  h5 {
+    font-size: 1.1rem;
+  }
+  .game-teams {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .game-team {
+    flex: 1;
+    text-align: center;
+  }
+  .game-score {
+    flex: 0 0 auto;
+    padding: 0 0.5rem;
+  }
+  .score-display {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .table-responsive {
+    overflow-x: auto;
+  }
+  .table th {
+    position: sticky;
+    top: 0;
+    background: #e0f7fa;
+    z-index: 2;
+  }
+}
+
+@media (min-width: 769px) {
+  .social-icons {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .game-teams {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+  .game-team {
+    width: 40%;
+    text-align: center;
+  }
+  .game-score {
+    width: 20%;
+    text-align: center;
+  }
+  .score-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  width: 100%;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #70e070;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Ajustes para o spinner na tabela */
+#tabela-container .loading-spinner {
+  min-height: 300px;
+}
+
+/* Ajustes para o spinner nos jogos */
+#jogos-container .loading-spinner {
+  min-height: 200px;
+}

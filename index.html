@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <title>Campeonato de Futebol</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <section class="container px-2">
+      <!-- Copa Campina -->
+      <div class="container-fluid card-banner">
+        <img id="banner-img" src="" alt="Banner do Campeonato" class="img-fluid card-banner m-0 mt-4">
+      </div>
+
+      <!-- Series -->
+      <div class="card-container">
+        <div class="d-flex justify-content-center" id="series-buttons">
+          <button class="btn text-dark fw-bold px-4 py-2 mx-1 my-1" data-serie="ouro" id="btn-serie-ouro">SÉRIE OURO</button>
+          <button class="btn text-dark fw-bold px-4 py-2 mx-1 my-1" data-serie="prata" id="btn-serie-prata">SÉRIE PRATA</button>
+          <!-- Adicione mais botões se houver mais séries -->
+        </div>
+      </div>
+
+      <!-- Tabela -->
+      <div class="card-container my-3">
+        <div class="d-flex justify-content-center my-2">
+          <h5 class="text-green">TABELA</h5>
+        </div>
+        <div class="table-responsive">
+          <table class="table text-center align-middle" style="min-width: 800px;">
+            <thead id="tabela-header">
+              <tr>
+                <th class="text-left">Pos</th>
+                <th class="text-left">Time</th>
+                <th class="toggle-info" data-toggle="tooltip" title="Pontos">P</th>
+                <th class="toggle-info" data-toggle="tooltip" title="Vitórias">V</th>
+                <th class="toggle-info" data-toggle="tooltip" title="Empates">E</th>
+                <th class="toggle-info" data-toggle="tooltip" title="Derrotas">D</th>
+                <th class="toggle-info" data-toggle="tooltip" title="Gols Pró">GP</th>
+                <th class="toggle-info" data-toggle="tooltip" title="Gols Contra">GC</th>
+                <th class="toggle-info" data-toggle="tooltip" title="Saldo de Gols">SG</th>
+                <th class="toggle-info" data-toggle="tooltip" title="Cartões Amarelos">CA</th>
+                <th class="toggle-info" data-toggle="tooltip" title="Cartões Vermelhos">CV</th>
+              </tr>
+            </thead>
+            <tbody id="tabela-body">
+              <!-- As linhas reais serão inseridas aqui pelo JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Jogos -->
+      <div class="card-container my-3">
+        <div class="d-flex justify-content-center p-2 my-2">
+          <h5 class="text-green m-1">JOGOS</h5>
+        </div>
+
+        <!-- Navegação da rodada -->
+        <div class="d-flex justify-content-center align-content-center flex-wrap flex-md-nowrap align-items-center" style="gap: 0.5rem;">
+          <button class="text-success card-container p-2" id="prev-rodada">&lt;</button>
+          <span class="text-success card-container p-2 mx-2" id="rodada-atual">1º RODADA</span>
+          <button class="text-success card-container p-2" id="next-rodada">&gt;</button>
+        </div>
+
+        <!-- Jogos -->
+        <div class="row justify-content-around p-2" id="jogos-container">
+          <!-- Os cards reais serão inseridos aqui pelo JS -->
+        </div>
+      </div>
+
+      <!-- Templates HTML -->
+      <template id="team-row-template">
+        <tr>
+          <td class="align-middle position">1</td>
+          <td class="align-middle">
+            <div class="d-flex align-items-center">
+              <img src="" alt="Time" class="mr-2 mr-md-4 team-img" style="width: 40px; height: 40px; object-fit: contain;">
+              <span class="team-nome">Time</span>
+            </div>
+          </td>
+          <td class="font-weight-bold align-middle team-pontos">0</td>
+          <td class="align-middle team-vitorias">0</td>
+          <td class="align-middle team-empates">0</td>
+          <td class="align-middle team-derrotas">0</td>
+          <td class="align-middle team-golsPro">0</td>
+          <td class="align-middle team-golsContra">0</td>
+          <td class="align-middle team-saldo">0</td>
+          <td class="align-middle team-cartoesAmarelos">0</td>
+          <td class="align-middle team-cartoesVermelhos">0</td>
+        </tr>
+      </template>
+      <template id="game-card-template">
+        <div class="col-12 col-md-5 col-lg-3 card-content mb-3 mt-3">
+          <div class="p-3">
+            <div class="text-center text-muted mb-3 game-info" style="font-size:0.85rem; line-height:1.4;">
+              <div class="d-block d-md-none game-estadio">Estádio</div>
+              <div><span class="game-data">Data</span> • <strong class="game-hora">Hora</strong> • <span class="game-estadio">Estádio</span></div>
+            </div>
+            <div class="game-teams">
+              <div class="game-team">
+                <img src="" alt="Time A" class="mb-1 game-imgA" style="width:40px;height:40px;object-fit:contain;">
+                <div class="game-nomeA" style="font-size:0.95rem; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Time A</div>
+              </div>
+              <div class="game-score">
+                <div class="score-display" style="font-size:1.5rem; font-weight:bold;">
+                  <span class="game-placarA">0</span>
+                  <span style="font-size:1rem;">x</span>
+                  <span class="game-placarB">0</span>
+                </div>
+              </div>
+              <div class="game-team">
+                <img src="" alt="Time B" class="mb-1 game-imgB" style="width:40px;height:40px;object-fit:contain;">
+                <div class="game-nomeB" style="font-size:0.95rem; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Time B</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+    </section>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="script.js" req></script>
+</body>
+
+</html>
