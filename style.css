@@ -271,3 +271,35 @@ h5.text-green {
 #jogos-container .loading-spinner {
   min-height: 200px;
 }
+
+/* Estilos para artilheiros e goleiros */
+.artilheiro-item, .goleiro-item {
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid #e9ecef;
+}
+
+.artilheiro-item:hover, .goleiro-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-color: #43e97b;
+}
+
+/* Responsividade para artilheiros e goleiros */
+@media (max-width: 767px) {
+  .artilheiro-item, .goleiro-item {
+    padding: 0.75rem !important;
+  }
+  
+  .player-name {
+    font-size: 0.85rem !important;
+  }
+  
+  .team-name {
+    font-size: 0.75rem !important;
+  }
+  
+  .goals-badge {
+    font-size: 0.7rem !important;
+    padding: 0.15rem 0.4rem !important;
+  }
+}

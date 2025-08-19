@@ -158,6 +158,46 @@
         "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/d5jv4jdtypp.png"
       }
     ],
+    "artilheiros": [
+      {
+        "nome": "João Silva",
+        "time": "Terra Boa",
+        "gols": 8,
+        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/xv5rl5mqyb3.png"
+      },
+      {
+        "nome": "Pedro Santos",
+        "time": "Penãrol",
+        "gols": 7,
+        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/d4ywnb5tple.png"
+      },
+      {
+        "nome": "Carlos Lima",
+        "time": "Tchuruu",
+        "gols": 6,
+        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/pbs0x43k55i.png"
+      }
+    ],
+    "goleiros": [
+      {
+        "nome": "Marcos Oliveira",
+        "time": "Parceria",
+        "golsSofridos": 3,
+        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/hivofdyqhn1.png"
+      },
+      {
+        "nome": "Roberto Costa",
+        "time": "Engenho",
+        "golsSofridos": 4,
+        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/n3vsizyeyml.png"
+      },
+      {
+        "nome": "Fernando Alves",
+        "time": "Fox",
+        "golsSofridos": 5,
+        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/2jxp33oxurv.png"
+      }
+    ],
     "rodadas": [
       {
         "data": "01/06/2025",
@@ -944,6 +984,46 @@
         "imagem": "https://campinagrandedosul.pr.gov.br/Downloads/Arquivos/FUTEBOL2025/FUTEBOL2025_41e9dfb5-6f76-4029-b311-7c9405b969bb.png"
       }
     ],
+    "artilheiros": [
+      {
+        "nome": "João Silva",
+        "time": "Terra Boa",
+        "gols": 8,
+        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/xv5rl5mqyb3.png"
+      },
+      {
+        "nome": "Pedro Santos",
+        "time": "Penãrol",
+        "gols": 7,
+        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/d4ywnb5tple.png"
+      },
+      {
+        "nome": "Carlos Lima",
+        "time": "Tchuruu",
+        "gols": 6,
+        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/pbs0x43k55i.png"
+      }
+    ],
+    "goleiros": [
+      {
+        "nome": "Marcos Oliveira",
+        "time": "Parceria",
+        "golsSofridos": 3,
+        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/hivofdyqhn1.png"
+      },
+      {
+        "nome": "Roberto Costa",
+        "time": "Engenho",
+        "golsSofridos": 4,
+        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/n3vsizyeyml.png"
+      },
+      {
+        "nome": "Fernando Alves",
+        "time": "Fox",
+        "golsSofridos": 5,
+        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/2jxp33oxurv.png"
+      }
+    ],
     "rodadas": [
       {
         "data": "06/07/2025",
@@ -1256,6 +1336,46 @@
             "cartoesVermelhosB": 0
           }
         ]
+      }
+    ],
+    "artilheiros": [
+      {
+        "nome": "Lucas Mendes",
+        "time": "Parma Campina",
+        "gols": 6,
+        "imagem": "https://campinagrandedosul.pr.gov.br/Downloads/Arquivos/FUTEBOL2025/FUTEBOL2025_51abf8aa-8115-4b78-8a48-ee3c13c72c34.png"
+      },
+      {
+        "nome": "Rafael Costa",
+        "time": "Redbull Campina",
+        "gols": 5,
+        "imagem": "https://campinagrandedosul.pr.gov.br/Downloads/Arquivos/FUTEBOL2025/FUTEBOL2025_41e9dfb5-6f76-4029-b311-7c9405b969bb.png"
+      },
+      {
+        "nome": "Diego Santos",
+        "time": "Panelinha Campina",
+        "gols": 4,
+        "imagem": "https://campinagrandedosul.pr.gov.br/Downloads/Arquivos/FUTEBOL2025/FUTEBOL2025_8874c86e-a933-4b30-9bfa-57f8899768f4.png"
+      }
+    ],
+    "goleiros": [
+      {
+        "nome": "Thiago Silva",
+        "time": "Campinense Futebol Clube",
+        "golsSofridos": 2,
+        "imagem": "https://campinagrandedosul.pr.gov.br/Downloads/Arquivos/FUTEBOL2025/FUTEBOL2025_77f90379-ff80-41b9-adc9-0f253bbacdfc.png"
+      },
+      {
+        "nome": "André Pereira",
+        "time": "Eucaliptus F.C",
+        "golsSofridos": 3,
+        "imagem": "https://campinagrandedosul.pr.gov.br/Downloads/Arquivos/FUTEBOL2025/FUTEBOL2025_4a455f2c-a56a-45a7-9dd4-6fde7bd24641.png"
+      },
+      {
+        "nome": "Bruno Martins",
+        "time": "America Campinense F.C",
+        "golsSofridos": 4,
+        "imagem": "https://campinagrandedosul.pr.gov.br/Downloads/Arquivos/FUTEBOL2025/FUTEBOL2025_b2d5eb9c-4a2e-4a77-bef7-334a419a0748.png"
       }
     ]
   }

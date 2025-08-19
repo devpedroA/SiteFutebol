@@ -7,6 +7,8 @@ const CONFIG = {
   }
 };
 
+
+
 // ===== CARREGAMENTO DE CSS =====
 function loadCSS() {
   const link = document.createElement("link");
@@ -308,6 +310,54 @@ const Renderer = {
 
   renderSerieButtons() {
     UI.updateSerieButtons();
+  },
+
+  renderArtilheiros(serie) {
+    const container = document.getElementById('artilheiros-list');
+    if (!AppState.data[serie]?.artilheiros) {
+      container.innerHTML = '<p class="text-center text-muted">Dados não disponíveis</p>';
+      return;
+    }
+
+    container.innerHTML = '';
+    const template = document.getElementById('artilheiro-template');
+    
+    AppState.data[serie].artilheiros.forEach((artilheiro, index) => {
+      const item = template.content.firstElementChild.cloneNode(true);
+      
+      item.querySelector('.position-badge').textContent = index + 1;
+      item.querySelector('.team-img').src = artilheiro.imagem;
+      item.querySelector('.team-img').alt = artilheiro.time;
+      item.querySelector('.player-name').textContent = artilheiro.nome;
+      item.querySelector('.team-name').textContent = artilheiro.time;
+      item.querySelector('.goals-badge').textContent = artilheiro.gols;
+      
+      container.appendChild(item);
+    });
+  },
+
+  renderGoleiros(serie) {
+    const container = document.getElementById('goleiros-list');
+    if (!AppState.data[serie]?.goleiros) {
+      container.innerHTML = '<p class="text-center text-muted">Dados não disponíveis</p>';
+      return;
+    }
+
+    container.innerHTML = '';
+    const template = document.getElementById('goleiro-template');
+    
+    AppState.data[serie].goleiros.forEach((goleiro, index) => {
+      const item = template.content.firstElementChild.cloneNode(true);
+      
+      item.querySelector('.position-badge').textContent = index + 1;
+      item.querySelector('.team-img').src = goleiro.imagem;
+      item.querySelector('.team-img').alt = goleiro.time;
+      item.querySelector('.player-name').textContent = goleiro.nome;
+      item.querySelector('.team-name').textContent = goleiro.time;
+      item.querySelector('.goals-badge').textContent = goleiro.golsSofridos;
+      
+      container.appendChild(item);
+    });
   }
 };
 
@@ -319,6 +369,8 @@ const App = {
     try {
       Renderer.renderTable(AppState.currentSerie);
       Renderer.renderGames(AppState.currentSerie, AppState.currentRodada);
+      Renderer.renderArtilheiros(AppState.currentSerie);
+      Renderer.renderGoleiros(AppState.currentSerie);
       UI.updateRodadaLabel();
     } catch (error) {
       console.error('Erro ao atualizar UI:', error);

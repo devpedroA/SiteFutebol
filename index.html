@@ -59,6 +59,31 @@
         </div>
       </div>
 
+      <!-- Abas de Artilheiros e Goleiros -->
+      <div class="card-container my-3">
+        <div class="row">
+          <!-- Aba de Artilheiros -->
+          <div class="col-12 col-md-6 mb-3 mb-md-0">
+            <div class="d-flex justify-content-center mb-3">
+              <h6 class="text-green">ARTILHEIROS - MAIS GOLS</h6>
+            </div>
+            <div id="artilheiros-list">
+              <!-- Lista de artilheiros será inserida aqui pelo JS -->
+            </div>
+          </div>
+
+          <!-- Aba de Goleiros -->
+          <div class="col-12 col-md-6">
+            <div class="d-flex justify-content-center mb-3">
+              <h6 class="text-green">GOLEIROS - MENOS VAZADOS</h6>
+            </div>
+            <div id="goleiros-list">
+              <!-- Lista de goleiros será inserida aqui pelo JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Jogos -->
       <div class="card-container my-3">
         <div class="d-flex justify-content-center p-2 my-2">
@@ -124,6 +149,32 @@
               </div>
             </div>
           </div>
+        </div>
+      </template>
+
+      <!-- Template para Artilheiros -->
+      <template id="artilheiro-template">
+        <div class="artilheiro-item d-flex align-items-center p-2 mb-2" style="background: #f8f9fa; border-radius: 0.5rem;">
+          <div class="position-badge me-2" style="width: 24px; height: 24px; background: #43e97b; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold;">1</div>
+          <img src="" alt="Time" class="team-img me-2" style="width: 32px; height: 32px; object-fit: contain;">
+          <div class="flex-grow-1">
+            <div class="player-name" style="font-size: 0.9rem; font-weight: 600;">Jogador</div>
+            <div class="team-name" style="font-size: 0.8rem; color: #6c757d;">Time</div>
+          </div>
+          <div class="goals-badge" style="background: #1b8f3c; color: white; padding: 0.2rem 0.5rem; border-radius: 1rem; font-size: 0.8rem; font-weight: bold;">0</div>
+        </div>
+      </template>
+
+      <!-- Template para Goleiros -->
+      <template id="goleiro-template">
+        <div class="goleiro-item d-flex align-items-center p-2 mb-2" style="background: #f8f9fa; border-radius: 0.5rem;">
+          <div class="position-badge me-2" style="width: 24px; height: 24px; background: #43e97b; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold;">1</div>
+          <img src="" alt="Time" class="team-img me-2" style="width: 32px; height: 32px; object-fit: contain;">
+          <div class="flex-grow-1">
+            <div class="player-name" style="font-size: 0.9rem; font-weight: 600;">Goleiro</div>
+            <div class="team-name" style="font-size: 0.8rem; color: #6c757d;">Time</div>
+          </div>
+          <div class="goals-badge" style="background: #1b8f3c; color: white; padding: 0.2rem 0.5rem; border-radius: 1rem; font-size: 0.8rem; font-weight: bold;">0</div>
         </div>
       </template>
     </section>

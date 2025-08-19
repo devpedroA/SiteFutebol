@@ -427,6 +427,13 @@
     }
 
     function extractClubName(data) {
+      // Primeiro tenta pegar a linha que começa com "Nome do Clube*"
+      const clubLineMatch = data.match(/Nome do Clube\*\s*\n(.+)/i);
+      if (clubLineMatch) {
+        return clubLineMatch[1].trim();
+      }
+
+      // Se não encontrar, tenta outros padrões
       const lines = data.split('\n');
       const clubPatterns = [
         { pattern: 'SPORT CLUB', suffix: 'SPORT CLUB' },
@@ -446,31 +453,15 @@
         { pattern: 'DEPORTIVO CAMPINA', suffix: 'DEPORTIVO C.F.C' },
         { pattern: 'REDBULL CAMPINA', suffix: 'REDBULL C.' },
         { pattern: 'PARMA CAMPINA', suffix: 'PARMA C.' },
-        { pattern: 'SANTA ROSA', suffix: 'SANTA ROSA' }
+        { pattern: 'SANTA ROSA', suffix: 'SANTA ROSA' },
+        { pattern: 'JUVENTUS FUTEBOL CLUBE', suffix: 'JUVENTUS F.C' }
       ];
 
       for (let line of lines) {
-        // Primeiro verifica se é uma linha com nome de time (geralmente começa com número)
-        if (/^\d+\t/.test(line)) {
-          const parts = line.split('\t');
-          if (parts.length > 1) {
-            return parts[1].trim();
-          }
-        }
-
-        // Depois verifica os padrões específicos
         for (const club of clubPatterns) {
           if (line.includes(club.pattern)) {
             return club.suffix;
           }
-        }
-      }
-
-      // Se não encontrou, tenta pegar a primeira palavra antes de um tab
-      for (let line of lines) {
-        const parts = line.split('\t');
-        if (parts.length > 1 && parts[1].trim() !== '') {
-          return parts[1].trim();
         }
       }
 
@@ -552,7 +543,10 @@
       try {
         const clubName = extractClubName(inputData);
 
-        const presidente = extractPersonData(inputData, 'PRESIDENTE');
+        const presidente = {
+          name: inputData.match(/Nome do Presidente\*\s*\n([^\n]+)/i)?.[1]?.trim() || '-----',
+          cpf: inputData.match(/CPF do Presidente\*\s*\n([\d.-]+)/i)?.[1]?.trim() || '-----'
+        };
         const tecnico = extractPersonData(inputData, 'TÉCNICO');
         const auxTecnico = extractPersonData(inputData, 'AUX\\. TÉCNICO');
         const massagista = extractPersonData(inputData, 'MASSAGISTA');
@@ -565,7 +559,7 @@
         const staff = [
           { role: 'Presidente', data: presidente },
           { role: 'Técnico', data: tecnico },
-          { role: 'Auxiliar Técnico', data: auxTecnico },
+          { role: 'Auxiliar Tecnico', data: auxTecnico },
           { role: 'Massagista', data: massagista }
         ];
 
