@@ -440,24 +440,27 @@ const App = {
     try {
       UI.showLoading();
       
-      // Carrega todos os arquivos JSON separadamente
+      // Carregamento com fallback: GitHub Raw → jsDelivr → GitHub Pages → relativo
+      const fetchJSONWithFallback = async (filename) => {
+        const urls = Renderer.resolveDataUrls(filename);
+        let lastError;
+        for (const url of urls) {
+          try {
+            const res = await fetch(url, { cache: 'no-cache' });
+            if (res.ok) return res.json();
+            lastError = new Error(`HTTP ${res.status}`);
+          } catch (e) {
+            lastError = e;
+          }
+        }
+        throw new Error(`Erro ao carregar ${filename}: ${lastError?.message || 'desconhecido'}`);
+      };
+
       const [timesData, rodadasData, artilhariaData, goleirosData] = await Promise.all([
-        fetch('https://raw.githubusercontent.com/devpedroA/SiteFutebol/refs/heads/main/times.json?token=GHSAT0AAAAAADJQVSVESK4JDIXB2IE4NVBU2FHDPXQ').then(response => {
-          if (!response.ok) throw new Error('Erro ao carregar times.json');
-          return response.json();
-        }),
-        fetch('https://raw.githubusercontent.com/devpedroA/SiteFutebol/refs/heads/main/rodadas.json?token=GHSAT0AAAAAADJQVSVET64PYK76K433VVTI2FHDQHA').then(response => {
-          if (!response.ok) throw new Error('Erro ao carregar rodadas.json');
-          return response.json();
-        }),
-        fetch('https://raw.githubusercontent.com/devpedroA/SiteFutebol/refs/heads/main/atilharia.json?token=GHSAT0AAAAAADJQVSVE4URRP2V2E2INWRQ42FHDQNA').then(response => {
-          if (!response.ok) throw new Error('Erro ao carregar atilharia.json');
-          return response.json();
-        }),
-        fetch('https://raw.githubusercontent.com/devpedroA/SiteFutebol/refs/heads/main/goleiros.json?token=GHSAT0AAAAAADJQVSVFXNVG2SWXTISQIU2Y2FHDRAQ').then(response => {
-          if (!response.ok) throw new Error('Erro ao carregar goleiros.json');
-          return response.json();
-        })
+        fetchJSONWithFallback('times.json'),
+        fetchJSONWithFallback('rodadas.json'),
+        fetchJSONWithFallback('atilharia.json'),
+        fetchJSONWithFallback('goleiros.json')
       ]);
 
       // Combina os dados em uma estrutura unificada
@@ -526,4 +529,21 @@ Renderer.applyScrollableLimit = function(listContainer, itemSelector) {
   } catch (e) {
     console.warn('Falha ao aplicar limite rolável:', e);
   }
+};
+// ===== RESOLUÇÃO DE URL DE DADOS (GitHub Raw + fallbacks) =====
+Renderer.resolveDataUrls = function(filename) {
+  const owner = 'devpedroA';
+  const repo = 'SiteFutebol';
+  const urls = [];
+  try {
+    // GitHub Raw principal
+    urls.push(`https://raw.githubusercontent.com/${owner}/${repo}/main/${filename}`);
+    // jsDelivr CDN
+    urls.push(`https://cdn.jsdelivr.net/gh/${owner}/${repo}@main/${filename}`);
+    // GitHub Pages (se existir)
+    urls.push(`https://${owner}.github.io/${repo}/${filename}`);
+    // Caminho relativo (ambiente local)
+    urls.push(new URL(filename, window.location.href).href);
+  } catch (e) { /* ignore */ }
+  return Array.from(new Set(urls));
 };
