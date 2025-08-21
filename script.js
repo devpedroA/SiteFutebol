@@ -442,19 +442,19 @@ const App = {
       
       // Carrega todos os arquivos JSON separadamente
       const [timesData, rodadasData, artilhariaData, goleirosData] = await Promise.all([
-        fetch('times.json').then(response => {
+        fetch('https://raw.githubusercontent.com/devpedroA/SiteFutebol/refs/heads/main/times.json?token=GHSAT0AAAAAADJQVSVESK4JDIXB2IE4NVBU2FHDPXQ').then(response => {
           if (!response.ok) throw new Error('Erro ao carregar times.json');
           return response.json();
         }),
-        fetch('rodadas.json').then(response => {
+        fetch('https://raw.githubusercontent.com/devpedroA/SiteFutebol/refs/heads/main/rodadas.json?token=GHSAT0AAAAAADJQVSVET64PYK76K433VVTI2FHDQHA').then(response => {
           if (!response.ok) throw new Error('Erro ao carregar rodadas.json');
           return response.json();
         }),
-        fetch('atilharia.json').then(response => {
+        fetch('https://raw.githubusercontent.com/devpedroA/SiteFutebol/refs/heads/main/atilharia.json?token=GHSAT0AAAAAADJQVSVE4URRP2V2E2INWRQ42FHDQNA').then(response => {
           if (!response.ok) throw new Error('Erro ao carregar atilharia.json');
           return response.json();
         }),
-        fetch('goleiros.json').then(response => {
+        fetch('https://raw.githubusercontent.com/devpedroA/SiteFutebol/refs/heads/main/goleiros.json?token=GHSAT0AAAAAADJQVSVFXNVG2SWXTISQIU2Y2FHDRAQ').then(response => {
           if (!response.ok) throw new Error('Erro ao carregar goleiros.json');
           return response.json();
         })
