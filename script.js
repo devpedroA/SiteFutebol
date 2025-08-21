@@ -321,19 +321,29 @@ const Renderer = {
 
     container.innerHTML = '';
     const template = document.getElementById('artilheiro-template');
+    const teamMap = DataProcessor.createTeamMap(serie);
     
-    AppState.data[serie].artilheiros.forEach((artilheiro, index) => {
+    const sortedArtilheiros = [...AppState.data[serie].artilheiros]
+      .sort((a, b) => (b.gols || 0) - (a.gols || 0) || (a.nome || '').localeCompare(b.nome || ''));
+
+    sortedArtilheiros.forEach((artilheiro, index) => {
       const item = template.content.firstElementChild.cloneNode(true);
       
       item.querySelector('.position-badge').textContent = index + 1;
-      item.querySelector('.team-img').src = artilheiro.imagem;
+      item.querySelector('.team-img').src = (teamMap[artilheiro.time]?.imagem) || artilheiro.imagem || '';
       item.querySelector('.team-img').alt = artilheiro.time;
       item.querySelector('.player-name').textContent = artilheiro.nome;
       item.querySelector('.team-name').textContent = artilheiro.time;
       item.querySelector('.goals-badge').textContent = artilheiro.gols;
+      if (index < 3) {
+        item.classList.add('top-performer', `top-${index + 1}`);
+      }
       
       container.appendChild(item);
     });
+
+    // Após renderizar todos, limitar a altura ao tamanho dos 5 primeiros
+    this.applyScrollableLimit(container, '.artilheiro-item');
   },
 
   renderGoleiros(serie) {
@@ -345,19 +355,40 @@ const Renderer = {
 
     container.innerHTML = '';
     const template = document.getElementById('goleiro-template');
+    const teamMap = DataProcessor.createTeamMap(serie);
     
-    AppState.data[serie].goleiros.forEach((goleiro, index) => {
+    const sortedGoleiros = [...AppState.data[serie].goleiros]
+      .map(g => {
+        const partidas = typeof g.partidas === 'number' ? g.partidas : parseFloat(g.partidas) || 0;
+        const golsSofridos = typeof g.golsSofridos === 'number' ? g.golsSofridos : parseFloat(g.golsSofridos) || 0;
+        const media = partidas > 0 ? golsSofridos / partidas : Number.POSITIVE_INFINITY;
+        return { ...g, partidas, golsSofridos, media };
+      })
+      .sort((a, b) => {
+        if (a.media !== b.media) return a.media - b.media; // menor média primeiro
+        if (a.partidas !== b.partidas) return b.partidas - a.partidas; // mais partidas primeiro
+        if (a.golsSofridos !== b.golsSofridos) return a.golsSofridos - b.golsSofridos; // menos gols sofridos
+        return (a.nome || '').localeCompare(b.nome || '');
+      });
+
+    sortedGoleiros.forEach((goleiro, index) => {
       const item = template.content.firstElementChild.cloneNode(true);
       
       item.querySelector('.position-badge').textContent = index + 1;
-      item.querySelector('.team-img').src = goleiro.imagem;
+      item.querySelector('.team-img').src = (teamMap[goleiro.time]?.imagem) || goleiro.imagem || '';
       item.querySelector('.team-img').alt = goleiro.time;
       item.querySelector('.player-name').textContent = goleiro.nome;
-      item.querySelector('.team-name').textContent = goleiro.time;
+      item.querySelector('.team-name').textContent = `${goleiro.time} • ${goleiro.partidas} PJ`;
       item.querySelector('.goals-badge').textContent = goleiro.golsSofridos;
+      if (index < 3) {
+        item.classList.add('top-performer', `top-${index + 1}`);
+      }
       
       container.appendChild(item);
     });
+
+    // Após renderizar todos, limitar a altura ao tamanho dos 5 primeiros
+    this.applyScrollableLimit(container, '.goleiro-item');
   }
 };
 
@@ -399,6 +430,13 @@ const App = {
   async initialize() {
     loadCSS();
     window.addEventListener("resize", Utils.debounce(UI.updateBannerImage));
+    // Recalcula os limites de rolagem nas listas ao redimensionar
+    window.addEventListener("resize", Utils.debounce(() => {
+      const artilheiros = document.getElementById('artilheiros-list');
+      const goleiros = document.getElementById('goleiros-list');
+      if (artilheiros) Renderer.applyScrollableLimit(artilheiros, '.artilheiro-item');
+      if (goleiros) Renderer.applyScrollableLimit(goleiros, '.goleiro-item');
+    }, 150));
     try {
       UI.showLoading();
       
@@ -461,3 +499,31 @@ const App = {
 document.addEventListener("DOMContentLoaded", () => {
   App.initialize();
 });
+
+// ===== UTILITÁRIO DE SCROLL PARA LISTAS =====
+Renderer.applyScrollableLimit = function(listContainer, itemSelector) {
+  try {
+    if (!listContainer) return;
+    const items = listContainer.querySelectorAll(itemSelector);
+    if (!items || items.length <= 5) {
+      listContainer.style.maxHeight = '';
+      listContainer.style.overflowY = '';
+      return;
+    }
+
+    // Soma a altura dos 5 primeiros, incluindo margens
+    let height = 0;
+    for (let i = 0; i < Math.min(5, items.length); i++) {
+      const el = items[i];
+      const style = window.getComputedStyle(el);
+      const marginTop = parseFloat(style.marginTop) || 0;
+      const marginBottom = parseFloat(style.marginBottom) || 0;
+      height += el.offsetHeight + marginTop + marginBottom;
+    }
+
+    listContainer.style.maxHeight = height + 'px';
+    listContainer.style.overflowY = 'auto';
+  } catch (e) {
+    console.warn('Falha ao aplicar limite rolável:', e);
+  }
+};

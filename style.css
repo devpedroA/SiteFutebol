@@ -303,3 +303,19 @@ h5.text-green {
     padding: 0.15rem 0.4rem !important;
   }
 }
+
+/* Limitar listas a 5 itens e ativar rolagem interna */
+.scrollable-list {
+  overflow-y: auto;
+}
+
+/* A altura será definida via JS baseado na soma dos 5 primeiros itens */
+
+/* Destaque para Top 3 */
+.top-performer {
+  border-color: #43e97b !important;
+  box-shadow: 0 4px 16px rgba(67, 233, 123, 0.18);
+}
+.top-1 .position-badge { background: #ffd700 !important; color: #000 !important; }
+.top-2 .position-badge { background: #c0c0c0 !important; color: #000 !important; }
+.top-3 .position-badge { background: #cd7f32 !important; color: #fff !important; }

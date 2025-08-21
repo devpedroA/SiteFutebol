@@ -702,6 +702,162 @@
             "cartoesVermelhosB": 0
           }
         ]
+      },
+      {
+        "data": "24/08/2025",
+        "rodada": 10,
+        "jogos": [
+          {
+            "timeA": "Terra Boa",
+            "timeB": "Peñarol",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Sede",
+            "hora": "08:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Parceria",
+            "timeB": "Engenho",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Santa Rosa",
+            "hora": "08:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Tchuruu",
+            "timeB": "Juventus",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Jardim Paulista",
+            "hora": "08:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "C.A.D.B",
+            "timeB": "Sport Campina",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Sede",
+            "hora": "10:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Esperafico",
+            "timeB": "Braguense",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Santa Rosa",
+            "hora": "10:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Araçatuba",
+            "timeB": "Fox",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Jardim Paulista",
+            "hora": "10:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          }
+        ]
+      },
+      {
+        "data": "31/08/2025",
+        "rodada": 11,
+        "jogos": [
+          {
+            "timeA": "Sport Campina",
+            "timeB": "Tchuruu",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Sede",
+            "hora": "08:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Parceria",
+            "timeB": "C.A.D.B",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Santa Rosa",
+            "hora": "08:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Fox",
+            "timeB": "Juventus",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Jardim Paulista",
+            "hora": "08:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Esperafico",
+            "timeB": "Terra Boa",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Sede",
+            "hora": "10:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Engenho",
+            "timeB": "Peñarol",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Santa Rosa",
+            "hora": "10:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Braguense",
+            "timeB": "Araçatuba",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Jardim Paulista",
+            "hora": "10:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          }
+        ]
       }
     ]
   },
@@ -1167,6 +1323,127 @@
             "placarA": 2,
             "placarB": 2,
             "estadio": "Santa Rosa",
+            "hora": "15:00",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          }
+        ]
+      }
+      ,
+      {
+        "data": "24/08/2025",
+        "rodada": 7,
+        "jogos": [
+          {
+            "timeA": "Gileade F.C",
+            "timeB": "America Campinense F.C",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Jardim Paulista",
+            "hora": "13:00",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Santa Rosa",
+            "timeB": "Deportivo Campina Fc",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Santa Rosa",
+            "hora": "13:00",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Campinense Futebol Clube",
+            "timeB": "Entre Parents F.C",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Sede",
+            "hora": "13:00",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Hookah Futebol Clube",
+            "timeB": "Panelinha Campina",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Jardim Paulista",
+            "hora": "15:00",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Braguense Esporte Clube",
+            "timeB": "Marfran Esporte Clube",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Santa Rosa",
+            "hora": "15:00",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Motta F.C",
+            "timeB": "Eucaliptus F.C",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Sede",
+            "hora": "15:00",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          }
+        ]
+      },
+      {
+        "data": "31/08/2025",
+        "rodada": 8,
+        "jogos": [
+          {
+            "timeA": "Entre Parents F.C",
+            "timeB": "Gileade F.C",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Jardim Paulista",
+            "hora": "13:00",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Motta F.C",
+            "timeB": "Parma Campina",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Santa Rosa",
+            "hora": "13:00",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Panelinha Campina",
+            "timeB": "Marfran Esporte Clube",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Jardim Paulista",
             "hora": "15:00",
             "cartoesAmarelosA": 0,
             "cartoesVermelhosA": 0,

@@ -1,46 +1,84 @@
 {
   "ouro": {
     "goleiros": [
-      {
-        "nome": "Leandro Marcos Garcia da Silva",
-        "time": "Parceria",
-        "golsSofridos": 5,
-        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/hivofdyqhn1.png"
-      },
-      {
-        "nome": "Milton de Almeida Barreto",
-        "time": "Fox",
-        "golsSofridos": 8,
-        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/2jxp33oxurv.png"
-      },
-      {
-        "nome": "Reynaldo Pereira dos Santos",
-        "time": "Peñarol",
-        "golsSofridos": 14,
-        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/d4ywnb5tple.png"
-      }
+      { "nome": "RODRIGO DE FREITAS DOS SANTOS", "time": "Terra Boa", "partidas": 8, "golsSofridos": 14 },
+      { "nome": "GABRIEL DE ANDRADE PACHECO", "time": "Terra Boa", "partidas": 1, "golsSofridos": 2 },
+
+      { "nome": "LUCAS EDUARDO FERREIRA", "time": "C.A.D.B", "partidas": 9, "golsSofridos": 21 },
+
+      { "nome": "CARLOS ALVES DE LIMA", "time": "Braguense", "partidas": 8, "golsSofridos": 19 },
+
+      { "nome": "BRUNO RICARDO DE SOUZA", "time": "Engenho", "partidas": 6.5, "golsSofridos": 8 },
+      { "nome": "LEONARDO VINICIUS F. DOS SANTOS", "time": "Engenho", "partidas": 1.5, "golsSofridos": 2 },
+      { "nome": "LEANDRO FERREIRA DOS SANTOS", "time": "Engenho", "partidas": 1, "golsSofridos": 1 },
+
+      { "nome": "JHONATHAN TOMAZ", "time": "Esperafico", "partidas": 9, "golsSofridos": 26 },
+
+      { "nome": "GUSTAVO HENRIQUE BONTORIN WALLER", "time": "Tchuruu", "partidas": 5, "golsSofridos": 8 },
+      { "nome": "ANDRE LUIZ PINHEIRO SANTANA", "time": "Tchuruu", "partidas": 4, "golsSofridos": 5 },
+
+      { "nome": "MÁRCIO CHRISTIAN LOPES", "time": "Sport Campina", "partidas": 9, "golsSofridos": 26 },
+      { "nome": "LUCAS MAX HARZ LOPES", "time": "Sport Campina", "partidas": 0, "golsSofridos": 0 },
+
+      { "nome": "BRUNO MARTIMIANO", "time": "Araçatuba", "partidas": 5, "golsSofridos": 7 },
+      { "nome": "MARCO ADRIANO BOGO", "time": "Araçatuba", "partidas": 4, "golsSofridos": 10 },
+
+      { "nome": "MILTON DE ALMEIDA BARRETO", "time": "Fox", "partidas": 9, "golsSofridos": 8 },
+
+      { "nome": "REYNALDO PEREIRA DOS SANTOS", "time": "Peñarol", "partidas": 9, "golsSofridos": 14 },
+
+      { "nome": "DIEGO VINICIO GOES MANZINI", "time": "Juventus", "partidas": 9, "golsSofridos": 19 },
+
+      { "nome": "LEANDRO MARCOS GARCIA DA SILVA", "time": "Parceria", "partidas": 9, "golsSofridos": 5 }
     ]
   },
   "prata": {
     "goleiros": [
-      {
-        "nome": "Renan de Araujo Miguel",
-        "time": "Eucaliptus F.C",
-        "golsSofridos": 2,
-        "imagem": "https://campinagrandedosul.pr.gov.br/Downloads/Arquivos/FUTEBOL2025/FUTEBOL2025_4a455f2c-a56a-45a7-9dd4-6fde7bd24641.png"
-      },
-      {
-        "nome": "Luiz Fernando dos Reis Demetrio",
-        "time": "Hookah Futebol Clube",
-        "golsSofridos": 2,
-        "imagem": "https://campinagrandedosul.pr.gov.br/Downloads/Arquivos/FUTEBOL2025/FUTEBOL2025_44495087-eead-4822-a266-6a3616c930a6.png"
-      },
-      {
-        "nome": "Roger da Luz Hirt",
-        "time": "Redbull Campina",
-        "golsSofridos": 5,
-        "imagem": "https://campinagrandedosul.pr.gov.br/Downloads/Arquivos/FUTEBOL2025/FUTEBOL2025_41e9dfb5-6f76-4029-b311-7c9405b969bb.png"
-      }
+      { "nome": "BRUNO STRUZ LIMA", "time": "America Campinense F.C", "partidas": 4, "golsSofridos": 7 },
+      { "nome": "ROBERT EDUARDO QUIRINO MARIA", "time": "America Campinense F.C", "partidas": 1, "golsSofridos": 0 },
+
+      { "nome": "ANDREWS HENRIQUE SOARES", "time": "Arsenal F.C", "partidas": 3, "golsSofridos": 6 },
+      { "nome": "MABSON ROBUSTO", "time": "Arsenal F.C", "partidas": 3, "golsSofridos": 4 },
+
+      { "nome": "JOSE FELIPE CORDEIRO DA SILVA", "time": "Braguense Esporte Clube", "partidas": 4, "golsSofridos": 11 },
+
+      { "nome": "MAGAIVER SANTANA DE LIMA", "time": "Vila Sapo F.C", "partidas": 5, "golsSofridos": 9 },
+
+      { "nome": "AMAURI ANDRE GILIER", "time": "Campinense Futebol Clube", "partidas": 4, "golsSofridos": 6 },
+
+      { "nome": "LUCAS RAMOS DA SILVA", "time": "Deportivo Campina Fc", "partidas": 1, "golsSofridos": 4 },
+      { "nome": "ADRIANO STRUZ LIMA", "time": "Deportivo Campina Fc", "partidas": 4, "golsSofridos": 0 },
+
+      { "nome": "EDIMAR TRENTO", "time": "Los Coyudos F.C", "partidas": 1, "golsSofridos": 1 },
+      { "nome": "OLIVELTON DOS SANTOS", "time": "Los Coyudos F.C", "partidas": 4, "golsSofridos": 8 },
+      { "nome": "DANILO DIAS", "time": "Los Coyudos F.C", "partidas": 1, "golsSofridos": 1 },
+
+      { "nome": "JOÃO FLAVIO DE SOUZA", "time": "Entre Parents F.C", "partidas": 1, "golsSofridos": 1 },
+      { "nome": "JHONATAM WESLEY LAGUNA SILVIANO", "time": "Entre Parents F.C", "partidas": 2, "golsSofridos": 5 },
+
+      { "nome": "EVERTON LOPES DE OLIVEIRA", "time": "Estrela Campina", "partidas": 5, "golsSofridos": 9 },
+
+      { "nome": "RENAN DE ARAUJO MIGUEL", "time": "Eucaliptus F.C", "partidas": 5, "golsSofridos": 2 },
+
+      { "nome": "DIRLEI CASSIO BORGES", "time": "Gileade F.C", "partidas": 4, "golsSofridos": 11 },
+
+      { "nome": "LUIZ FERNANDO DOS REIS DEMETRIO", "time": "Hookah Futebol Clube", "partidas": 5, "golsSofridos": 2 },
+
+      { "nome": "GUSTAVO HENRIQUE DE OLIVEIRA DE CARVALHO", "time": "Marfran Esporte Clube", "partidas": 5, "golsSofridos": 12 },
+
+      { "nome": "PAULO DE TARSO EVANGELISTA", "time": "Motta F.C", "partidas": 3, "golsSofridos": 3 },
+
+      { "nome": "ELVIS WESLEY DO CARMO", "time": "Panelinha Campina", "partidas": 3, "golsSofridos": 6 },
+      { "nome": "JOSE PEREIRA DA SILVA FILHO", "time": "Panelinha Campina", "partidas": 0, "golsSofridos": 0 },
+      { "nome": "LUCAS GONÇALVES", "time": "Panelinha Campina", "partidas": 1, "golsSofridos": 4 },
+
+      { "nome": "RICARDO PEREIRA DOS SANTOS", "time": "Parma Campina", "partidas": 3, "golsSofridos": 8 },
+
+      { "nome": "GABRIEL STORRER RODRIGUES DE LIMA", "time": "Redbull Campina", "partidas": 0, "golsSofridos": 0 },
+      { "nome": "ROGER DA LUZ HIRT", "time": "Redbull Campina", "partidas": 5, "golsSofridos": 5 },
+
+      { "nome": "NELSON DA LUZ SANTOS", "time": "Santa Rosa", "partidas": 3, "golsSofridos": 3 },
+      { "nome": "MAGNO BERTOTTI", "time": "Santa Rosa", "partidas": 1, "golsSofridos": 4 }
     ]
   }
 }
