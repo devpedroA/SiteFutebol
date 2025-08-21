@@ -1,0 +1,47 @@
+{
+  "ouro": {
+    "goleiros": [
+      {
+        "nome": "Leandro Marcos Garcia da Silva",
+        "time": "Parceria",
+        "golsSofridos": 5,
+        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/hivofdyqhn1.png"
+      },
+      {
+        "nome": "Milton de Almeida Barreto",
+        "time": "Fox",
+        "golsSofridos": 8,
+        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/2jxp33oxurv.png"
+      },
+      {
+        "nome": "Reynaldo Pereira dos Santos",
+        "time": "Peñarol",
+        "golsSofridos": 14,
+        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/d4ywnb5tple.png"
+      }
+    ]
+  },
+  "prata": {
+    "goleiros": [
+      {
+        "nome": "Renan de Araujo Miguel",
+        "time": "Eucaliptus F.C",
+        "golsSofridos": 2,
+        "imagem": "https://campinagrandedosul.pr.gov.br/Downloads/Arquivos/FUTEBOL2025/FUTEBOL2025_4a455f2c-a56a-45a7-9dd4-6fde7bd24641.png"
+      },
+      {
+        "nome": "Luiz Fernando dos Reis Demetrio",
+        "time": "Hookah Futebol Clube",
+        "golsSofridos": 2,
+        "imagem": "https://campinagrandedosul.pr.gov.br/Downloads/Arquivos/FUTEBOL2025/FUTEBOL2025_44495087-eead-4822-a266-6a3616c930a6.png"
+      },
+      {
+        "nome": "Roger da Luz Hirt",
+        "time": "Redbull Campina",
+        "golsSofridos": 5,
+        "imagem": "https://campinagrandedosul.pr.gov.br/Downloads/Arquivos/FUTEBOL2025/FUTEBOL2025_41e9dfb5-6f76-4029-b311-7c9405b969bb.png"
+      }
+    ]
+  }
+}
+

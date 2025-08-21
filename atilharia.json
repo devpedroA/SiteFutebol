@@ -1,0 +1,47 @@
+{
+  "ouro": {
+    "artilheiros": [
+      {
+        "nome": "Guilherme do Espírito Santo",
+        "time": "Terra Boa",
+        "gols": 8,
+        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/xv5rl5mqyb3.png"
+      },
+      {
+        "nome": "Lucas Henrique Martins Santos",
+        "time": "Tchuruu",
+        "gols": 7,
+        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/pbs0x43k55i.png"
+      },
+      {
+        "nome": "Ivan A. Rivero Espínola",
+        "time": "Tchuruu",
+        "gols": 6,
+        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/pbs0x43k55i.png"
+      }
+    ]
+  },
+  "prata": {
+    "artilheiros": [
+      {
+        "nome": "LUCAS LIMA",
+        "time": "Redbull Campina",
+        "gols": 4,
+        "imagem": "https://campinagrandedosul.pr.gov.br/Downloads/Arquivos/FUTEBOL2025/FUTEBOL2025_41e9dfb5-6f76-4029-b311-7c9405b969bb.png"
+      },
+      {
+        "nome": "MATEUS HENRIQUE",
+        "time": "Marfran Esporte Clube",
+        "gols": 2,
+        "imagem": "https://campinagrandedosul.pr.gov.br/Downloads/Arquivos/FUTEBOL2025/FUTEBOL2025_1f8872e9-4955-49bc-a5ca-dc97a851322a.png"
+      },
+      {
+        "nome": "ALEXSANDRO ALVES",
+        "time": "Vila Sapo F.C",
+        "gols": 2,
+        "imagem": "https://campinagrandedosul.pr.gov.br/Downloads/Arquivos/FUTEBOL2025/FUTEBOL2025_da36723c-ad63-4ce9-947b-25dee62e80e5.png"
+      }
+    ]
+  }
+}
+

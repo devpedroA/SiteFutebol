@@ -1,203 +1,5 @@
 {
   "ouro": {
-    "times": [
-      {
-        "nome": "Terra Boa",
-        "pontos": 0,
-        "vitorias": 0,
-        "empates": 0,
-        "derrotas": 0,
-        "golsPro": 0,
-        "golsContra": 0,
-        "saldo": 0,
-        "cartoesAmarelos": 0,
-        "cartoesVermelhos": 0,
-        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/xv5rl5mqyb3.png"
-      },
-      {
-        "nome": "Tchuruu",
-        "pontos": 0,
-        "vitorias": 0,
-        "empates": 0,
-        "derrotas": 0,
-        "golsPro": 0,
-        "golsContra": 0,
-        "saldo": 0,
-        "cartoesAmarelos": 0,
-        "cartoesVermelhos": 0,
-        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/pbs0x43k55i.png"
-      },
-      {
-        "nome": "Penãrol",
-        "pontos": 0,
-        "vitorias": 0,
-        "empates": 0,
-        "derrotas": 0,
-        "golsPro": 0,
-        "golsContra": 0,
-        "saldo": 0,
-        "cartoesAmarelos": 0,
-        "cartoesVermelhos": 0,
-        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/d4ywnb5tple.png"
-      },
-      {
-        "nome": "Sport Campina",
-        "pontos": 0,
-        "vitorias": 0,
-        "empates": 0,
-        "derrotas": 0,
-        "golsPro": 0,
-        "golsContra": 0,
-        "saldo": 0,
-        "cartoesAmarelos": 0,
-        "cartoesVermelhos": 0,
-        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/sivw0qvmfcx.png"
-      },
-      {
-        "nome": "Araçatuba",
-        "pontos": 0,
-        "vitorias": 0,
-        "empates": 0,
-        "derrotas": 0,
-        "golsPro": 0,
-        "golsContra": 0,
-        "saldo": 0,
-        "cartoesAmarelos": 0,
-        "cartoesVermelhos": 0,
-        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/mbajeipkctc.png"
-      },
-      {
-        "nome": "Juventus",
-        "pontos": 0,
-        "vitorias": 0,
-        "empates": 0,
-        "derrotas": 0,
-        "golsPro": 0,
-        "golsContra": 0,
-        "saldo": 0,
-        "cartoesAmarelos": 0,
-        "cartoesVermelhos": 0,
-        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/tuimrltomm3.png"
-      },
-      {
-        "nome": "Fox",
-        "pontos": 0,
-        "vitorias": 0,
-        "empates": 0,
-        "derrotas": 0,
-        "golsPro": 0,
-        "golsContra": 0,
-        "saldo": 0,
-        "cartoesAmarelos": 0,
-        "cartoesVermelhos": 0,
-        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/2jxp33oxurv.png"
-      },
-      {
-        "nome": "Engenho",
-        "pontos": 0,
-        "vitorias": 0,
-        "empates": 0,
-        "derrotas": 0,
-        "golsPro": 0,
-        "golsContra": 0,
-        "saldo": 0,
-        "cartoesAmarelos": 0,
-        "cartoesVermelhos": 0,
-        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/n3vsizyeyml.png"
-      },
-      {
-        "nome": "Esperafico",
-        "pontos": 0,
-        "vitorias": 0,
-        "empates": 0,
-        "derrotas": 0,
-        "golsPro": 0,
-        "golsContra": 0,
-        "saldo": 0,
-        "cartoesAmarelos": 0,
-        "cartoesVermelhos": 0,
-        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/3a0tfiwywc0.png"
-      },
-      {
-        "nome": "C.A.D.B",
-        "pontos": 0,
-        "vitorias": 0,
-        "empates": 0,
-        "derrotas": 0,
-        "golsPro": 0,
-        "golsContra": 0,
-        "saldo": 0,
-        "cartoesAmarelos": 0,
-        "cartoesVermelhos": 0,
-        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/uqqrfgb01ov.png"
-      },
-      {
-        "nome": "Parceria",
-        "pontos": 0,
-        "vitorias": 0,
-        "empates": 0,
-        "derrotas": 0,
-        "golsPro": 0,
-        "golsContra": 0,
-        "saldo": 0,
-        "cartoesAmarelos": 0,
-        "cartoesVermelhos": 0,
-        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/hivofdyqhn1.png"
-      },
-      {
-        "nome": "Braguense",
-        "pontos": 0,
-        "vitorias": 0,
-        "empates": 0,
-        "derrotas": 0,
-        "golsPro": 0,
-        "golsContra": 0,
-        "saldo": 0,
-        "cartoesAmarelos": 0,
-        "cartoesVermelhos": 0,
-        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/d5jv4jdtypp.png"
-      }
-    ],
-    "artilheiros": [
-      {
-        "nome": "MARLON CHRISTIAN",
-        "time": "Penãrol",
-        "gols": 6,
-        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/d4ywnb5tple.png"
-      },
-      {
-        "nome": "GUILHERME",
-        "time": "Penãrol",
-        "gols": 6,
-        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/d4ywnb5tple.png"
-      },
-      {
-        "nome": "THOMAS GUEDES",
-        "time": "Penãrol",
-        "gols": 6,
-        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/d4ywnb5tple.png"
-      }
-    ],
-    "goleiros": [
-      {
-        "nome": "LEANDRO MARCOS ",
-        "time": "Parceria",
-        "golsSofridos": 3,
-        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/hivofdyqhn1.png"
-      },
-      {
-        "nome": "MILTON DE ALMEIDA",
-        "time": "Fox",
-        "golsSofridos": 6,
-        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/2jxp33oxurv.png"
-      },
-      {
-        "nome": "BRUNO RICARDO",
-        "time": "Engenho",
-        "golsSofridos": 8,
-        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/n3vsizyeyml.png"
-      }
-    ],
     "rodadas": [
       {
         "data": "01/06/2025",
@@ -210,9 +12,9 @@
             "placarB": 0,
             "estadio": "Sede",
             "hora": "08:30",
-            "cartoesAmarelosA": 0,
+            "cartoesAmarelosA": 3,
             "cartoesVermelhosA": 0,
-            "cartoesAmarelosB": 0,
+            "cartoesAmarelosB": 4,
             "cartoesVermelhosB": 0
           },
           {
@@ -222,21 +24,21 @@
             "placarB": 1,
             "estadio": "Sede",
             "hora": "10:30",
-            "cartoesAmarelosA": 0,
+            "cartoesAmarelosA": 3,
             "cartoesVermelhosA": 0,
-            "cartoesAmarelosB": 0,
+            "cartoesAmarelosB": 5,
             "cartoesVermelhosB": 0
           },
           {
-            "timeA": "Penãrol",
+            "timeA": "Peñarol",
             "timeB": "Sport Campina",
             "placarA": 4,
             "placarB": 0,
             "estadio": "Jardim Paulista",
             "hora": "08:30",
-            "cartoesAmarelosA": 0,
+            "cartoesAmarelosA": 2,
             "cartoesVermelhosA": 0,
-            "cartoesAmarelosB": 0,
+            "cartoesAmarelosB": 3,
             "cartoesVermelhosB": 0
           },
           {
@@ -246,10 +48,10 @@
             "placarB": 2,
             "estadio": "Jardim Paulista",
             "hora": "10:30",
-            "cartoesAmarelosA": 0,
+            "cartoesAmarelosA": 6,
             "cartoesVermelhosA": 0,
-            "cartoesAmarelosB": 0,
-            "cartoesVermelhosB": 0
+            "cartoesAmarelosB": 8,
+            "cartoesVermelhosB": 1
           },
           {
             "timeA": "Fox",
@@ -258,9 +60,9 @@
             "placarB": 0,
             "estadio": "Santa Rosa",
             "hora": "08:30",
-            "cartoesAmarelosA": 0,
+            "cartoesAmarelosA": 3,
             "cartoesVermelhosA": 0,
-            "cartoesAmarelosB": 0,
+            "cartoesAmarelosB": 4,
             "cartoesVermelhosB": 0
           },
           {
@@ -270,9 +72,9 @@
             "placarB": 2,
             "estadio": "Santa Rosa",
             "hora": "10:30",
-            "cartoesAmarelosA": 0,
+            "cartoesAmarelosA": 2,
             "cartoesVermelhosA": 0,
-            "cartoesAmarelosB": 0,
+            "cartoesAmarelosB": 2,
             "cartoesVermelhosB": 0
           }
         ]
@@ -318,7 +120,7 @@
             "cartoesVermelhosB": 0
           },
           {
-            "timeA": "Penãrol",
+            "timeA": "Peñarol",
             "timeB": "Esperafico",
             "placarA": 2,
             "placarB": 4,
@@ -384,7 +186,7 @@
             "cartoesVermelhosB": 0
           },
           {
-            "timeA": "Penãrol",
+            "timeA": "Peñarol",
             "timeB": "Braguense",
             "placarA": 5,
             "placarB": 1,
@@ -475,7 +277,7 @@
           },
           {
             "timeA": "Tchuruu",
-            "timeB": "Penãrol",
+            "timeB": "Peñarol",
             "placarA": 2,
             "placarB": 3,
             "estadio": "Sede",
@@ -529,7 +331,7 @@
           },
           {
             "timeA": "C.A.D.B",
-            "timeB": "Penãrol",
+            "timeB": "Peñarol",
             "placarA": 1,
             "placarB": 2,
             "estadio": "Jardim Paulista",
@@ -619,7 +421,7 @@
           },
           {
             "timeA": "Juventus",
-            "timeB": "Penãrol",
+            "timeB": "Peñarol",
             "placarA": 0,
             "placarB": 2,
             "estadio": "Jardim Paulista",
@@ -668,14 +470,194 @@
         ]
       },
       {
-        "data": "27/07/2099",
+        "data": "27/07/2025",
         "rodada": 7,
         "jogos": [
           {
             "timeA": "Esperafico",
             "timeB": "Tchuruu",
+            "placarA": 1,
+            "placarB": 4,
+            "estadio": "Santa Rosa",
+            "hora": "08:30",
+            "cartoesAmarelosA": 4,
+            "cartoesVermelhosA": 2,
+            "cartoesAmarelosB": 1,
+            "cartoesVermelhosB": 2
+          },
+          {
+            "timeA": "Araçatuba",
+            "timeB": "Sport Campina",
             "placarA": 0,
+            "placarB": 1,
+            "estadio": "Santa Rosa",
+            "hora": "10:30",
+            "cartoesAmarelosA": 4,
+            "cartoesVermelhosA": 1,
+            "cartoesAmarelosB": 3,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Juventus",
+            "timeB": "Parceria",
+            "placarA": 0,
+            "placarB": 3,
+            "estadio": "Jardim Paulista",
+            "hora": "08:30",
+            "cartoesAmarelosA": 2,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 3,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "C.A.D.B",
+            "timeB": "Terra Boa",
+            "placarA": 1,
+            "placarB": 5,
+            "estadio": "Sede",
+            "hora": "10:30",
+            "cartoesAmarelosA": 1,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 2,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Engenho",
+            "timeB": "Braguense",
+            "placarA": 4,
+            "placarB": 2,
+            "estadio": "Sede",
+            "hora": "08:30",
+            "cartoesAmarelosA": 1,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 1,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Fox",
+            "timeB": "Peñarol",
+            "placarA": 2,
+            "placarB": 2,
+            "estadio": "Jardim Paulista",
+            "hora": "10:30",
+            "cartoesAmarelosA": 4,
+            "cartoesVermelhosA": 1,
+            "cartoesAmarelosB": 3,
+            "cartoesVermelhosB": 1
+          }
+        ]
+      },
+      {
+        "data": "03/08/2025",
+        "rodada": 8,
+        "jogos": [
+          {
+            "timeA": "Parceria",
+            "timeB": "Braguense",
+            "placarA": 1,
+            "placarB": 1,
+            "estadio": "Sede",
+            "hora": "08:30",
+            "cartoesAmarelosA": 2,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 10,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "C.A.D.B",
+            "timeB": "Fox",
+            "placarA": 0,
+            "placarB": 3,
+            "estadio": "Jardim Paulista",
+            "hora": "08:30",
+            "cartoesAmarelosA": 1,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 2,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Terra Boa",
+            "timeB": "Juventus",
+            "placarA": 7,
             "placarB": 0,
+            "estadio": "Santa Rosa",
+            "hora": "08:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 2,
+            "cartoesVermelhosB": 1
+          },
+          {
+            "timeA": "Sport Campina",
+            "timeB": "Esperafico",
+            "placarA": 1,
+            "placarB": 0,
+            "estadio": "Sede",
+            "hora": "10:30",
+            "cartoesAmarelosA": 2,
+            "cartoesVermelhosA": 1,
+            "cartoesAmarelosB": 1,
+            "cartoesVermelhosB": 1
+          },
+          {
+            "timeA": "Engenho",
+            "timeB": "Tchuruu",
+            "placarA": 1,
+            "placarB": 1,
+            "estadio": "Jardim Paulista",
+            "hora": "08:30",
+            "cartoesAmarelosA": 3,
+            "cartoesVermelhosA": 1,
+            "cartoesAmarelosB": 4,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Peñarol",
+            "timeB": "Araçatuba",
+            "placarA": 2,
+            "placarB": 1,
+            "estadio": "Santa Rosa",
+            "hora": "10:30",
+            "cartoesAmarelosA": 4,
+            "cartoesVermelhosA": 2,
+            "cartoesAmarelosB": 3,
+            "cartoesVermelhosB": 0
+          }
+        ]
+      },
+      {
+        "data": "17/08/2025",
+        "rodada": 9,
+        "jogos": [
+          {
+            "timeA": "Sport Campina",
+            "timeB": "Engenho",
+            "placarA": 1,
+            "placarB": 5,
+            "estadio": "Sede",
+            "hora": "08:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Tchuruu",
+            "timeB": "Terra Boa",
+            "placarA": 5,
+            "placarB": 2,
+            "estadio": "Jardim Paulista",
+            "hora": "08:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Esperafico",
+            "timeB": "Araçatuba",
+            "placarA": 2,
+            "placarB": 4,
             "estadio": "Santa Rosa",
             "hora": "08:30",
             "cartoesAmarelosA": 0,
@@ -684,12 +666,24 @@
             "cartoesVermelhosB": 0
           },
           {
-            "timeA": "Araçatuba",
-            "timeB": "Sport Campina",
-            "placarA": 0,
+            "timeA": "Braguense",
+            "timeB": "Fox",
+            "placarA": 2,
             "placarB": 0,
-            "estadio": "Santa Rosa",
+            "estadio": "Sede",
             "hora": "10:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Parceria",
+            "timeB": "Peñarol",
+            "placarA": 3,
+            "placarB": 2,
+            "estadio": "Jardim Paulista",
+            "hora": "08:30",
             "cartoesAmarelosA": 0,
             "cartoesVermelhosA": 0,
             "cartoesAmarelosB": 0,
@@ -697,46 +691,10 @@
           },
           {
             "timeA": "Juventus",
-            "timeB": "Parceria",
-            "placarA": 0,
-            "placarB": 0,
-            "estadio": "Jardim Paulista",
-            "hora": "08:30",
-            "cartoesAmarelosA": 0,
-            "cartoesVermelhosA": 0,
-            "cartoesAmarelosB": 0,
-            "cartoesVermelhosB": 0
-          },
-          {
-            "timeA": "C.A.D.B",
-            "timeB": "Terra Boa",
-            "placarA": 0,
-            "placarB": 0,
-            "estadio": "Sede",
-            "hora": "10:30",
-            "cartoesAmarelosA": 0,
-            "cartoesVermelhosA": 0,
-            "cartoesAmarelosB": 0,
-            "cartoesVermelhosB": 0
-          },
-          {
-            "timeA": "Engenho",
-            "timeB": "Braguense",
-            "placarA": 0,
-            "placarB": 0,
-            "estadio": "Sede",
-            "hora": "08:30",
-            "cartoesAmarelosA": 0,
-            "cartoesVermelhosA": 0,
-            "cartoesAmarelosB": 0,
-            "cartoesVermelhosB": 0
-          },
-          {
-            "timeA": "Fox",
-            "timeB": "Penãrol",
-            "placarA": 0,
-            "placarB": 0,
-            "estadio": "Jardim Paulista",
+            "timeB": "C.A.D.B",
+            "placarA": 1,
+            "placarB": 1,
+            "estadio": "Santa Rosa",
             "hora": "10:30",
             "cartoesAmarelosA": 0,
             "cartoesVermelhosA": 0,
@@ -748,282 +706,6 @@
     ]
   },
   "prata": {
-    "times": [
-      {
-        "nome": "Parma Campina",
-        "pontos": 0,
-        "vitorias": 0,
-        "empates": 0,
-        "derrotas": 0,
-        "golsPro": 0,
-        "golsContra": 0,
-        "saldo": 0,
-        "cartoesAmarelos": 0,
-        "cartoesVermelhos": 0,
-        "imagem": "https://campinagrandedosul.pr.gov.br/Downloads/Arquivos/FUTEBOL2025/FUTEBOL2025_51abf8aa-8115-4b78-8a48-ee3c13c72c34.png"
-      },
-      {
-        "nome": "Santa Rosa",
-        "pontos": 0,
-        "vitorias": 0,
-        "empates": 0,
-        "derrotas": 0,
-        "golsPro": 0,
-        "golsContra": 0,
-        "saldo": 0,
-        "cartoesAmarelos": 0,
-        "cartoesVermelhos": 0,
-        "imagem": "https://campinagrandedosul.pr.gov.br/Downloads/Arquivos/FUTEBOL2025/FUTEBOL2025_b0aca1f6-522b-4081-86d0-bc33fe583512.png"
-      },
-      {
-        "nome": "Campinense Futebol Clube",
-        "pontos": 0,
-        "vitorias": 0,
-        "empates": 0,
-        "derrotas": 0,
-        "golsPro": 0,
-        "golsContra": 0,
-        "saldo": 0,
-        "cartoesAmarelos": 0,
-        "cartoesVermelhos": 0,
-        "imagem": "https://campinagrandedosul.pr.gov.br/Downloads/Arquivos/FUTEBOL2025/FUTEBOL2025_77f90379-ff80-41b9-adc9-0f253bbacdfc.png"
-      },
-      {
-        "nome": "Arsenal F.C",
-        "pontos": 0,
-        "vitorias": 0,
-        "empates": 0,
-        "derrotas": 0,
-        "golsPro": 0,
-        "golsContra": 0,
-        "saldo": 0,
-        "cartoesAmarelos": 0,
-        "cartoesVermelhos": 0,
-        "imagem": "https://campinagrandedosul.pr.gov.br/Downloads/Arquivos/FUTEBOL2025/FUTEBOL2025_87200322-222e-4348-814f-4b91c6a58810.png"
-      },
-      {
-        "nome": "Gileade F.C",
-        "pontos": 0,
-        "vitorias": 0,
-        "empates": 0,
-        "derrotas": 0,
-        "golsPro": 0,
-        "golsContra": 0,
-        "saldo": 0,
-        "cartoesAmarelos": 0,
-        "cartoesVermelhos": 0,
-        "imagem": "https://campinagrandedosul.pr.gov.br/Downloads/Arquivos/FUTEBOL2025/FUTEBOL2025_36b6958a-72a2-4522-b6c3-7b0d815c1f1c.png"
-      },
-      {
-        "nome": "Motta F.C",
-        "pontos": 0,
-        "vitorias": 0,
-        "empates": 0,
-        "derrotas": 0,
-        "golsPro": 0,
-        "golsContra": 0,
-        "saldo": 0,
-        "cartoesAmarelos": 0,
-        "cartoesVermelhos": 0,
-        "imagem": "https://campinagrandedosul.pr.gov.br/Downloads/Arquivos/FUTEBOL2025/FUTEBOL2025_8a4c2fbd-c651-4521-8be2-f5fa8f4768db.png"
-      },
-      {
-        "nome": "Los Coyudos F.C",
-        "pontos": 0,
-        "vitorias": 0,
-        "empates": 0,
-        "derrotas": 0,
-        "golsPro": 0,
-        "golsContra": 0,
-        "saldo": 0,
-        "cartoesAmarelos": 0,
-        "cartoesVermelhos": 0,
-        "imagem": "https://campinagrandedosul.pr.gov.br/Downloads/Arquivos/FUTEBOL2025/FUTEBOL2025_295d7774-65dc-4b7c-a5c2-7e08553229aa.png"
-      },
-      {
-        "nome": "Eucaliptus F.C",
-        "pontos": 0,
-        "vitorias": 0,
-        "empates": 0,
-        "derrotas": 0,
-        "golsPro": 0,
-        "golsContra": 0,
-        "saldo": 0,
-        "cartoesAmarelos": 0,
-        "cartoesVermelhos": 0,
-        "imagem": "https://campinagrandedosul.pr.gov.br/Downloads/Arquivos/FUTEBOL2025/FUTEBOL2025_4a455f2c-a56a-45a7-9dd4-6fde7bd24641.png"
-      },
-      {
-        "nome": "America Campinense F.C",
-        "pontos": 0,
-        "vitorias": 0,
-        "empates": 0,
-        "derrotas": 0,
-        "golsPro": 0,
-        "golsContra": 0,
-        "saldo": 0,
-        "cartoesAmarelos": 0,
-        "cartoesVermelhos": 0,
-        "imagem": "https://campinagrandedosul.pr.gov.br/Downloads/Arquivos/FUTEBOL2025/FUTEBOL2025_b2d5eb9c-4a2e-4a77-bef7-334a419a0748.png"
-      },
-      {
-        "nome": "Panelinha Campina",
-        "pontos": 0,
-        "vitorias": 0,
-        "empates": 0,
-        "derrotas": 0,
-        "golsPro": 0,
-        "golsContra": 0,
-        "saldo": 0,
-        "cartoesAmarelos": 0,
-        "cartoesVermelhos": 0,
-        "imagem": "https://campinagrandedosul.pr.gov.br/Downloads/Arquivos/FUTEBOL2025/FUTEBOL2025_8874c86e-a933-4b30-9bfa-57f8899768f4.png"
-      },
-      {
-        "nome": "Hookah Futebol Clube",
-        "pontos": 0,
-        "vitorias": 0,
-        "empates": 0,
-        "derrotas": 0,
-        "golsPro": 0,
-        "golsContra": 0,
-        "saldo": 0,
-        "cartoesAmarelos": 0,
-        "cartoesVermelhos": 0,
-        "imagem": "https://campinagrandedosul.pr.gov.br/Downloads/Arquivos/FUTEBOL2025/FUTEBOL2025_44495087-eead-4822-a266-6a3616c930a6.png"
-      },
-      {
-        "nome": "Estrela Campina",
-        "pontos": 0,
-        "vitorias": 0,
-        "empates": 0,
-        "derrotas": 0,
-        "golsPro": 0,
-        "golsContra": 0,
-        "saldo": 0,
-        "cartoesAmarelos": 0,
-        "cartoesVermelhos": 0,
-        "imagem": "https://campinagrandedosul.pr.gov.br/Downloads/Arquivos/FUTEBOL2025/FUTEBOL2025_d2b3e476-80b1-44cb-a568-c9e53cd11a68.png"
-      },
-      {
-        "nome": "Entre Parents F.C",
-        "pontos": 0,
-        "vitorias": 0,
-        "empates": 0,
-        "derrotas": 0,
-        "golsPro": 0,
-        "golsContra": 0,
-        "saldo": 0,
-        "cartoesAmarelos": 0,
-        "cartoesVermelhos": 0,
-        "imagem": "https://campinagrandedosul.pr.gov.br/Downloads/Arquivos/FUTEBOL2025/FUTEBOL2025_24f9fd99-db72-428e-9a5a-53b3a6e8d8e9.png"
-      },
-      {
-        "nome": "Braguense Esporte Clube",
-        "pontos": 0,
-        "vitorias": 0,
-        "empates": 0,
-        "derrotas": 0,
-        "golsPro": 0,
-        "golsContra": 0,
-        "saldo": 0,
-        "cartoesAmarelos": 0,
-        "cartoesVermelhos": 0,
-        "imagem": "https://campinagrandedosul.pr.gov.br/Downloads/Arquivos/FUTEBOL2025/FUTEBOL2025_d8a7e4a9-c2c0-4900-a036-8ed2f19ae5be.png"
-      },
-      {
-        "nome": "Marfran Esporte Clube",
-        "pontos": 0,
-        "vitorias": 0,
-        "empates": 0,
-        "derrotas": 0,
-        "golsPro": 0,
-        "golsContra": 0,
-        "saldo": 0,
-        "cartoesAmarelos": 0,
-        "cartoesVermelhos": 0,
-        "imagem": "https://campinagrandedosul.pr.gov.br/Downloads/Arquivos/FUTEBOL2025/FUTEBOL2025_1f8872e9-4955-49bc-a5ca-dc97a851322a.png"
-      },
-      {
-        "nome": "Vila Sapo F.C",
-        "pontos": 0,
-        "vitorias": 0,
-        "empates": 0,
-        "derrotas": 0,
-        "golsPro": 0,
-        "golsContra": 0,
-        "saldo": 0,
-        "cartoesAmarelos": 0,
-        "cartoesVermelhos": 0,
-        "imagem": "https://campinagrandedosul.pr.gov.br/Downloads/Arquivos/FUTEBOL2025/FUTEBOL2025_da36723c-ad63-4ce9-947b-25dee62e80e5.png"
-      },
-      {
-        "nome": "Deportivo Campina Fc",
-        "pontos": 0,
-        "vitorias": 0,
-        "empates": 0,
-        "derrotas": 0,
-        "golsPro": 0,
-        "golsContra": 0,
-        "saldo": 0,
-        "cartoesAmarelos": 0,
-        "cartoesVermelhos": 0,
-        "imagem": "https://campinagrandedosul.pr.gov.br/Downloads/Arquivos/FUTEBOL2025/FUTEBOL2025_a114c061-9f68-4e35-ac77-902b6e407ae5.png"
-      },
-      {
-        "nome": "Redbull Campina",
-        "pontos": 0,
-        "vitorias": 0,
-        "empates": 0,
-        "derrotas": 0,
-        "golsPro": 0,
-        "golsContra": 0,
-        "saldo": 0,
-        "cartoesAmarelos": 0,
-        "cartoesVermelhos": 0,
-        "imagem": "https://campinagrandedosul.pr.gov.br/Downloads/Arquivos/FUTEBOL2025/FUTEBOL2025_41e9dfb5-6f76-4029-b311-7c9405b969bb.png"
-      }
-    ],
-    "artilheiros": [
-      {
-        "nome": "João Silva",
-        "time": "Terra Boa",
-        "gols": 8,
-        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/xv5rl5mqyb3.png"
-      },
-      {
-        "nome": "Pedro Santos",
-        "time": "Penãrol",
-        "gols": 7,
-        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/d4ywnb5tple.png"
-      },
-      {
-        "nome": "Carlos Lima",
-        "time": "Tchuruu",
-        "gols": 6,
-        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/pbs0x43k55i.png"
-      }
-    ],
-    "goleiros": [
-      {
-        "nome": "Marcos Oliveira",
-        "time": "Parceria",
-        "golsSofridos": 3,
-        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/hivofdyqhn1.png"
-      },
-      {
-        "nome": "Roberto Costa",
-        "time": "Engenho",
-        "golsSofridos": 4,
-        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/n3vsizyeyml.png"
-      },
-      {
-        "nome": "Fernando Alves",
-        "time": "Fox",
-        "golsSofridos": 5,
-        "imagem": "https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/2jxp33oxurv.png"
-      }
-    ],
     "rodadas": [
       {
         "data": "06/07/2025",
@@ -1267,29 +949,161 @@
             "timeA": "Braguense Esporte Clube",
             "timeB": "Hookah Futebol Clube",
             "placarA": 0,
-            "placarB": 0,
+            "placarB": 2,
             "estadio": "Jardim Paulista",
             "hora": "13:00",
-            "cartoesAmarelosA": 0,
+            "cartoesAmarelosA": 1,
             "cartoesVermelhosA": 0,
-            "cartoesAmarelosB": 0,
-            "cartoesVermelhosB": 0
+            "cartoesAmarelosB": 3,
+            "cartoesVermelhosB": 1
           },
           {
             "timeA": "Parma Campina",
             "timeB": "Eucaliptus F.C",
-            "placarA": 0,
-            "placarB": 0,
+            "placarA": 1,
+            "placarB": 4,
             "estadio": "Santa Rosa",
             "hora": "13:00",
-            "cartoesAmarelosA": 0,
+            "cartoesAmarelosA": 5,
             "cartoesVermelhosA": 0,
-            "cartoesAmarelosB": 0,
-            "cartoesVermelhosB": 0
+            "cartoesAmarelosB": 2,
+            "cartoesVermelhosB": 1
           },
           {
             "timeA": "America Campinense F.C",
             "timeB": "Entre Parents F.C",
+            "placarA": 2,
+            "placarB": 1,
+            "estadio": "Sede",
+            "hora": "13:00",
+            "cartoesAmarelosA": 3,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 5,
+            "cartoesVermelhosB": 1
+          },
+          {
+            "timeA": "Estrela Campina",
+            "timeB": "Redbull Campina",
+            "placarA": 2,
+            "placarB": 1,
+            "estadio": "Jardim Paulista",
+            "hora": "15:00",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 2,
+            "cartoesAmarelosB": 3,
+            "cartoesVermelhosB": 2
+          },
+          {
+            "timeA": "Los Coyudos F.C",
+            "timeB": "Vila Sapo F.C",
+            "placarA": 1,
+            "placarB": 3,
+            "estadio": "Santa Rosa",
+            "hora": "15:00",
+            "cartoesAmarelosA": 2,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 4,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Santa Rosa",
+            "timeB": "Arsenal F.C",
+            "placarA": 2,
+            "placarB": 0,
+            "estadio": "Sede",
+            "hora": "15:00",
+            "cartoesAmarelosA": 3,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 4,
+            "cartoesVermelhosB": 2
+          }
+        ]
+      },
+      {
+        "data": "03/08/2025",
+        "rodada": 5,
+        "jogos": [
+          {
+            "timeA": "Eucaliptus F.C",
+            "timeB": "Arsenal F.C",
+            "placarA": 1,
+            "placarB": 0,
+            "estadio": "Sede",
+            "hora": "13:00",
+            "cartoesAmarelosA": 1,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 1,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Redbull Campina",
+            "timeB": "Marfran Esporte Clube",
+            "placarA": 6,
+            "placarB": 0,
+            "estadio": "Jardim Paulista",
+            "hora": "13:00",
+            "cartoesAmarelosA": 1,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 2,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Motta F.C",
+            "timeB": "Deportivo Campina Fc",
+            "placarA": 0,
+            "placarB": 1,
+            "estadio": "Santa Rosa",
+            "hora": "13:00",
+            "cartoesAmarelosA": 5,
+            "cartoesVermelhosA": 2,
+            "cartoesAmarelosB": 5,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Los Coyudos F.C",
+            "timeB": "Gileade F.C",
+            "placarA": 3,
+            "placarB": 1,
+            "estadio": "Sede",
+            "hora": "15:00",
+            "cartoesAmarelosA": 5,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 2,
+            "cartoesVermelhosB": 1
+          },
+          {
+            "timeA": "Entre Parents F.C",
+            "timeB": "Vila Sapo F.C",
+            "placarA": 0,
+            "placarB": 3,
+            "estadio": "Jardim Paulista",
+            "hora": "15:00",
+            "cartoesAmarelosA": 6,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 4,
+            "cartoesVermelhosB": 1
+          },
+          {
+            "timeA": "Braguense Esporte Clube",
+            "timeB": "Estrela Campina",
+            "placarA": 5,
+            "placarB": 3,
+            "estadio": "Santa Rosa",
+            "hora": "15:00",
+            "cartoesAmarelosA": 4,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 2,
+            "cartoesVermelhosB": 0
+          }
+        ]
+      },
+      {
+        "data": "17/08/2025",
+        "rodada": 6,
+        "jogos": [
+          {
+            "timeA": "Deportivo Campina Fc",
+            "timeB": "Eucaliptus F.C",
             "placarA": 0,
             "placarB": 0,
             "estadio": "Sede",
@@ -1300,12 +1114,24 @@
             "cartoesVermelhosB": 0
           },
           {
-            "timeA": "Estrela Campina",
+            "timeA": "Panelinha Campina",
             "timeB": "Redbull Campina",
             "placarA": 0,
-            "placarB": 0,
+            "placarB": 4,
             "estadio": "Jardim Paulista",
-            "hora": "15:00",
+            "hora": "13:00",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Marfran Esporte Clube",
+            "timeB": "Hookah Futebol Clube",
+            "placarA": 0,
+            "placarB": 2,
+            "estadio": "Santa Rosa",
+            "hora": "13:00",
             "cartoesAmarelosA": 0,
             "cartoesVermelhosA": 0,
             "cartoesAmarelosB": 0,
@@ -1313,10 +1139,10 @@
           },
           {
             "timeA": "Los Coyudos F.C",
-            "timeB": "Vila Sapo F.C",
-            "placarA": 0,
-            "placarB": 0,
-            "estadio": "Santa Rosa",
+            "timeB": "Campinense Futebol Clube",
+            "placarA": 1,
+            "placarB": 2,
+            "estadio": "Sede",
             "hora": "15:00",
             "cartoesAmarelosA": 0,
             "cartoesVermelhosA": 0,
@@ -1324,11 +1150,23 @@
             "cartoesVermelhosB": 0
           },
           {
-            "timeA": "Santa Rosa",
-            "timeB": "Arsenal F.C",
+            "timeA": "Arsenal F.C",
+            "timeB": "Parma Campina",
             "placarA": 0,
-            "placarB": 0,
-            "estadio": "Sede",
+            "placarB": 3,
+            "estadio": "Jardim Paulista",
+            "hora": "15:00",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Vila Sapo F.C",
+            "timeB": "Gileade F.C",
+            "placarA": 2,
+            "placarB": 2,
+            "estadio": "Santa Rosa",
             "hora": "15:00",
             "cartoesAmarelosA": 0,
             "cartoesVermelhosA": 0,
@@ -1340,3 +1178,4 @@
     ]
   }
 }
+

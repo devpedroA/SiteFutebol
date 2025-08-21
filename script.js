@@ -44,7 +44,7 @@ const Utils = {
 // ===== ESTADO DA APLICAÇÃO =====
 const AppState = {
   currentSerie: 'ouro',
-  currentRodada: 1,
+  currentRodada: 9,
   data: null, 
 
   
@@ -401,9 +401,41 @@ const App = {
     window.addEventListener("resize", Utils.debounce(UI.updateBannerImage));
     try {
       UI.showLoading();
-      const response = await fetch('https://raw.githubusercontent.com/devpedroA/mycsscdn/main/db.json');
-      if (!response.ok) throw new Error('Erro ao carregar dados');
-      AppState.data = await response.json();
+      
+      // Carrega todos os arquivos JSON separadamente
+      const [timesData, rodadasData, artilhariaData, goleirosData] = await Promise.all([
+        fetch('times.json').then(response => {
+          if (!response.ok) throw new Error('Erro ao carregar times.json');
+          return response.json();
+        }),
+        fetch('rodadas.json').then(response => {
+          if (!response.ok) throw new Error('Erro ao carregar rodadas.json');
+          return response.json();
+        }),
+        fetch('atilharia.json').then(response => {
+          if (!response.ok) throw new Error('Erro ao carregar atilharia.json');
+          return response.json();
+        }),
+        fetch('goleiros.json').then(response => {
+          if (!response.ok) throw new Error('Erro ao carregar goleiros.json');
+          return response.json();
+        })
+      ]);
+
+      // Combina os dados em uma estrutura unificada
+      AppState.data = {};
+      
+      // Para cada série (ouro e prata)
+      const series = Object.keys(timesData);
+      series.forEach(serie => {
+        AppState.data[serie] = {
+          times: timesData[serie]?.times || [],
+          rodadas: rodadasData[serie]?.rodadas || [],
+          artilheiros: artilhariaData[serie]?.artilheiros || [],
+          goleiros: goleirosData[serie]?.goleiros || []
+        };
+      });
+
       AppState.currentRodada = AppState.getLastCompletedRodada(AppState.currentSerie);
       this.setupRodadaNavigation();
       UI.updateBannerImage();
@@ -411,11 +443,13 @@ const App = {
       this.updateUI();
     } catch (error) {
       console.error('Erro na inicialização:', error);
-      const errorContainer = document.getElementById('tabela-container') || document.body;
+      const errorContainer = document.getElementById('tabela-body') || document.body;
       errorContainer.innerHTML = `
-        <div class="alert alert-danger">
-          Erro ao carregar dados: ${error.message}
-        </div>
+        <tr><td colspan="11" class="text-center">
+          <div class="alert alert-danger">
+            Erro ao carregar dados: ${error.message}
+          </div>
+        </td></tr>
       `;
     } finally {
       UI.hideLoading();
