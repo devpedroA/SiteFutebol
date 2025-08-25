@@ -45,9 +45,9 @@ const Utils = {
 const AppState = {
   currentSerie: 'ouro',
   currentRodada: 9,
-  data: null, 
+  data: null,
 
-  
+
   getLastCompletedRodada(serie) {
     if (!this.data || !this.data[serie]?.rodadas) return 1;
 
@@ -209,10 +209,22 @@ const UI = {
             AppState.changeSerie(serie);
             App.updateUI();
             UI.updateSerieButtons();
+            UI.updateLegenda();
           }
         };
       }
     });
+  },
+
+  updateLegenda() {
+    const legenda = document.getElementById('legenda-prata');
+    if (legenda) {
+      if (AppState.currentSerie === 'prata') {
+        legenda.style.display = 'flex';
+      } else {
+        legenda.style.display = 'none';
+      }
+    }
   },
 
   showLoading() {
@@ -245,11 +257,18 @@ const Renderer = {
     const template = document.getElementById('team-row-template');
     teams.forEach((team, i) => {
       const row = template.content.firstElementChild.cloneNode(true);
-      // Classificação visual
-      if (i < 4) row.classList.add('table-success'); // 4 primeiros
-      if (i >= teams.length - 2) row.classList.add('table-danger'); // 2 últimos
-      // Remover a linha abaixo para não adicionar 'relegation-row' (texto vermelho extra)
-      // if (i >= teams.length - 1) row.classList.add('relegation-row');
+
+      // Classificação visual específica por série
+      if (serie === 'prata') {
+        // Série Prata: 8 primeiros (verde para subir) e 6 últimos (vermelho para cair)
+        if (i < 8) row.classList.add('table-success'); // 8 primeiros - tarja verde
+        if (i >= teams.length - 6) row.classList.add('table-danger'); // 6 últimos - tarja vermelha
+      } else {
+        // Série Ouro: 4 primeiros e 2 últimos (padrão)
+        if (i < 4) row.classList.add('table-success'); // 4 primeiros
+        if (i >= teams.length - 2) row.classList.add('table-danger'); // 2 últimos
+      }
+
       row.querySelector('.position').textContent = i + 1;
       row.querySelector('.team-img').src = team.imagem;
       row.querySelector('.team-img').alt = team.nome;
@@ -322,13 +341,13 @@ const Renderer = {
     container.innerHTML = '';
     const template = document.getElementById('artilheiro-template');
     const teamMap = DataProcessor.createTeamMap(serie);
-    
+
     const sortedArtilheiros = [...AppState.data[serie].artilheiros]
       .sort((a, b) => (b.gols || 0) - (a.gols || 0) || (a.nome || '').localeCompare(b.nome || ''));
 
     sortedArtilheiros.forEach((artilheiro, index) => {
       const item = template.content.firstElementChild.cloneNode(true);
-      
+
       item.querySelector('.position-badge').textContent = index + 1;
       item.querySelector('.team-img').src = (teamMap[artilheiro.time]?.imagem) || artilheiro.imagem || '';
       item.querySelector('.team-img').alt = artilheiro.time;
@@ -338,7 +357,7 @@ const Renderer = {
       if (index < 3) {
         item.classList.add('top-performer', `top-${index + 1}`);
       }
-      
+
       container.appendChild(item);
     });
 
@@ -356,7 +375,7 @@ const Renderer = {
     container.innerHTML = '';
     const template = document.getElementById('goleiro-template');
     const teamMap = DataProcessor.createTeamMap(serie);
-    
+
     const sortedGoleiros = [...AppState.data[serie].goleiros]
       .map(g => {
         const partidas = typeof g.partidas === 'number' ? g.partidas : parseFloat(g.partidas) || 0;
@@ -373,7 +392,7 @@ const Renderer = {
 
     sortedGoleiros.forEach((goleiro, index) => {
       const item = template.content.firstElementChild.cloneNode(true);
-      
+
       item.querySelector('.position-badge').textContent = index + 1;
       item.querySelector('.team-img').src = (teamMap[goleiro.time]?.imagem) || goleiro.imagem || '';
       item.querySelector('.team-img').alt = goleiro.time;
@@ -383,7 +402,7 @@ const Renderer = {
       if (index < 3) {
         item.classList.add('top-performer', `top-${index + 1}`);
       }
-      
+
       container.appendChild(item);
     });
 
@@ -403,6 +422,7 @@ const App = {
       Renderer.renderArtilheiros(AppState.currentSerie);
       Renderer.renderGoleiros(AppState.currentSerie);
       UI.updateRodadaLabel();
+      UI.updateLegenda();
     } catch (error) {
       console.error('Erro ao atualizar UI:', error);
     } finally {
@@ -439,7 +459,7 @@ const App = {
     }, 150));
     try {
       UI.showLoading();
-      
+
       // Carregamento com fallback: GitHub Raw → jsDelivr → GitHub Pages → relativo
       const fetchJSONWithFallback = async (filename) => {
         const urls = Renderer.resolveDataUrls(filename);
@@ -465,7 +485,7 @@ const App = {
 
       // Combina os dados em uma estrutura unificada
       AppState.data = {};
-      
+
       // Para cada série (ouro e prata)
       const series = Object.keys(timesData);
       series.forEach(serie => {
@@ -481,6 +501,7 @@ const App = {
       this.setupRodadaNavigation();
       UI.updateBannerImage();
       Renderer.renderSerieButtons();
+      UI.updateLegenda();
       this.updateUI();
     } catch (error) {
       console.error('Erro na inicialização:', error);
@@ -504,7 +525,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ===== UTILITÁRIO DE SCROLL PARA LISTAS =====
-Renderer.applyScrollableLimit = function(listContainer, itemSelector) {
+Renderer.applyScrollableLimit = function (listContainer, itemSelector) {
   try {
     if (!listContainer) return;
     const items = listContainer.querySelectorAll(itemSelector);
@@ -531,7 +552,7 @@ Renderer.applyScrollableLimit = function(listContainer, itemSelector) {
   }
 };
 // ===== RESOLUÇÃO DE URL DE DADOS (GitHub Raw + fallbacks) =====
-Renderer.resolveDataUrls = function(filename) {
+Renderer.resolveDataUrls = function (filename) {
   const owner = 'devpedroA';
   const repo = 'SiteFutebol';
   const urls = [];
