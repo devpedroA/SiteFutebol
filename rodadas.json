@@ -810,8 +810,8 @@
             "cartoesVermelhosB": 0
           },
           {
-            "timeA": "Fox",
-            "timeB": "Juventus",
+            "timeA": "Braguense",
+            "timeB": "Araçatuba",
             "placarA": 0,
             "placarB": 0,
             "estadio": "Jardim Paulista",
@@ -822,8 +822,8 @@
             "cartoesVermelhosB": 0
           },
           {
-            "timeA": "Esperafico",
-            "timeB": "Terra Boa",
+            "timeA": "Engenho",
+            "timeB": "Peñarol",
             "placarA": 0,
             "placarB": 0,
             "estadio": "Sede",
@@ -834,8 +834,8 @@
             "cartoesVermelhosB": 0
           },
           {
-            "timeA": "Engenho",
-            "timeB": "Peñarol",
+            "timeA": "Esperafico",
+            "timeB": "Terra Boa",
             "placarA": 0,
             "placarB": 0,
             "estadio": "Santa Rosa",
@@ -846,8 +846,8 @@
             "cartoesVermelhosB": 0
           },
           {
-            "timeA": "Braguense",
-            "timeB": "Araçatuba",
+            "timeA": "Fox",
+            "timeB": "Juventus",
             "placarA": 0,
             "placarB": 0,
             "estadio": "Jardim Paulista",
@@ -1387,8 +1387,8 @@
           {
             "timeA": "Braguense Esporte Clube",
             "timeB": "Marfran Esporte Clube",
-            "placarA": 3,
-            "placarB": 1,
+            "placarA": 2,
+            "placarB": 3,
             "estadio": "Santa Rosa",
             "hora": "15:00",
             "cartoesAmarelosA": 7,
