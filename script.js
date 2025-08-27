@@ -170,7 +170,7 @@ const DataProcessor = {
       if (b.pontos !== a.pontos) return b.pontos - a.pontos;
       if (b.vitorias !== a.vitorias) return b.vitorias - a.vitorias;
       if (b.saldo !== a.saldo) return b.saldo - a.saldo;
-      return b.golsPro - a.golsPro;
+      return a.cartoesVermelhos - b.cartoesVermelhos;
     });
   }
 };
