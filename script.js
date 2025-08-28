@@ -170,7 +170,14 @@ const DataProcessor = {
       if (b.pontos !== a.pontos) return b.pontos - a.pontos;
       if (b.vitorias !== a.vitorias) return b.vitorias - a.vitorias;
       if (b.saldo !== a.saldo) return b.saldo - a.saldo;
-      return a.cartoesVermelhos - b.cartoesVermelhos;
+
+      const cartaoVermelho = 15
+      const cartaoAmarelo = 5
+      
+      // Soma cartões
+      const totalA = a.cartoesVermelhos * cartaoVermelho + a.cartoesAmarelos * cartaoAmarelo;
+      const totalB = b.cartoesVermelhos * cartaoVermelho + b.cartoesAmarelos * cartaoAmarelo;
+      return totalA - totalB; 
     });
   }
 };
