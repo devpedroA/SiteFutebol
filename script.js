@@ -173,11 +173,11 @@ const DataProcessor = {
 
       const cartaoVermelho = 15
       const cartaoAmarelo = 5
-      
+
       // Soma cartões
       const totalA = a.cartoesVermelhos * cartaoVermelho + a.cartoesAmarelos * cartaoAmarelo;
       const totalB = b.cartoesVermelhos * cartaoVermelho + b.cartoesAmarelos * cartaoAmarelo;
-      return totalA - totalB; 
+      return totalA - totalB;
     });
   }
 };
@@ -244,6 +244,17 @@ const UI = {
     if (gamesContainer) {
       gamesContainer.innerHTML = `<div class="loading-spinner"><div class="spinner"></div></div>`;
     }
+  },
+
+  updateRodadaLabel() {
+    const label = document.getElementById('rodada-atual');
+    if (!label || !AppState.data || !AppState.data[AppState.currentSerie]) return;
+    const rodadaObj = AppState.data[AppState.currentSerie].rodadas.find(r => r.rodada === AppState.currentRodada);
+    let rodadaNome = '';
+    if (rodadaObj && rodadaObj.nome) {
+      rodadaNome = ` - ${rodadaObj.nome}`;
+    }
+    label.textContent = `${AppState.currentRodada}ª RODADA${rodadaNome}`;
   },
 
   hideLoading() {
@@ -445,7 +456,9 @@ const App = {
       }
     };
     document.getElementById('next-rodada').onclick = () => {
-      const maxRodada = AppState.data[AppState.currentSerie]?.rodadas.length || 1;
+      // Busca o maior número de rodada presente no array
+      const rodadas = AppState.data[AppState.currentSerie]?.rodadas || [];
+      const maxRodada = rodadas.length > 0 ? Math.max(...rodadas.map(r => r.rodada)) : 1;
       if (AppState.currentRodada < maxRodada) {
         AppState.currentRodada++;
         this.updateUI();
@@ -504,7 +517,10 @@ const App = {
         };
       });
 
-      AppState.currentRodada = AppState.getLastCompletedRodada(AppState.currentSerie);
+      // SEMPRE inicia na menor rodada disponível (1) ou na última rodada do array
+      const rodadas = AppState.data[AppState.currentSerie]?.rodadas || [];
+      const maxRodada = rodadas.length > 0 ? Math.max(...rodadas.map(r => r.rodada)) : 1;
+      AppState.currentRodada = maxRodada;
       this.setupRodadaNavigation();
       UI.updateBannerImage();
       Renderer.renderSerieButtons();

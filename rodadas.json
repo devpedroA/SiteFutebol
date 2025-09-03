@@ -169,7 +169,7 @@
             "estadio": "Sede",
             "hora": "08:30",
             "cartoesAmarelosA": 3,
-            "cartoesVermelhosA":2,
+            "cartoesVermelhosA": 2,
             "cartoesAmarelosB": 4,
             "cartoesVermelhosB": 0
           },
@@ -271,7 +271,7 @@
             "estadio": "Jardim Paulista",
             "hora": "08:30",
             "cartoesAmarelosA": 2,
-            "cartoesVermelhosA":1,
+            "cartoesVermelhosA": 1,
             "cartoesAmarelosB": 2,
             "cartoesVermelhosB": 1
           },
@@ -858,6 +858,56 @@
             "cartoesVermelhosB": 0
           }
         ]
+      },
+      {
+        "data": "14/09/2025",
+        "rodada": 12,
+        "nome": "Semifinal",
+        "jogos": [
+          {
+            "timeA": "Semifinalista 1",
+            "timeB": "Semifinalista 2",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "A definir",
+            "hora": "13:00",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Semifinalista 3",
+            "timeB": "Semifinalista 4",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "A definir",
+            "hora": "15:00",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          }
+        ]
+      },
+      {
+        "data": "14/09/2025",
+        "rodada": 13,
+        "nome": "Final",
+        "jogos": [
+          {
+            "timeA": "Vencedor Semifinal 1",
+            "timeB": "Vencedor Semifinal 2",
+            "placarA": 0,
+            "placarB": null,
+            "estadio": "A definir",
+            "hora": "15:00",
+            "cartoesAmarelosA": null,
+            "cartoesVermelhosA": null,
+            "cartoesAmarelosB": null,
+            "cartoesVermelhosB": null
+          }
+        ]
       }
     ]
   },
@@ -1330,8 +1380,7 @@
             "cartoesVermelhosB": 0
           }
         ]
-      }
-      ,
+      },
       {
         "data": "24/08/2025",
         "rodada": 7,
@@ -1455,4 +1504,3 @@
     ]
   }
 }
-
