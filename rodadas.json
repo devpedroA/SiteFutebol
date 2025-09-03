@@ -889,25 +889,6 @@
             "cartoesVermelhosB": 0
           }
         ]
-      },
-      {
-        "data": "14/09/2025",
-        "rodada": 13,
-        "nome": "Final",
-        "jogos": [
-          {
-            "timeA": "Vencedor Semifinal 1",
-            "timeB": "Vencedor Semifinal 2",
-            "placarA": 0,
-            "placarB": null,
-            "estadio": "A definir",
-            "hora": "15:00",
-            "cartoesAmarelosA": null,
-            "cartoesVermelhosA": null,
-            "cartoesAmarelosB": null,
-            "cartoesVermelhosB": null
-          }
-        ]
       }
     ]
   },
