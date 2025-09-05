@@ -862,7 +862,7 @@
       {
         "data": "14/09/2025",
         "rodada": 12,
-        "nome": "Semifinal",
+        "nome": "Semi finais",
         "jogos": [
           {
             "timeA": "Peñarol",
@@ -1473,6 +1473,61 @@
             "timeB": "Marfran Esporte Clube",
             "placarA": 2,
             "placarB": 3,
+            "estadio": "Jardim Paulista",
+            "hora": "15:00",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          }
+        ]
+      },
+      {
+        "data": "07/09/2025",
+        "nome": "Quartas de finais",
+        "rodada": 9,
+        "jogos": [
+          {
+            "timeA": "Parma Campina",
+            "timeB": "Hookah Futebol Clube",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Sede",
+            "hora": "13:00",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Redbull Campina",
+            "timeB": "America Campinense F.C",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Sede",
+            "hora": "15:00",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Eucaliptus F.C",
+            "timeB": "Marfran Esporte Clube",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Jardim Paulista",
+            "hora": "13:00",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Deportivo Campina Fc",
+            "timeB": "Campinense Futebol Clube",
+            "placarA": 0,
+            "placarB": 0,
             "estadio": "Jardim Paulista",
             "hora": "15:00",
             "cartoesAmarelosA": 0,
