@@ -1,3 +1,5 @@
+<!-- Template para Jogos Normais (rodadas) -->
+
 <!doctype html>
 <html lang="pt-BR">
 
@@ -23,8 +25,10 @@
       <!-- Series -->
       <div class="card-container">
         <div class="d-flex justify-content-center" id="series-buttons">
-          <button class="btn text-dark fw-bold px-4 py-2 mx-1 my-1" data-serie="ouro" id="btn-serie-ouro">SÉRIE OURO</button>
-          <button class="btn text-dark fw-bold px-4 py-2 mx-1 my-1" data-serie="prata" id="btn-serie-prata">SÉRIE PRATA</button>
+          <button class="btn text-dark fw-bold px-4 py-2 mx-1 my-1" data-serie="ouro" id="btn-serie-ouro">SÉRIE
+            OURO</button>
+          <button class="btn text-dark fw-bold px-4 py-2 mx-1 my-1" data-serie="prata" id="btn-serie-prata">SÉRIE
+            PRATA</button>
           <!-- Adicione mais botões se houver mais séries -->
         </div>
       </div>
@@ -58,7 +62,7 @@
         </div>
       </div>
 
-     
+
       <div class="card-container my-3">
         <div class="row">
           <div class="col-12 col-md-6 mb-3 mb-md-0">
@@ -97,7 +101,8 @@
         </div>
 
         <!-- Navegação da rodada -->
-        <div class="d-flex justify-content-center align-content-center flex-wrap flex-md-nowrap align-items-center" style="gap: 0.5rem;">
+        <div class="d-flex justify-content-center align-content-center flex-wrap flex-md-nowrap align-items-center"
+          style="gap: 0.5rem;">
           <button class="text-success card-container p-2" id="prev-rodada">&lt;</button>
           <span class="text-success card-container p-2 mx-2" id="rodada-atual">1º RODADA</span>
           <button class="text-success card-container p-2" id="next-rodada">&gt;</button>
@@ -115,7 +120,8 @@
           <td class="align-middle position">1</td>
           <td class="align-middle">
             <div class="d-flex align-items-center">
-              <img src="" alt="Time" class="mr-2 mr-md-4 team-img" style="width: 40px; height: 40px; object-fit: contain;">
+              <img src="" alt="Time" class="mr-2 mr-md-4 team-img"
+                style="width: 40px; height: 40px; object-fit: contain;">
               <span class="team-nome">Time</span>
             </div>
           </td>
@@ -135,12 +141,15 @@
           <div class="p-3">
             <div class="text-center text-muted mb-3 game-info" style="font-size:0.85rem; line-height:1.4;">
               <div class="d-block d-md-none game-estadio">Estádio</div>
-              <div><span class="game-data">Data</span> • <strong class="game-hora">Hora</strong> • <span class="game-estadio">Estádio</span></div>
+              <div><span class="game-data">Data</span> • <strong class="game-hora">Hora</strong> • <span
+                  class="game-estadio">Estádio</span></div>
             </div>
             <div class="game-teams">
               <div class="game-team">
                 <img src="" alt="Time A" class="mb-1 game-imgA" style="width:40px;height:40px;object-fit:contain;">
-                <div class="game-nomeA" style="font-size:0.95rem; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Time A</div>
+                <div class="game-nomeA"
+                  style="font-size:0.95rem; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">
+                  Time A</div>
               </div>
               <div class="game-score">
                 <div class="score-display" style="font-size:1.5rem; font-weight:bold;">
@@ -151,7 +160,9 @@
               </div>
               <div class="game-team">
                 <img src="" alt="Time B" class="mb-1 game-imgB" style="width:40px;height:40px;object-fit:contain;">
-                <div class="game-nomeB" style="font-size:0.95rem; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Time B</div>
+                <div class="game-nomeB"
+                  style="font-size:0.95rem; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">
+                  Time B</div>
               </div>
             </div>
           </div>
@@ -160,38 +171,80 @@
 
       <!-- Template para Artilheiros -->
       <template id="artilheiro-template">
-        <div class="artilheiro-item d-flex align-items-center p-2 mb-2" style="background: #f8f9fa; border-radius: 0.5rem;">
-          <div class="position-badge me-2" style="width: 24px; height: 24px; background: #43e97b; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold;">1</div>
+        <div class="artilheiro-item d-flex align-items-center p-2 mb-2"
+          style="background: #f8f9fa; border-radius: 0.5rem;">
+          <div class="position-badge me-2"
+            style="width: 24px; height: 24px; background: #43e97b; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold;">
+            1</div>
           <img src="" alt="Time" class="team-img me-2" style="width: 32px; height: 32px; object-fit: contain;">
           <div class="flex-grow-1">
             <div class="player-name" style="font-size: 0.9rem; font-weight: 600;">Jogador</div>
             <div class="team-name" style="font-size: 0.8rem; color: #6c757d;">Time</div>
           </div>
-          <div class="goals-badge" style="background: #1b8f3c; color: white; padding: 0.2rem 0.5rem; border-radius: 1rem; font-size: 0.8rem; font-weight: bold;">0</div>
+          <div class="goals-badge"
+            style="background: #1b8f3c; color: white; padding: 0.2rem 0.5rem; border-radius: 1rem; font-size: 0.8rem; font-weight: bold;">
+            0</div>
         </div>
       </template>
 
 
       <!-- Template para Goleiros -->
       <template id="goleiro-template">
-        <div class="goleiro-item d-flex align-items-center p-2 mb-2" style="background: #f8f9fa; border-radius: 0.5rem;">
-          <div class="position-badge me-2" style="width: 24px; height: 24px; background: #43e97b; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold;">1</div>
+        <div class="goleiro-item d-flex align-items-center p-2 mb-2"
+          style="background: #f8f9fa; border-radius: 0.5rem;">
+          <div class="position-badge me-2"
+            style="width: 24px; height: 24px; background: #43e97b; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold;">
+            1</div>
           <img src="" alt="Time" class="team-img me-2" style="width: 32px; height: 32px; object-fit: contain;">
           <div class="flex-grow-1">
             <div class="player-name" style="font-size: 0.9rem; font-weight: 600;">Goleiro</div>
             <div class="team-name" style="font-size: 0.8rem; color: #6c757d;">Time</div>
           </div>
-          <div class="goals-badge" style="background: #1b8f3c; color: white; padding: 0.2rem 0.5rem; border-radius: 1rem; font-size: 0.8rem; font-weight: bold;">0</div>
+          <div class="goals-badge"
+            style="background: #1b8f3c; color: white; padding: 0.2rem 0.5rem; border-radius: 1rem; font-size: 0.8rem; font-weight: bold;">
+            0</div>
         </div>
       </template>
     </section>
+    <template id="game-row-template">
+      <div class="col-12 col-md-5 col-lg-3 card-content mb-3 mt-3">
+        <div class="p-3">
+          <div class="text-center text-muted mb-3 game-info" style="font-size:0.85rem; line-height:1.4;">
+            <div class="d-block d-md-none game-estadio">Estádio</div>
+            <div><span class="game-data">Data</span> • <strong class="game-hora">Hora</strong> • <span
+                class="game-estadio">Estádio</span></div>
+          </div>
+          <div class="game-teams">
+            <div class="game-team">
+              <img src="" alt="Time A" class="mb-1 game-imgA" style="width:40px;height:40px;object-fit:contain;">
+              <div class="game-nomeA"
+                style="font-size:0.95rem; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">
+                Time A</div>
+            </div>
+            <div class="game-score">
+              <div class="score-display" style="font-size:1.5rem; font-weight:bold;">
+                <span class="game-placarA">0</span>
+                <span style="font-size:1rem;">x</span>
+                <span class="game-placarB">0</span>
+              </div>
+            </div>
+            <div class="game-team">
+              <img src="" alt="Time B" class="mb-1 game-imgB" style="width:40px;height:40px;object-fit:contain;">
+              <div class="game-nomeB"
+                style="font-size:0.95rem; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">
+                Time B</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
   </main>
 
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <script src="script.js" req></script>
+  <script type="module" src="script.js"></script>
 </body>
 
 </html>

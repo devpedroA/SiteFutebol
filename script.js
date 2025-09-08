@@ -1,3 +1,5 @@
+
+
 // ===== CONFIGURAÇÃO E CONSTANTES =====
 const CONFIG = {
   MOBILE_BREAKPOINT: 768,
@@ -7,37 +9,29 @@ const CONFIG = {
   }
 };
 
-
-
-// ===== CARREGAMENTO DE CSS =====
-function loadCSS() {
-  const link = document.createElement("link");
-  link.rel = "stylesheet";
-  link.href = "https://devpedroa.github.io/mycsscdn/mycsscdn.css";
-  document.head.appendChild(link);
-}
-
-// Utilitarios
+// ===== UTILITÁRIOS =====
 const Utils = {
-  // Converte data brasileira (DD/MM/AAAA) para objeto Date
-  parseDateBR(dateString) {
+  firstName: str => str ? str.split(' ')[0] : '',
+  parseDateBR: dateString => {
     const [day, month, year] = dateString.split('/');
     return new Date(`${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`);
   },
-
-  // Formata data para exibição (substitui 2099 por "A DEFINIR")
-  formatDate(dateString) {
+  formatDate: dateString => {
     const [day, month, year] = dateString.split('/');
     return year === '2099' ? 'A DEFINIR' : dateString;
   },
-
-  // Debounce para otimizar eventos
-  debounce(func, timeout = 100) {
+  debounce: (func, timeout = 100) => {
     let timer;
     return (...args) => {
       clearTimeout(timer);
       timer = setTimeout(() => func.apply(this, args), timeout);
     };
+  },
+  loadCSS: () => {
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = "https://devpedroa.github.io/mycsscdn/mycsscdn.css";
+    document.head.appendChild(link);
   }
 };
 
@@ -46,22 +40,17 @@ const AppState = {
   currentSerie: 'ouro',
   currentRodada: 9,
   data: null,
-
-
   getLastCompletedRodada(serie) {
     if (!this.data || !this.data[serie]?.rodadas) return 1;
-
     const currentDate = new Date();
     const completedRodadas = this.data[serie].rodadas.filter(rodada => {
-      const rodadaDate = Utils.parseDateBR(rodada.data);
+      const [day, month, year] = rodada.data.split('/');
+      const rodadaDate = new Date(`${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`);
       return rodadaDate <= currentDate;
     });
-
     if (completedRodadas.length === 0) return 1;
     return Math.max(...completedRodadas.map(r => r.rodada));
   },
-
-  // Muda para uma nova série
   changeSerie(newSerie) {
     this.currentSerie = newSerie;
     this.currentRodada = this.getLastCompletedRodada(newSerie);
@@ -70,16 +59,13 @@ const AppState = {
 
 // ===== PROCESSAMENTO DE DADOS =====
 const DataProcessor = {
-  // Cria um mapa de times para facilitar acesso
-  createTeamMap(serie) {
+  createTeamMap(serie, data) {
     const teamMap = {};
-    AppState.data[serie].times.forEach(team => {
+    data[serie].times.forEach(team => {
       teamMap[team.nome] = { ...team };
     });
     return teamMap;
   },
-
-  // Reseta estatísticas de um time
   resetTeamStats(team) {
     Object.assign(team, {
       pontos: 0, vitorias: 0, empates: 0, derrotas: 0,
@@ -87,22 +73,15 @@ const DataProcessor = {
       cartoesAmarelos: 0, cartoesVermelhos: 0
     });
   },
-
-  // Processa resultado de um jogo
   processGame(teamA, teamB, scoreA, scoreB, cardsData = {}) {
-    // Atualiza gols
     teamA.golsPro += scoreA;
     teamA.golsContra += scoreB;
     teamB.golsPro += scoreB;
     teamB.golsContra += scoreA;
-
-    // Atualiza cartões
     teamA.cartoesAmarelos += cardsData.cartoesAmarelosA || 0;
     teamA.cartoesVermelhos += cardsData.cartoesVermelhosA || 0;
     teamB.cartoesAmarelos += cardsData.cartoesAmarelosB || 0;
     teamB.cartoesVermelhos += cardsData.cartoesVermelhosB || 0;
-
-    // Atualiza resultado
     if (scoreA > scoreB) {
       teamA.vitorias++;
       teamA.pontos += 3;
@@ -118,30 +97,20 @@ const DataProcessor = {
       teamB.pontos += 1;
     }
   },
-
-  // Calcula tabela de classificação
-  calculateTable(serie) {
-    const teamMap = this.createTeamMap(serie);
-
-    // Reseta estatísticas
+  calculateTable(serie, data, getLastCompletedRodada) {
+    const teamMap = this.createTeamMap(serie, data);
     Object.values(teamMap).forEach(team => this.resetTeamStats(team));
-
-    // Processa rodadas concluídas
-    const lastRodada = AppState.getLastCompletedRodada(serie);
+    const lastRodada = getLastCompletedRodada(serie);
     const currentDate = new Date();
-
-    const completedRodadas = AppState.data[serie].rodadas.filter(rodada => {
+    const completedRodadas = data[serie].rodadas.filter(rodada => {
       const rodadaDate = Utils.parseDateBR(rodada.data);
       return rodada.rodada <= lastRodada && rodadaDate <= currentDate;
     });
-
-    // Processa todos os jogos
     completedRodadas.forEach(rodada => {
       rodada.jogos.forEach(jogo => {
         if (jogo.placarA != null && jogo.placarB != null) {
           const teamA = teamMap[jogo.timeA];
           const teamB = teamMap[jogo.timeB];
-
           if (teamA && teamB) {
             const cardsData = {
               cartoesAmarelosA: jogo.cartoesAmarelosA || 0,
@@ -149,38 +118,43 @@ const DataProcessor = {
               cartoesAmarelosB: jogo.cartoesAmarelosB || 0,
               cartoesVermelhosB: jogo.cartoesVermelhosB || 0
             };
-
             this.processGame(teamA, teamB, jogo.placarA, jogo.placarB, cardsData);
           }
         }
       });
     });
-
-    // Calcula saldo de gols
     Object.values(teamMap).forEach(team => {
       team.saldo = team.golsPro - team.golsContra;
     });
-
     return Object.values(teamMap);
   },
-
-  // Ordena times por classificação
   sortTeams(teams) {
     return teams.sort((a, b) => {
       if (b.pontos !== a.pontos) return b.pontos - a.pontos;
       if (b.vitorias !== a.vitorias) return b.vitorias - a.vitorias;
       if (b.saldo !== a.saldo) return b.saldo - a.saldo;
-
-      const cartaoVermelho = 15
-      const cartaoAmarelo = 5
-
-      // Soma cartões
+      const cartaoVermelho = 15;
+      const cartaoAmarelo = 5;
       const totalA = a.cartoesVermelhos * cartaoVermelho + a.cartoesAmarelos * cartaoAmarelo;
       const totalB = b.cartoesVermelhos * cartaoVermelho + b.cartoesAmarelos * cartaoAmarelo;
       return totalA - totalB;
     });
   }
 };
+
+// ===== RESOLUÇÃO DE URL DE DADOS (GitHub Raw + fallbacks) =====
+function resolveDataUrls(filename) {
+  const owner = 'devpedroA';
+  const repo = 'SiteFutebol';
+  const urls = [];
+  try {
+    urls.push(new URL(filename, window.location.href).href);
+    urls.push(`https://raw.githubusercontent.com/${owner}/${repo}/main/${filename}`);
+    urls.push(`https://cdn.jsdelivr.net/gh/${owner}/${repo}@main/${filename}`);
+    urls.push(`https://${owner}.github.io/${repo}/${filename}`);
+  } catch (e) { /* ignore */ }
+  return Array.from(new Set(urls));
+}
 
 // ===== INTERFACE DO USUÁRIO =====
 const UI = {
@@ -270,7 +244,7 @@ const Renderer = {
       tbody.innerHTML = '<tr><td colspan="11" class="text-center">Série não encontrada</td></tr>';
       return;
     }
-    const teams = DataProcessor.sortTeams(DataProcessor.calculateTable(serie));
+    const teams = DataProcessor.sortTeams(DataProcessor.calculateTable(serie, AppState.data, AppState.getLastCompletedRodada.bind(AppState)));
     tbody.innerHTML = '';
     const template = document.getElementById('team-row-template');
     teams.forEach((team, i) => {
@@ -290,7 +264,7 @@ const Renderer = {
       row.querySelector('.position').textContent = i + 1;
       row.querySelector('.team-img').src = team.imagem;
       row.querySelector('.team-img').alt = team.nome;
-      row.querySelector('.team-nome').textContent = team.nome;
+      row.querySelector('.team-nome').textContent = (team.nome);
       row.querySelector('.team-pontos').textContent = team.pontos;
       row.querySelector('.team-vitorias').textContent = team.vitorias;
       row.querySelector('.team-empates').textContent = team.empates;
@@ -319,29 +293,94 @@ const Renderer = {
       return;
     }
     container.innerHTML = '';
-    const teamMap = DataProcessor.createTeamMap(serie);
-    const template = document.getElementById('game-card-template');
-    // Agrupar de 3 em 3
-    for (let i = 0; i < rodadaObj.jogos.length; i += 3) {
-      const rowDiv = document.createElement('div');
-      rowDiv.className = 'row justify-content-around w-100 mb-4';
-      const gamesSlice = rodadaObj.jogos.slice(i, i + 3);
-      gamesSlice.forEach(game => {
-        const card = template.content.firstElementChild.cloneNode(true);
-        card.querySelector('.game-data').textContent = Utils.formatDate(rodadaObj.data);
-        card.querySelector('.game-hora').textContent = game.hora;
-        card.querySelectorAll('.game-estadio').forEach(e => e.textContent = game.estadio);
-        card.querySelector('.game-imgA').src = teamMap[game.timeA]?.imagem || '';
-        card.querySelector('.game-imgA').alt = game.timeA;
-        card.querySelector('.game-nomeA').textContent = game.timeA;
-        card.querySelector('.game-imgB').src = teamMap[game.timeB]?.imagem || '';
-        card.querySelector('.game-imgB').alt = game.timeB;
-        card.querySelector('.game-nomeB').textContent = game.timeB;
-        card.querySelector('.game-placarA').textContent = game.placarA;
-        card.querySelector('.game-placarB').textContent = game.placarB;
-        rowDiv.appendChild(card);
+    const teamMap = DataProcessor.createTeamMap(serie, AppState.data);
+    // Detect knockout round by nome
+    const knockout = rodadaObj.nome && /(Quartas|Semifinal|Final)/i.test(rodadaObj.nome);
+    if (knockout) {
+      rodadaObj.jogos.forEach((game, idx) => {
+        const card = document.createElement('div');
+        card.className = 'bracket-game mb-4 p-3';
+        card.style.border = '2px solid #43e97b';
+        card.style.borderRadius = '1rem';
+        card.style.background = '#f8f9fa';
+        card.style.maxWidth = '400px';
+        card.style.margin = '0 auto';
+
+        // Teams and score
+        const teamA = teamMap[game.timeA] || {};
+        const teamB = teamMap[game.timeB] || {};
+        const placarA = game.placarA;
+        const placarB = game.placarB;
+
+        // Winner logic
+        let winner = null;
+        if (placarA > placarB) winner = 'A';
+        else if (placarB > placarA) winner = 'B';
+        // Penalty logic (if draw and penalty fields exist)
+        let penaltyInfo = '';
+        if (placarA === placarB && game.penaltisA !== undefined && game.penaltisB !== undefined) {
+          penaltyInfo = `<div class="text-center mt-2"><span style='font-weight:bold;'>Pênaltis:</span> <span class='${game.penaltisA > game.penaltisB ? 'text-success' : ''}'>${game.penaltisA}</span> x <span class='${game.penaltisB > game.penaltisA ? 'text-success' : ''}'>${game.penaltisB}</span></div>`;
+          if (game.penaltisA > game.penaltisB) winner = 'A';
+          else if (game.penaltisB > game.penaltisA) winner = 'B';
+        }
+
+        // Lógica para destacar o vencedor em verde apenas na série ouro
+        const highlightA = (serie === 'ouro' && winner === 'A') ? 'color:#1b8f3c;font-weight:bold;' : '';
+        const highlightB = (serie === 'ouro' && winner === 'B') ? 'color:#1b8f3c;font-weight:bold;' : '';
+        card.innerHTML = `
+          <div class="text-center text-muted mb-2" style="font-size:0.95rem;">${Utils.formatDate(rodadaObj.data)} • <strong>${game.hora}</strong> • ${game.estadio}</div>
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <img src="${teamA.imagem || ''}" alt="${game.timeA}" style="width:40px;height:40px;object-fit:contain;" class="mr-2">
+              <span style="font-size:1.1rem;${highlightA}">${Utils.firstName(game.timeA)}</span>
+            </div>
+            <div class="score-display mx-2" style="font-size:1.5rem; font-weight:bold;">
+              <span>${placarA}</span>
+              <span style="font-size:1rem;">x</span>
+              <span>${placarB}</span>
+            </div>
+            <div class="d-flex align-items-center">
+              <span style="font-size:1.1rem;${highlightB}">${Utils.firstName(game.timeB)}</span>
+              <img src="${teamB.imagem || ''}" alt="${game.timeB}" style="width:40px;height:40px;object-fit:contain;" class="ml-2">
+            </div>
+          </div>
+          ${penaltyInfo}
+        `;
+        container.appendChild(card);
       });
-      container.appendChild(rowDiv);
+      // Ajuste visual: remove espaço extra do primeiro card
+      const style = document.createElement('style');
+      style.textContent = `
+        .bracket-game { margin-top: 2rem !important; margin-bottom: 0 !important; }
+        @media (min-width: 768px) {
+          #jogos-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; }
+          .bracket-game { flex: 1 1 350px; min-width: 320px; }
+        }
+      `;
+      document.head.appendChild(style);
+    } else {
+      const template = document.getElementById('game-row-template');
+      for (let i = 0; i < rodadaObj.jogos.length; i += 3) {
+        const rowDiv = document.createElement('div');
+        rowDiv.className = 'row justify-content-around w-100 mb-4';
+        const gamesSlice = rodadaObj.jogos.slice(i, i + 3);
+        gamesSlice.forEach(game => {
+          const card = template.content.firstElementChild.cloneNode(true);
+          card.querySelector('.game-data').textContent = Utils.formatDate(rodadaObj.data);
+          card.querySelector('.game-hora').textContent = game.hora;
+          card.querySelectorAll('.game-estadio').forEach(e => e.textContent = game.estadio);
+          card.querySelector('.game-imgA').src = teamMap[game.timeA]?.imagem || '';
+          card.querySelector('.game-imgA').alt = game.timeA;
+          card.querySelector('.game-nomeA').textContent = game.timeA;
+          card.querySelector('.game-imgB').src = teamMap[game.timeB]?.imagem || '';
+          card.querySelector('.game-imgB').alt = game.timeB;
+          card.querySelector('.game-nomeB').textContent = game.timeB;
+          card.querySelector('.game-placarA').textContent = game.placarA;
+          card.querySelector('.game-placarB').textContent = game.placarB;
+          rowDiv.appendChild(card);
+        });
+        container.appendChild(rowDiv);
+      }
     }
   },
 
@@ -358,7 +397,7 @@ const Renderer = {
 
     container.innerHTML = '';
     const template = document.getElementById('artilheiro-template');
-    const teamMap = DataProcessor.createTeamMap(serie);
+    const teamMap = DataProcessor.createTeamMap(serie, AppState.data);
 
     const sortedArtilheiros = [...AppState.data[serie].artilheiros]
       .sort((a, b) => (b.gols || 0) - (a.gols || 0) || (a.nome || '').localeCompare(b.nome || ''));
@@ -392,7 +431,7 @@ const Renderer = {
 
     container.innerHTML = '';
     const template = document.getElementById('goleiro-template');
-    const teamMap = DataProcessor.createTeamMap(serie);
+    const teamMap = DataProcessor.createTeamMap(serie, AppState.data);
 
     const sortedGoleiros = [...AppState.data[serie].goleiros]
       .map(g => {
@@ -415,7 +454,6 @@ const Renderer = {
       item.querySelector('.team-img').src = (teamMap[goleiro.time]?.imagem) || goleiro.imagem || '';
       item.querySelector('.team-img').alt = goleiro.time;
       item.querySelector('.player-name').textContent = goleiro.nome;
-      item.querySelector('.team-name').textContent = `${goleiro.time} • ${goleiro.partidas} PJ`;
       item.querySelector('.goals-badge').textContent = goleiro.golsSofridos;
       if (index < 3) {
         item.classList.add('top-performer', `top-${index + 1}`);
@@ -468,7 +506,7 @@ const App = {
   },
 
   async initialize() {
-    loadCSS();
+    Utils.loadCSS();
     window.addEventListener("resize", Utils.debounce(UI.updateBannerImage));
     // Recalcula os limites de rolagem nas listas ao redimensionar
     window.addEventListener("resize", Utils.debounce(() => {
@@ -544,6 +582,7 @@ const App = {
 
 // ===== INICIALIZAÇÃO =====
 document.addEventListener("DOMContentLoaded", () => {
+  Utils.loadCSS();
   App.initialize();
 });
 
@@ -557,8 +596,6 @@ Renderer.applyScrollableLimit = function (listContainer, itemSelector) {
       listContainer.style.overflowY = '';
       return;
     }
-
-    // Soma a altura dos 5 primeiros, incluindo margens
     let height = 0;
     for (let i = 0; i < Math.min(5, items.length); i++) {
       const el = items[i];
@@ -567,27 +604,23 @@ Renderer.applyScrollableLimit = function (listContainer, itemSelector) {
       const marginBottom = parseFloat(style.marginBottom) || 0;
       height += el.offsetHeight + marginTop + marginBottom;
     }
-
     listContainer.style.maxHeight = height + 'px';
     listContainer.style.overflowY = 'auto';
   } catch (e) {
     console.warn('Falha ao aplicar limite rolável:', e);
   }
 };
+
 // ===== RESOLUÇÃO DE URL DE DADOS (GitHub Raw + fallbacks) =====
 Renderer.resolveDataUrls = function (filename) {
   const owner = 'devpedroA';
   const repo = 'SiteFutebol';
   const urls = [];
   try {
-    // GitHub Raw principal
-    urls.push(`https://raw.githubusercontent.com/${owner}/${repo}/main/${filename}`);
-    // jsDelivr CDN
-    urls.push(`https://cdn.jsdelivr.net/gh/${owner}/${repo}@main/${filename}`);
-    // GitHub Pages (se existir)
-    urls.push(`https://${owner}.github.io/${repo}/${filename}`);
-    // Caminho relativo (ambiente local)
     urls.push(new URL(filename, window.location.href).href);
+    urls.push(`https://raw.githubusercontent.com/${owner}/${repo}/main/${filename}`);
+    urls.push(`https://cdn.jsdelivr.net/gh/${owner}/${repo}@main/${filename}`);
+    urls.push(`https://${owner}.github.io/${repo}/${filename}`);
   } catch (e) { /* ignore */ }
   return Array.from(new Set(urls));
 };
