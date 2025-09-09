@@ -30,32 +30,32 @@
 
       { "nome": "DIEGO VINICIO GOES MANZINI", "time": "Juventus", "partidas": 9, "golsSofridos": 19 },
 
-      { "nome": "LEANDRO MARCOS GARCIA DA SILVA", "time": "Parceria", "partidas": 9, "golsSofridos": 5 }
+      { "nome": "LEANDRO GARCIA DA SILVA", "time": "Parceria", "partidas": 9, "golsSofridos": 5 }
     ]
   },
   "prata": {
     "goleiros": [
-      { "nome": "BRUNO STRUZ LIMA", "time": "America Campinense F.C", "partidas": 4, "golsSofridos": 7 },
-      { "nome": "ROBERT EDUARDO QUIRINO MARIA", "time": "America Campinense F.C", "partidas": 1, "golsSofridos": 0 },
+      { "nome": "BRUNO STRUZ LIMA", "time": "America Campinense F.C", "partidas": 5, "golsSofridos": 10 },
+      { "nome": "ROBERT EDUARDO QUIRINO MARIA", "time": "America Campinense F.C", "partidas": 0, "golsSofridos": 0 },
 
-      { "nome": "ANDREWS HENRIQUE SOARES", "time": "Arsenal F.C", "partidas": 3, "golsSofridos": 6 },
-      { "nome": "MABSON ROBUSTO", "time": "Arsenal F.C", "partidas": 3, "golsSofridos": 4 },
+      { "nome": "ANDREWS HENRIQUE SOARES", "time": "Arsenal F.C", "partidas": 2, "golsSofridos": 4 },
+      { "nome": "MABSON ROBUSTO", "time": "Arsenal F.C", "partidas": 3, "golsSofridos": 6 },
 
       { "nome": "JOSE FELIPE CORDEIRO DA SILVA", "time": "Braguense Esporte Clube", "partidas": 4, "golsSofridos": 11 },
 
       { "nome": "MAGAIVER SANTANA DE LIMA", "time": "Vila Sapo F.C", "partidas": 5, "golsSofridos": 9 },
 
-      { "nome": "AMAURI ANDRE GILIER", "time": "Campinense Futebol Clube", "partidas": 5, "golsSofridos": 9 },
+      { "nome": "AMAURI ANDRE GILIER", "time": "Campinense Futebol Clube", "partidas": 6, "golsSofridos": 10 },
 
-      { "nome": "LUCAS RAMOS DA SILVA", "time": "Deportivo Campina Fc", "partidas": 5, "golsSofridos": 5 },
-      { "nome": "ADRIANO STRUZ LIMA", "time": "Deportivo Campina Fc", "partidas": 4, "golsSofridos": 0 },
+      { "nome": "LUCAS RAMOS DA SILVA", "time": "Deportivo Campina Fc", "partidas": 2, "golsSofridos": 5 },
+      { "nome": "ADRIANO STRUZ LIMA", "time": "Deportivo Campina Fc", "partidas": 5, "golsSofridos": 1 },
 
       { "nome": "EDIMAR TRENTO", "time": "Los Coyudos F.C", "partidas": 1, "golsSofridos": 1 },
       { "nome": "OLIVELTON DOS SANTOS", "time": "Los Coyudos F.C", "partidas": 4, "golsSofridos": 8 },
-      { "nome": "DANILO DIAS", "time": "Los Coyudos F.C", "partidas": 1, "golsSofridos": 1 },
+      { "nome": "DANILO DIAS", "time": "Los Coyudos F.C", "partidas": 0, "golsSofridos": 0 },
 
       { "nome": "JOÃO FLAVIO DE SOUZA", "time": "Entre Parents F.C", "partidas": 1, "golsSofridos": 1 },
-      { "nome": "JHONATAM WESLEY LAGUNA SILVIANO", "time": "Entre Parents F.C", "partidas": 3, "golsSofridos": 7 },
+      { "nome": "JHONATAM WESLEY LAGUNA SILVIANO", "time": "Entre Parents F.C", "partidas": 4, "golsSofridos": 7 },
 
       { "nome": "EVERTON LOPES DE OLIVEIRA", "time": "Estrela Campina", "partidas": 5, "golsSofridos": 9 },
 
@@ -65,7 +65,7 @@
 
       { "nome": "LUIZ FERNANDO DOS REIS DEMETRIO", "time": "Hookah Futebol Clube", "partidas": 5, "golsSofridos": 2 },
 
-      { "nome": "GUSTAVO HENRIQUE DE OLIVEIRA DE CARVALHO", "time": "Marfran Esporte Clube", "partidas": 5, "golsSofridos": 12 },
+      { "nome": "GUSTAVO HENRIQUE DE OLIVEIRA DE CARVALHO", "time": "Marfran Esporte Clube", "partidas": 6, "golsSofridos": 18 },
 
       { "nome": "PAULO DE TARSO EVANGELISTA", "time": "Motta F.C", "partidas": 3, "golsSofridos": 3 },
 
