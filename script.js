@@ -454,6 +454,7 @@ const Renderer = {
       item.querySelector('.team-img').src = (teamMap[goleiro.time]?.imagem) || goleiro.imagem || '';
       item.querySelector('.team-img').alt = goleiro.time;
       item.querySelector('.player-name').textContent = goleiro.nome;
+      item.querySelector('.team-name').textContent = goleiro.time;
       item.querySelector('.goals-badge').textContent = goleiro.golsSofridos;
       if (index < 3) {
         item.classList.add('top-performer', `top-${index + 1}`);
