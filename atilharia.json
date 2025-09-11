@@ -1,7 +1,7 @@
 {
   "ouro": {
     "artilheiros": [
-     { "nome": "ALEX APARECIDO OLIMPIO", "time": "Terra Boa", "gols": 1 },
+  { "nome": "ALEX APARECIDO OLIMPIO", "time": "Terra Boa", "gols": 1 },
   { "nome": "MURILO FELIPE R. ALVES", "time": "Terra Boa", "gols": 1 },
   { "nome": "MURILO ZELA", "time": "Terra Boa", "gols": 1 },
   { "nome": "GEOVANI DE OLIVEIRA", "time": "Terra Boa", "gols": 1 },
@@ -123,12 +123,15 @@
       { "nome": "REGINALDO FRANCISCO BORGES", "time": "America Campinense F.C", "gols": 3 },
       { "nome": "GUILHERME PEREIRA DA SILVA", "time": "America Campinense F.C", "gols": 1 },
       { "nome": "MARCOS VIEIRA", "time": "America Campinense F.C", "gols": 1 },
+      { "nome": "WALISSON FELIPE NIS", "time": "America Campinense F.C", "gols": 1 },
+      { "nome": "OZIEL NAZARENO DE CARVALHO", "time": "America Campinense F.C", "gols": 1 },
 
       { "nome": "CLEVERSON LUIS ROSA", "time": "Braguense Esporte Clube", "gols": 2 },
       { "nome": "EVERTON RIBEIRO", "time": "Braguense Esporte Clube", "gols": 2 },
       { "nome": "ALISSON RODRIGO DE ANDRADE", "time": "Braguense Esporte Clube", "gols": 1 },
       { "nome": "ALEX ANTONIO GUADAGNIN", "time": "Braguense Esporte Clube", "gols": 2 },
       { "nome": "FABIO DA GRACA DE FREITAS", "time": "Braguense Esporte Clube", "gols": 1 },
+      { "nome": "CAIQUE LIMA DOS SANTOS", "time": "Braguense Esporte Clube", "gols": 1 },
 
       { "nome": "DEIVID ISREYLA TURIBIO", "time": "Campinense Futebol Clube", "gols": 4 },
       { "nome": "ELTON DE OLIVEIRA BARBOSA", "time": "Campinense Futebol Clube", "gols": 1 },
@@ -136,15 +139,20 @@
       { "nome": "WELINGTON DE LIMA ROSA", "time": "Campinense Futebol Clube", "gols": 1 },
       { "nome": "HENRIQUE DO ROSARIO SILVA", "time": "Campinense Futebol Clube", "gols": 1 },
       { "nome": "JHONATAN DE LIMA RIBEIRO", "time": "Campinense Futebol Clube", "gols": 1 },
+      { "nome": "CAUA HENRIQUE SANTOS DA COSTA", "time": "Campinense Futebol Clube", "gols": 1 },
 
-      { "nome": "VITOR HUGO DO ROSÁRIO RODRIGUES", "time": "Deportivo Campina Fc", "gols": 3 },
+      { "nome": "VITOR HUGO DO ROSÁRIO RODRIGUES", "time": "Deportivo Campina Fc", "gols": 5 },
       { "nome": "KRISTOPHER DITERTT", "time": "Deportivo Campina Fc", "gols": 1 },
       { "nome": "ALEX JOSUÉ ROMERO CAMPBELL", "time": "Deportivo Campina Fc", "gols": 1 },
       { "nome": "RAFAEL DA CRUZ JEANINE", "time": "Deportivo Campina Fc", "gols": 1 },
       { "nome": "JOSNEI JOSÉ MARTINS", "time": "Deportivo Campina Fc", "gols": 1 },
+      { "nome": "VILSON JOSE A. STRAPASSON", "time": "Deportivo Campina Fc", "gols": 1 },
 
-      { "nome": "ABNER FELIPE NOGUEIRA", "time": "Entre Parents F.C", "gols": 1 },
-      { "nome": "GUILHERME DA SILVA", "time": "Entre Parents F.C", "gols": 1 },
+      { "nome": "ABNER FELIPE NOGUEIRA", "time": "Entre Parents F.C", "gols": 2 },
+      { "nome": "GUILHERME DA SILVA", "time": "Entre Parents F.C", "gols": 2 },
+      { "nome": "HENRIQUE ASSIS VIEGAS", "time": "Entre Parents F.C", "gols": 1 },
+      { "nome": "GABRIEL AUGUSTO S. PEREIRA", "time": "Entre Parents F.C", "gols": 1 },
+      { "nome": "GREGORI SILVA GOMES", "time": "Entre Parents F.C", "gols": 1 },
 
       { "nome": "ALAN GABRIEL BRIZUELA SOSA", "time": "Estrela Campina", "gols": 1 },
       { "nome": "DAVID SOARES", "time": "Estrela Campina", "gols": 1 },
@@ -152,29 +160,40 @@
       { "nome": "JOÃO HENRIQUE SOUZA SILVA", "time": "Estrela Campina", "gols": 1 },
       { "nome": "DIEGO LUIS BRIZUELA SOSA", "time": "Estrela Campina", "gols": 1 },
 
-      { "nome": "VAGNER ALEXANDRE DE  L. REGINATO", "time": "Eucaliptus F.C", "gols": 2 },
-      { "nome": "FERNANDO ANTONIO ROCHA", "time": "Eucaliptus F.C", "gols": 2 },
+      { "nome": "VAGNER ALEXANDRE DE L. REGINATO", "time": "Eucaliptus F.C", "gols": 2 },
+      { "nome": "FERNANDO ANTONIO ROCHA", "time": "Eucaliptus F.C", "gols": 4 },
       { "nome": "RICARDO MATHEUS GOMES MENDES", "time": "Eucaliptus F.C", "gols": 1 },
       { "nome": "ERICO LUAN SILVA BONATTI", "time": "Eucaliptus F.C", "gols": 1 },
       { "nome": "MAYCON VINICIUS DO NASCIMENTO", "time": "Eucaliptus F.C", "gols": 1 },
+      { "nome": "EWERTHON PARO RODOLFO", "time": "Eucaliptus F.C", "gols": 1 },
 
       { "nome": "LUCAS SCHWEIGERT DOS SANTOS", "time": "Gileade F.C", "gols": 1 },
       { "nome": "FABRICIO DANIEL BUENO LEGNANI", "time": "Gileade F.C", "gols": 1 },
+      { "nome": "GUSTAVO HENRIQUE", "time": "Gileade F.C", "gols": 1 },
 
       { "nome": "BRUNO HENING DE CASTRO", "time": "Hookah Futebol Clube", "gols": 1 },
       { "nome": "THIAGO GARCIA DA ROCHA", "time": "Hookah Futebol Clube", "gols": 1 },
       { "nome": "MURILO HENING CABRAL DA LUZ", "time": "Hookah Futebol Clube", "gols": 1 },
+      { "nome": "RODRIGO TIAGO F. ARRUDA", "time": "Hookah Futebol Clube", "gols": 1 },
 
       { "nome": "EVERTON HENRIQUE VAZ MARTINS", "time": "Los Coyudos F.C", "gols": 2 },
       { "nome": "FILIPE DE CASTILHO MACIEL", "time": "Los Coyudos F.C", "gols": 3 },
       { "nome": "DOUGLAS LUIZ DE OLIVEIRA", "time": "Los Coyudos F.C", "gols": 1 },
 
-      { "nome": "MATEUS HENRIQUE SASKOSKI", "time": "Marfran Esporte Clube", "gols": 2 },
+      { "nome": "MATEUS HENRIQUE SASKOSKI", "time": "Marfran Esporte Clube", "gols": 3 },
+      { "nome": "MATEUS VINICIUS CIRIACO", "time": "Marfran Esporte Clube", "gols": 1 },
+      { "nome": "MAICON DOUGLAS DE OLIVEIRA", "time": "Marfran Esporte Clube", "gols": 1 },
 
       { "nome": "MATHEUS CESAR ANDRADE DA SILVA", "time": "Motta F.C", "gols": 2 },
+      { "nome": "MATEUS HENRIQUE CIRIACO", "time": "Motta F.C", "gols": 2 },
+      { "nome": "OSMIR ROBSON DE ANDRADE", "time": "Motta F.C", "gols": 1 },
+      { "nome": "DEIVITY RAFAEL CORDEIRO", "time": "Motta F.C", "gols": 1 },
+      { "nome": "EVERTON LAMOUR", "time": "Motta F.C", "gols": 1 },
 
       { "nome": "MATEUS RAMOS DA SILVA", "time": "Panelinha Campina", "gols": 1 },
       { "nome": "NATHAN MIKAEL LOPES DA CRUZ", "time": "Panelinha Campina", "gols": 1 },
+      { "nome": "GIOVANI ALEGRE F. DA SILVA", "time": "Panelinha Campina", "gols": 1 },
+      { "nome": "TIAGO DA SILVA", "time": "Panelinha Campina", "gols": 1 },
 
       { "nome": "GILLIARD HENRIQUE DOS SANTOS", "time": "Parma Campina", "gols": 3 },
       { "nome": "RAFAEL DOMINGUES ARRUDA", "time": "Parma Campina", "gols": 1 },
