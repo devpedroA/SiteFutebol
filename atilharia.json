@@ -58,7 +58,7 @@
 
   { "nome": "LEANDRO DE OLIVEIRA DIAS", "time": "Tchuruu", "gols": 1 },
   { "nome": "MATHEUS HENRIQUE DA SILVA", "time": "Tchuruu", "gols": 1 },
-  { "nome": "JULIANO ANDRÉ PLASDO", "time": "Tchuruu", "gols": 4 },
+  { "nome": "JULIANO ANDRÉ PLASDO", "time": "Tchuruu", "gols": 2 },
   { "nome": "WILLIAN CECCON C. DE SOUZA", "time": "Tchuruu", "gols": 3 },
   { "nome": "DEVERCILDO DAVID MARTINS", "time": "Tchuruu", "gols": 1 },
   { "nome": "IVAN A. RIVERO ESPINOLA", "time": "Tchuruu", "gols": 8 },
@@ -83,7 +83,7 @@
   { "nome": "WESLEY VICTOR NOVAK ARAUJO", "time": "Araçatuba", "gols": 1 },
 
   { "nome": "GUILHERME DE OLIVEIRA CARVALHO", "time": "Fox", "gols": 4 },
-  { "nome": "IZAEL FAGUNDES", "time": "Fox", "gols": 4 },
+  { "nome": "IZAEL FAGUNDES", "time": "Fox", "gols": 5 },
   { "nome": "GUILHERME RODRIGUES FAGUNDES", "time": "Fox", "gols": 3 },
   { "nome": "VAINER DA ROSA SANTANA", "time": "Fox", "gols": 3 },
 
@@ -91,7 +91,7 @@
   { "nome": "RAFAEL PEREIRA DE MELLO", "time": "Peñarol", "gols": 5 },
   { "nome": "ELI CLAUDIO FONSECA DE SÁ", "time": "Peñarol", "gols": 4 },
   { "nome": "MATHEUS CARVALHOS DOS SANTOS", "time": "Peñarol", "gols": 1 },
-  { "nome": "RONALD WARLEY F. DOS REIS", "time": "Peñarol", "gols": 2 },
+  { "nome": "RONALD WARLEY F. DOS REIS", "time": "Peñarol", "gols": 3 },
   { "nome": "JUAN CARLOS PORCOTE", "time": "Peñarol", "gols": 1 },
   { "nome": "BRUNO GONÇALVES DOS SANTOS", "time": "Peñarol", "gols": 2 },
   { "nome": "ICARO GUILHERME DALBELLO", "time": "Peñarol", "gols": 1 },
@@ -114,7 +114,7 @@
   { "nome": "FRANCINALDO DE OLIVEIRA", "time": "Parceria", "gols": 1 },
   { "nome": "JONATAN WILIAN DE CASTRO ARAUJO", "time": "Parceria", "gols": 2 },
   { "nome": "DIEGO JOSE DE OLIVEIRA TRUBANO", "time": "Parceria", "gols": 4 },
-  { "nome": "MARCIANO ALVES PINHEIRO HILARIO", "time": "Parceria", "gols": 4 },
+  { "nome": "MARCIANO ALVES PINHEIRO HILARIO", "time": "Parceria", "gols": 5 },
   { "nome": "LUCAS RENAN PADILHA DE LIMA", "time": "Parceria", "gols": 1 }
     ]
   },
@@ -141,7 +141,7 @@
       { "nome": "JHONATAN DE LIMA RIBEIRO", "time": "Campinense Futebol Clube", "gols": 1 },
       { "nome": "CAUA HENRIQUE SANTOS DA COSTA", "time": "Campinense Futebol Clube", "gols": 1 },
 
-      { "nome": "VITOR HUGO DO ROSÁRIO RODRIGUES", "time": "Deportivo Campina Fc", "gols": 5 },
+      { "nome": "VITOR HUGO DO ROSÁRIO RODRIGUES", "time": "Deportivo Campina Fc", "gols": 6 },
       { "nome": "KRISTOPHER DITERTT", "time": "Deportivo Campina Fc", "gols": 1 },
       { "nome": "ALEX JOSUÉ ROMERO CAMPBELL", "time": "Deportivo Campina Fc", "gols": 1 },
       { "nome": "RAFAEL DA CRUZ JEANINE", "time": "Deportivo Campina Fc", "gols": 1 },
@@ -161,7 +161,7 @@
       { "nome": "DIEGO LUIS BRIZUELA SOSA", "time": "Estrela Campina", "gols": 1 },
 
       { "nome": "VAGNER ALEXANDRE DE L. REGINATO", "time": "Eucaliptus F.C", "gols": 2 },
-      { "nome": "FERNANDO ANTONIO ROCHA", "time": "Eucaliptus F.C", "gols": 4 },
+      { "nome": "FERNANDO ANTONIO ROCHA", "time": "Eucaliptus F.C", "gols": 6 },
       { "nome": "RICARDO MATHEUS GOMES MENDES", "time": "Eucaliptus F.C", "gols": 1 },
       { "nome": "ERICO LUAN SILVA BONATTI", "time": "Eucaliptus F.C", "gols": 1 },
       { "nome": "MAYCON VINICIUS DO NASCIMENTO", "time": "Eucaliptus F.C", "gols": 1 },
@@ -195,7 +195,7 @@
       { "nome": "GIOVANI ALEGRE F. DA SILVA", "time": "Panelinha Campina", "gols": 1 },
       { "nome": "TIAGO DA SILVA", "time": "Panelinha Campina", "gols": 1 },
 
-      { "nome": "GILLIARD HENRIQUE DOS SANTOS", "time": "Parma Campina", "gols": 3 },
+      { "nome": "GILLIARD HENRIQUE DOS SANTOS", "time": "Parma Campina", "gols": 4 },
       { "nome": "RAFAEL DOMINGUES ARRUDA", "time": "Parma Campina", "gols": 1 },
       { "nome": "ANDRE DA VEIGA DA ROCHA", "time": "Parma Campina", "gols": 1 },
       { "nome": "WILLIAN DOUGLAS FILOMENO", "time": "Parma Campina", "gols": 1 },
@@ -208,6 +208,7 @@
       { "nome": "LUIZ GUSTAVO SOUZA MARTINS", "time": "Redbull Campina", "gols": 1 },
       { "nome": "LEANDRO BRAGA DE LIMA", "time": "Redbull Campina", "gols": 1 },
       { "nome": "WELLINGTON FELIPE DA SILVA FILHO", "time": "Redbull Campina", "gols": 1 },
+      { "nome": "SERGIO DE LARA SILVA ", "time": "Redbull Campina", "gols": 1 },
 
       { "nome": "BRUNO MIRANDA DE ALMEIDA", "time": "Santa Rosa", "gols": 1 },
       { "nome": "DIONE WILLIAN CUSTODIO", "time": "Santa Rosa", "gols": 1 },

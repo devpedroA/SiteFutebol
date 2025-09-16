@@ -16,17 +16,17 @@
       { "nome": "JHONATHAN TOMAZ", "time": "Esperafico", "partidas": 9, "golsSofridos": 26 },
 
       { "nome": "GUSTAVO HENRIQUE BONTORIN WALLER", "time": "Tchuruu", "partidas": 5, "golsSofridos": 15 },
-      { "nome": "ANDRE LUIZ PINHEIRO SANTANA", "time": "Tchuruu", "partidas": 5, "golsSofridos": 9 },
+      { "nome": "ANDRE LUIZ PINHEIRO SANTANA", "time": "Tchuruu", "partidas": 6, "golsSofridos": 10 },
 
       { "nome": "MÁRCIO CHRISTIAN LOPES", "time": "Sport Campina", "partidas": 9, "golsSofridos": 26 },
       { "nome": "LUCAS MAX HARZ LOPES", "time": "Sport Campina", "partidas": 0, "golsSofridos": 0 },
 
       { "nome": "BRUNO MARTIMIANO", "time": "Araçatuba", "partidas": 5, "golsSofridos": 7 },
-      { "nome": "MARCO ADRIANO BOGO", "time": "Araçatuba", "partidas": 4, "golsSofridos": 10 },
+      { "nome": "MARCO ADRIANO BOGO", "time": "Araçatuba", "partidas": 5, "golsSofridos": 12 },
 
-      { "nome": "MILTON DE ALMEIDA BARRETO", "time": "Fox", "partidas": 9, "golsSofridos": 8 },
+      { "nome": "MILTON DE ALMEIDA BARRETO", "time": "Fox", "partidas": 10, "golsSofridos": 9 },
 
-      { "nome": "REYNALDO PEREIRA DOS SANTOS", "time": "Peñarol", "partidas": 9, "golsSofridos": 14 },
+      { "nome": "REYNALDO PEREIRA DOS SANTOS", "time": "Peñarol", "partidas": 10, "golsSofridos": 15 },
 
       { "nome": "DIEGO VINICIO GOES MANZINI", "time": "Juventus", "partidas": 9, "golsSofridos": 19 },
 
@@ -59,7 +59,7 @@
 
       { "nome": "EVERTON LOPES DE OLIVEIRA", "time": "Estrela Campina", "partidas": 5, "golsSofridos": 9 },
 
-      { "nome": "RENAN DE ARAUJO MIGUEL", "time": "Eucaliptus F.C", "partidas": 5, "golsSofridos": 3 },
+      { "nome": "RENAN DE ARAUJO MIGUEL", "time": "Eucaliptus F.C", "partidas": 6, "golsSofridos": 4 },
 
       { "nome": "DIRLEI CASSIO BORGES", "time": "Gileade F.C", "partidas": 5, "golsSofridos": 15 },
 
@@ -74,9 +74,10 @@
       { "nome": "LUCAS GONÇALVES", "time": "Panelinha Campina", "partidas": 1, "golsSofridos": 4 },
 
       { "nome": "RICARDO PEREIRA DOS SANTOS", "time": "Parma Campina", "partidas": 4, "golsSofridos": 10 },
+      { "nome": "ANDRE DA VEIGA ROCHA", "time": "Parma Campina", "partidas": 1, "golsSofridos": 2 },
 
       { "nome": "GABRIEL STORRER RODRIGUES DE LIMA", "time": "Redbull Campina", "partidas": 0, "golsSofridos": 0 },
-      { "nome": "ROGER DA LUZ HIRT", "time": "Redbull Campina", "partidas": 5, "golsSofridos": 5 },
+      { "nome": "ROGER DA LUZ HIRT", "time": "Redbull Campina", "partidas": 6, "golsSofridos": 6 },
 
       { "nome": "NELSON DA LUZ SANTOS", "time": "Santa Rosa", "partidas": 4, "golsSofridos": 6 },
       { "nome": "MAGNO BERTOTTI", "time": "Santa Rosa", "partidas": 1, "golsSofridos": 4 }
