@@ -862,7 +862,7 @@
       {
         "data": "14/09/2025",
         "rodada": 12,
-        "nome": "Semifinal",
+        "nome": "Semi Finais",
         "jogos": [
           {
             "timeA": "Peñarol",
@@ -886,6 +886,28 @@
             "penaltisA": 0,
             "penaltisB": 0,
             "estadio": "Jardim Paulista",
+            "hora": "10:00",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          }
+        ]
+      }
+      ,
+      {
+        "data": "14/09/2025",
+        "rodada": 13,
+        "nome": "Final",
+        "jogos": [
+          {
+            "timeA": "Parceria",
+            "timeB": "Fox",
+            "placarA": 0,
+            "placarB": 0,
+            "penaltisA": 0,
+            "penaltisB": 0,
+            "estadio": "Sede",
             "hora": "10:00",
             "cartoesAmarelosA": 0,
             "cartoesVermelhosA": 0,
@@ -1542,6 +1564,62 @@
             "penaltisB": 1,
             "estadio": "Jardim Paulista",
             "hora": "15:00",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          }
+        ]
+      },
+      {
+        "data": "07/09/2025",
+        "nome": "Semi Finais",
+        "rodada": 10,
+        "jogos": [
+          {
+            "timeA": "Eucaliptus F.C",
+            "timeB": "Deportivo Campina Fc",
+            "placarA": 2,
+            "placarB": 1,
+            "penaltisA": 0,
+            "penaltisB": 0,
+            "estadio": "Sede",
+            "hora": "13:00",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Redbull Campina",
+            "timeB": "Parma Campina",
+            "placarA": 2,
+            "placarB": 1,
+            "penaltisA": 0,
+            "penaltisB": 0,
+            "estadio": "Sede",
+            "hora": "15:00",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          }
+        ]
+      },
+      {
+        "data": "07/09/2025",
+        "nome": "Final",
+        "rodada": 11,
+        "jogos": [
+          {
+            "timeA": "Redbull Campina",
+            "timeB": "Eucaliptus F.C",
+            "placarA": 0,
+            "placarB": 0,
+            "penaltisA": 0,
+            "penaltisB": 0,
+            "estadio": "Sede",
+            "hora": "13:00",
             "cartoesAmarelosA": 0,
             "cartoesVermelhosA": 0,
             "cartoesAmarelosB": 0,

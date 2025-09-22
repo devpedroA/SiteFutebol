@@ -1,5 +1,3 @@
-
-
 // ===== CONFIGURAÇÃO E CONSTANTES =====
 const CONFIG = {
   MOBILE_BREAKPOINT: 768,
@@ -223,10 +221,16 @@ const UI = {
   updateRodadaLabel() {
     const label = document.getElementById('rodada-atual');
     if (!label || !AppState.data || !AppState.data[AppState.currentSerie]) return;
-    const rodadaObj = AppState.data[AppState.currentSerie].rodadas.find(r => r.rodada === AppState.currentRodada);
+    const rodadasComNumero = AppState.data[AppState.currentSerie].rodadas.filter(r => r.rodada === AppState.currentRodada);
     let rodadaNome = '';
-    if (rodadaObj && rodadaObj.nome) {
-      rodadaNome = ` - ${rodadaObj.nome}`;
+    if (rodadasComNumero.length > 0) {
+      if (rodadasComNumero.length === 1) {
+        rodadaNome = rodadasComNumero[0].nome ? ` - ${rodadasComNumero[0].nome}` : '';
+      } else {
+        // Múltiplas rodadas com mesmo número - mostrar todas
+        const nomes = rodadasComNumero.map(r => r.nome).filter(n => n).join(' / ');
+        rodadaNome = nomes ? ` - ${nomes}` : '';
+      }
     }
     label.textContent = `${AppState.currentRodada}ª RODADA${rodadaNome}`;
   },
@@ -287,68 +291,108 @@ const Renderer = {
       container.innerHTML = '<p class="text-center text-muted">Série não encontrada.</p>';
       return;
     }
-    const rodadaObj = AppState.data[serie].rodadas.find(r => r.rodada === rodada);
-    if (!rodadaObj || rodadaObj.jogos.length === 0) {
+    const rodadasComNumero = AppState.data[serie].rodadas.filter(r => r.rodada === rodada);
+    if (rodadasComNumero.length === 0) {
       container.innerHTML = '<p class="text-center text-muted">Sem jogos para esta rodada.</p>';
       return;
     }
     container.innerHTML = '';
     const teamMap = DataProcessor.createTeamMap(serie, AppState.data);
-    // Detect knockout round by nome
-    const knockout = rodadaObj.nome && /(Quartas|Semifinal|Final)/i.test(rodadaObj.nome);
-    if (knockout) {
-      rodadaObj.jogos.forEach((game, idx) => {
-        const card = document.createElement('div');
-        card.className = 'bracket-game mb-4 p-3';
-        card.style.border = '2px solid #43e97b';
-        card.style.borderRadius = '1rem';
-        card.style.background = '#f8f9fa';
-        card.style.maxWidth = '400px';
-        card.style.margin = '0 auto';
 
-        // Teams and score
-        const teamA = teamMap[game.timeA] || {};
-        const teamB = teamMap[game.timeB] || {};
-        const placarA = game.placarA;
-        const placarB = game.placarB;
+    // Processar todas as rodadas com o mesmo número
+    rodadasComNumero.forEach((rodadaObj, rodadaIndex) => {
+      if (rodadaObj.jogos.length === 0) return;
 
-        // Winner logic
-        let winner = null;
-        if (placarA > placarB) winner = 'A';
-        else if (placarB > placarA) winner = 'B';
-        // Penalty logic (if draw and penalty fields exist)
-        let penaltyInfo = '';
-        if (placarA === placarB && game.penaltisA !== undefined && game.penaltisB !== undefined) {
-          penaltyInfo = `<div class="text-center mt-2"><span style='font-weight:bold;'>Pênaltis:</span> <span class='${game.penaltisA > game.penaltisB ? 'text-success' : ''}'>${game.penaltisA}</span> x <span class='${game.penaltisB > game.penaltisA ? 'text-success' : ''}'>${game.penaltisB}</span></div>`;
-          if (game.penaltisA > game.penaltisB) winner = 'A';
-          else if (game.penaltisB > game.penaltisA) winner = 'B';
+      // Adicionar título da rodada se houver múltiplas rodadas com mesmo número
+      if (rodadasComNumero.length > 1 && rodadaObj.nome) {
+        const titleDiv = document.createElement('div');
+        titleDiv.className = 'text-center mb-3';
+        titleDiv.innerHTML = `<h5 class="text-primary font-weight-bold">${rodadaObj.nome}</h5>`;
+        container.appendChild(titleDiv);
+      }
+
+      // Detect knockout round by nome
+      const knockout = rodadaObj.nome && /(Quartas|Semi Finais|Final)/i.test(rodadaObj.nome);
+      if (knockout) {
+        rodadaObj.jogos.forEach((game, idx) => {
+          const card = document.createElement('div');
+          card.className = 'bracket-game mb-4 p-3';
+          card.style.border = '2px solid #43e97b';
+          card.style.borderRadius = '1rem';
+          card.style.background = '#f8f9fa';
+          card.style.maxWidth = '400px';
+          card.style.margin = '0 auto';
+
+          // Teams and score
+          const teamA = teamMap[game.timeA] || {};
+          const teamB = teamMap[game.timeB] || {};
+          const placarA = game.placarA;
+          const placarB = game.placarB;
+
+          // Winner logic
+          let winner = null;
+          if (placarA > placarB) winner = 'A';
+          else if (placarB > placarA) winner = 'B';
+          // Penalty logic (if draw and penalty fields exist)
+          let penaltyInfo = '';
+          if (placarA === placarB && game.penaltisA !== undefined && game.penaltisB !== undefined) {
+            penaltyInfo = `<div class="text-center mt-2"><span style='font-weight:bold;'>Pênaltis:</span> <span class='${game.penaltisA > game.penaltisB ? 'text-success' : ''}'>${game.penaltisA}</span> x <span class='${game.penaltisB > game.penaltisA ? 'text-success' : ''}'>${game.penaltisB}</span></div>`;
+            if (game.penaltisA > game.penaltisB) winner = 'A';
+            else if (game.penaltisB > game.penaltisA) winner = 'B';
+          }
+
+          // Lógica para destacar o vencedor em verde apenas na série ouro
+          const highlightA = (serie === 'ouro' && winner === 'A') ? 'color:#1b8f3c;font-weight:bold;' : '';
+          const highlightB = (serie === 'ouro' && winner === 'B') ? 'color:#1b8f3c;font-weight:bold;' : '';
+          card.innerHTML = `
+            <div class="text-center text-muted mb-2" style="font-size:0.95rem;">${Utils.formatDate(rodadaObj.data)} • <strong>${game.hora}</strong> • ${game.estadio}</div>
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center">
+                <img src="${teamA.imagem || ''}" alt="${game.timeA}" style="width:40px;height:40px;object-fit:contain;" class="mr-2">
+                <span style="font-size:1.1rem;${highlightA}">${Utils.firstName(game.timeA)}</span>
+              </div>
+              <div class="score-display mx-2" style="font-size:1.5rem; font-weight:bold;">
+                <span>${placarA}</span>
+                <span style="font-size:1rem;">x</span>
+                <span>${placarB}</span>
+              </div>
+              <div class="d-flex align-items-center">
+                <span style="font-size:1.1rem;${highlightB}">${Utils.firstName(game.timeB)}</span>
+                <img src="${teamB.imagem || ''}" alt="${game.timeB}" style="width:40px;height:40px;object-fit:contain;" class="ml-2">
+              </div>
+            </div>
+            ${penaltyInfo}
+          `;
+          container.appendChild(card);
+        });
+      } else {
+        const template = document.getElementById('game-row-template');
+        for (let i = 0; i < rodadaObj.jogos.length; i += 3) {
+          const rowDiv = document.createElement('div');
+          rowDiv.className = 'row justify-content-around w-100 mb-4';
+          const gamesSlice = rodadaObj.jogos.slice(i, i + 3);
+          gamesSlice.forEach(game => {
+            const card = template.content.firstElementChild.cloneNode(true);
+            card.querySelector('.game-data').textContent = Utils.formatDate(rodadaObj.data);
+            card.querySelector('.game-hora').textContent = game.hora;
+            card.querySelectorAll('.game-estadio').forEach(e => e.textContent = game.estadio);
+            card.querySelector('.game-imgA').src = teamMap[game.timeA]?.imagem || '';
+            card.querySelector('.game-imgA').alt = game.timeA;
+            card.querySelector('.game-nomeA').textContent = game.timeA;
+            card.querySelector('.game-imgB').src = teamMap[game.timeB]?.imagem || '';
+            card.querySelector('.game-imgB').alt = game.timeB;
+            card.querySelector('.game-nomeB').textContent = game.timeB;
+            card.querySelector('.game-placarA').textContent = game.placarA;
+            card.querySelector('.game-placarB').textContent = game.placarB;
+            rowDiv.appendChild(card);
+          });
+          container.appendChild(rowDiv);
         }
+      }
+    });
 
-        // Lógica para destacar o vencedor em verde apenas na série ouro
-        const highlightA = (serie === 'ouro' && winner === 'A') ? 'color:#1b8f3c;font-weight:bold;' : '';
-        const highlightB = (serie === 'ouro' && winner === 'B') ? 'color:#1b8f3c;font-weight:bold;' : '';
-        card.innerHTML = `
-          <div class="text-center text-muted mb-2" style="font-size:0.95rem;">${Utils.formatDate(rodadaObj.data)} • <strong>${game.hora}</strong> • ${game.estadio}</div>
-          <div class="d-flex align-items-center justify-content-between">
-            <div class="d-flex align-items-center">
-              <img src="${teamA.imagem || ''}" alt="${game.timeA}" style="width:40px;height:40px;object-fit:contain;" class="mr-2">
-              <span style="font-size:1.1rem;${highlightA}">${Utils.firstName(game.timeA)}</span>
-            </div>
-            <div class="score-display mx-2" style="font-size:1.5rem; font-weight:bold;">
-              <span>${placarA}</span>
-              <span style="font-size:1rem;">x</span>
-              <span>${placarB}</span>
-            </div>
-            <div class="d-flex align-items-center">
-              <span style="font-size:1.1rem;${highlightB}">${Utils.firstName(game.timeB)}</span>
-              <img src="${teamB.imagem || ''}" alt="${game.timeB}" style="width:40px;height:40px;object-fit:contain;" class="ml-2">
-            </div>
-          </div>
-          ${penaltyInfo}
-        `;
-        container.appendChild(card);
-      });
-      // Ajuste visual: remove espaço extra do primeiro card
+    // Ajuste visual para knockout games
+    if (rodadasComNumero.some(r => r.nome && /(Quartas|Semifinal|Final)/i.test(r.nome))) {
       const style = document.createElement('style');
       style.textContent = `
         .bracket-game { margin-top: 2rem !important; margin-bottom: 0 !important; }
@@ -358,29 +402,6 @@ const Renderer = {
         }
       `;
       document.head.appendChild(style);
-    } else {
-      const template = document.getElementById('game-row-template');
-      for (let i = 0; i < rodadaObj.jogos.length; i += 3) {
-        const rowDiv = document.createElement('div');
-        rowDiv.className = 'row justify-content-around w-100 mb-4';
-        const gamesSlice = rodadaObj.jogos.slice(i, i + 3);
-        gamesSlice.forEach(game => {
-          const card = template.content.firstElementChild.cloneNode(true);
-          card.querySelector('.game-data').textContent = Utils.formatDate(rodadaObj.data);
-          card.querySelector('.game-hora').textContent = game.hora;
-          card.querySelectorAll('.game-estadio').forEach(e => e.textContent = game.estadio);
-          card.querySelector('.game-imgA').src = teamMap[game.timeA]?.imagem || '';
-          card.querySelector('.game-imgA').alt = game.timeA;
-          card.querySelector('.game-nomeA').textContent = game.timeA;
-          card.querySelector('.game-imgB').src = teamMap[game.timeB]?.imagem || '';
-          card.querySelector('.game-imgB').alt = game.timeB;
-          card.querySelector('.game-nomeB').textContent = game.timeB;
-          card.querySelector('.game-placarA').textContent = game.placarA;
-          card.querySelector('.game-placarB').textContent = game.placarB;
-          rowDiv.appendChild(card);
-        });
-        container.appendChild(rowDiv);
-      }
     }
   },
 
