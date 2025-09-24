@@ -30,7 +30,7 @@
 
       { "nome": "DIEGO VINICIO GOES MANZINI", "time": "Juventus", "partidas": 9, "golsSofridos": 19 },
 
-      { "nome": "LEANDRO GARCIA DA SILVA", "time": "Parceria", "partidas": 9, "golsSofridos": 5 }
+      { "nome": "LEANDRO GARCIA DA SILVA", "time": "Parceria", "partidas": 10, "golsSofridos": 6 }
     ]
   },
   "prata": {
@@ -48,7 +48,7 @@
       { "nome": "AMAURI ANDRE GILIER", "time": "Campinense Futebol Clube", "partidas": 6, "golsSofridos": 10 },
 
       { "nome": "LUCAS RAMOS DA SILVA", "time": "Deportivo Campina Fc", "partidas": 2, "golsSofridos": 5 },
-      { "nome": "ADRIANO STRUZ LIMA", "time": "Deportivo Campina Fc", "partidas": 5, "golsSofridos": 1 },
+      { "nome": "ADRIANO STRUZ LIMA", "time": "Deportivo Campina Fc", "partidas": 6, "golsSofridos": 3 },
 
       { "nome": "EDIMAR TRENTO", "time": "Los Coyudos F.C", "partidas": 1, "golsSofridos": 1 },
       { "nome": "OLIVELTON DOS SANTOS", "time": "Los Coyudos F.C", "partidas": 4, "golsSofridos": 8 },
