@@ -58,7 +58,7 @@
 
   { "nome": "LEANDRO DE OLIVEIRA DIAS", "time": "Tchuruu", "gols": 1 },
   { "nome": "MATHEUS HENRIQUE DA SILVA", "time": "Tchuruu", "gols": 1 },
-  { "nome": "JULIANO ANDRÉ PLASDO", "time": "Tchuruu", "gols": 2 },
+  { "nome": "JULIANO ANDRÉ PLASDO", "time": "Tchuruu", "gols": 3 },
   { "nome": "WILLIAN CECCON C. DE SOUZA", "time": "Tchuruu", "gols": 3 },
   { "nome": "DEVERCILDO DAVID MARTINS", "time": "Tchuruu", "gols": 1 },
   { "nome": "IVAN A. RIVERO ESPINOLA", "time": "Tchuruu", "gols": 8 },
@@ -147,9 +147,10 @@
       { "nome": "RAFAEL DA CRUZ JEANINE", "time": "Deportivo Campina Fc", "gols": 1 },
       { "nome": "JOSNEI JOSÉ MARTINS", "time": "Deportivo Campina Fc", "gols": 1 },
       { "nome": "VILSON JOSE A. STRAPASSON", "time": "Deportivo Campina Fc", "gols": 1 },
+      { "nome": "ADRIANO STRUZ", "time": "Deportivo Campina Fc", "gols": 2 },
 
       { "nome": "ABNER FELIPE NOGUEIRA", "time": "Entre Parents F.C", "gols": 2 },
-      { "nome": "GUILHERME DA SILVA", "time": "Entre Parents F.C", "gols": 2 },
+      { "nome": "GUILHERME DA SILVA", "time": "Entre Parents F.C", "gols": 3 },
       { "nome": "HENRIQUE ASSIS VIEGAS", "time": "Entre Parents F.C", "gols": 1 },
       { "nome": "GABRIEL AUGUSTO S. PEREIRA", "time": "Entre Parents F.C", "gols": 1 },
       { "nome": "GREGORI SILVA GOMES", "time": "Entre Parents F.C", "gols": 1 },
@@ -161,7 +162,7 @@
       { "nome": "DIEGO LUIS BRIZUELA SOSA", "time": "Estrela Campina", "gols": 1 },
 
       { "nome": "VAGNER ALEXANDRE DE L. REGINATO", "time": "Eucaliptus F.C", "gols": 2 },
-      { "nome": "FERNANDO ANTONIO ROCHA", "time": "Eucaliptus F.C", "gols": 7 },
+      { "nome": "FERNANDO ANTONIO ROCHA", "time": "Eucaliptus F.C", "gols": 8 },
       { "nome": "RICARDO MATHEUS GOMES MENDES", "time": "Eucaliptus F.C", "gols": 1 },
       { "nome": "ERICO LUAN SILVA BONATTI", "time": "Eucaliptus F.C", "gols": 1 },
       { "nome": "MAYCON VINICIUS DO NASCIMENTO", "time": "Eucaliptus F.C", "gols": 1 },
@@ -204,7 +205,7 @@
       { "nome": "ALEXANDRE VINICIUS D. CAILLET", "time": "Redbull Campina", "gols": 1 },
       { "nome": "IGOR DE MATOS FRANCO", "time": "Redbull Campina", "gols": 6 },
       { "nome": "LUCAS LIMA CAILLET", "time": "Redbull Campina", "gols": 8 },
-      { "nome": "NATANAEL FRANCO", "time": "Redbull Campina", "gols": 4 },
+      { "nome": "NATANAEL FRANCO", "time": "Redbull Campina", "gols": 49 },
       { "nome": "LUIZ GUSTAVO SOUZA MARTINS", "time": "Redbull Campina", "gols": 1 },
       { "nome": "LEANDRO BRAGA DE LIMA", "time": "Redbull Campina", "gols": 1 },
       { "nome": "WELLINGTON FELIPE DA SILVA FILHO", "time": "Redbull Campina", "gols": 1 },

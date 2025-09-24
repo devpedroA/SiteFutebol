@@ -236,7 +236,16 @@ const UI = {
   },
 
   hideLoading() {
-    // Não faz nada, pois o loading é substituído ao renderizar
+    // Remove o spinner da tabela
+    const tbody = document.getElementById('tabela-body');
+    if (tbody && tbody.innerHTML.includes('loading-spinner')) {
+      tbody.innerHTML = '';
+    }
+    // Remove o spinner dos jogos
+    const gamesContainer = document.getElementById('jogos-container');
+    if (gamesContainer && gamesContainer.innerHTML.includes('loading-spinner')) {
+      gamesContainer.innerHTML = '';
+    }
   }
 };
 
@@ -440,7 +449,7 @@ const Renderer = {
     });
 
     // Após renderizar todos, limitar a altura ao tamanho dos 5 primeiros
-    this.applyScrollableLimit(container, '.artilheiro-item');
+    applyScrollableLimit(container, '.artilheiro-item');
   },
 
   renderGoleiros(serie) {
@@ -485,7 +494,7 @@ const Renderer = {
     });
 
     // Após renderizar todos, limitar a altura ao tamanho dos 5 primeiros
-    this.applyScrollableLimit(container, '.goleiro-item');
+    applyScrollableLimit(container, '.goleiro-item');
   }
 };
 
@@ -534,15 +543,15 @@ const App = {
     window.addEventListener("resize", Utils.debounce(() => {
       const artilheiros = document.getElementById('artilheiros-list');
       const goleiros = document.getElementById('goleiros-list');
-      if (artilheiros) Renderer.applyScrollableLimit(artilheiros, '.artilheiro-item');
-      if (goleiros) Renderer.applyScrollableLimit(goleiros, '.goleiro-item');
+      if (artilheiros) applyScrollableLimit(artilheiros, '.artilheiro-item');
+      if (goleiros) applyScrollableLimit(goleiros, '.goleiro-item');
     }, 150));
     try {
       UI.showLoading();
 
       // Carregamento com fallback: GitHub Raw → jsDelivr → GitHub Pages → relativo
       const fetchJSONWithFallback = async (filename) => {
-        const urls = Renderer.resolveDataUrls(filename);
+        const urls = resolveDataUrls(filename);
         let lastError;
         for (const url of urls) {
           try {
@@ -609,7 +618,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ===== UTILITÁRIO DE SCROLL PARA LISTAS =====
-Renderer.applyScrollableLimit = function (listContainer, itemSelector) {
+function applyScrollableLimit(listContainer, itemSelector) {
   try {
     if (!listContainer) return;
     const items = listContainer.querySelectorAll(itemSelector);
@@ -631,18 +640,4 @@ Renderer.applyScrollableLimit = function (listContainer, itemSelector) {
   } catch (e) {
     console.warn('Falha ao aplicar limite rolável:', e);
   }
-};
-
-// ===== RESOLUÇÃO DE URL DE DADOS (GitHub Raw + fallbacks) =====
-Renderer.resolveDataUrls = function (filename) {
-  const owner = 'devpedroA';
-  const repo = 'SiteFutebol';
-  const urls = [];
-  try {
-    urls.push(new URL(filename, window.location.href).href);
-    urls.push(`https://raw.githubusercontent.com/${owner}/${repo}/main/${filename}`);
-    urls.push(`https://cdn.jsdelivr.net/gh/${owner}/${repo}@main/${filename}`);
-    urls.push(`https://${owner}.github.io/${repo}/${filename}`);
-  } catch (e) { /* ignore */ }
-  return Array.from(new Set(urls));
-};
+}
