@@ -24,13 +24,13 @@
       { "nome": "BRUNO MARTIMIANO", "time": "Araçatuba", "partidas": 5, "golsSofridos": 7 },
       { "nome": "MARCO ADRIANO BOGO", "time": "Araçatuba", "partidas": 5, "golsSofridos": 12 },
 
-      { "nome": "MILTON DE ALMEIDA BARRETO", "time": "Fox", "partidas": 10, "golsSofridos": 9 },
+      { "nome": "MILTON DE ALMEIDA BARRETO", "time": "Fox", "partidas": 10, "golsSofridos": 8 },
 
       { "nome": "REYNALDO PEREIRA DOS SANTOS", "time": "Peñarol", "partidas": 10, "golsSofridos": 15 },
 
       { "nome": "DIEGO VINICIO GOES MANZINI", "time": "Juventus", "partidas": 9, "golsSofridos": 19 },
 
-      { "nome": "LEANDRO GARCIA DA SILVA", "time": "Parceria", "partidas": 10, "golsSofridos": 6 }
+      { "nome": "LEANDRO GARCIA DA SILVA", "time": "Parceria", "partidas": 10, "golsSofridos": 8 }
     ]
   },
   "prata": {
@@ -48,7 +48,7 @@
       { "nome": "AMAURI ANDRE GILIER", "time": "Campinense Futebol Clube", "partidas": 6, "golsSofridos": 10 },
 
       { "nome": "LUCAS RAMOS DA SILVA", "time": "Deportivo Campina Fc", "partidas": 2, "golsSofridos": 5 },
-      { "nome": "ADRIANO STRUZ LIMA", "time": "Deportivo Campina Fc", "partidas": 6, "golsSofridos": 3 },
+      { "nome": "ADRIANO STRUZ LIMA", "time": "Deportivo Campina Fc", "partidas": 6, "golsSofridos": 4 },
 
       { "nome": "EDIMAR TRENTO", "time": "Los Coyudos F.C", "partidas": 1, "golsSofridos": 1 },
       { "nome": "OLIVELTON DOS SANTOS", "time": "Los Coyudos F.C", "partidas": 4, "golsSofridos": 8 },
@@ -63,7 +63,7 @@
 
       { "nome": "DIRLEI CASSIO BORGES", "time": "Gileade F.C", "partidas": 5, "golsSofridos": 15 },
 
-      { "nome": "LUIZ FERNANDO DOS REIS DEMETRIO", "time": "Hookah Futebol Clube", "partidas": 5, "golsSofridos": 2 },
+      { "nome": "LUIZ FERNANDO DOS REIS DEMETRIO", "time": "Hookah Futebol Clube", "partidas": 1, "golsSofridos": 2 },
 
       { "nome": "GUSTAVO HENRIQUE DE OLIVEIRA DE CARVALHO", "time": "Marfran Esporte Clube", "partidas": 6, "golsSofridos": 18 },
 
