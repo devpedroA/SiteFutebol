@@ -421,7 +421,7 @@ const Renderer = {
     console.log('Renderizando tabela para série:', serie);
     console.log('AppState.data:', AppState.data);
     console.log('Série disponível:', AppState.data?.[serie]);
-    
+
     if (!AppState.data || !AppState.data[serie]) {
       console.warn(`Série '${serie}' não encontrada. Séries disponíveis:`, Object.keys(AppState.data || {}));
       tbody.innerHTML = '<tr><td colspan="11" class="text-center">Série não encontrada</td></tr>';
@@ -470,7 +470,7 @@ const Renderer = {
     console.log('Renderizando jogos para série:', serie, 'rodada:', rodada);
     console.log('AppState.data:', AppState.data);
     console.log('Série disponível:', AppState.data?.[serie]);
-    
+
     if (!AppState.data || !AppState.data[serie]) {
       console.warn(`Série '${serie}' não encontrada. Séries disponíveis:`, Object.keys(AppState.data || {}));
       container.innerHTML = '<p class="text-center text-muted">Série não encontrada.</p>';
@@ -785,6 +785,12 @@ const App = {
 
         AppState.data = await response.json();
         console.log('Dados carregados com sucesso da API:', AppState.data);
+        console.log('Séries disponíveis na API:', Object.keys(AppState.data || {}));
+        console.log('Estrutura dos dados:', {
+          ouro: AppState.data?.ouro ? 'Disponível' : 'Não disponível',
+          prata: AppState.data?.prata ? 'Disponível' : 'Não disponível',
+          legends: AppState.data?.legends ? 'Disponível' : 'Não disponível'
+        });
 
       } catch (apiError) {
         console.warn('Erro ao carregar da API, tentando arquivos JSON locais:', apiError.message);
