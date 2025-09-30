@@ -1,3 +1,5 @@
+<!-- Template para Jogos Normais (rodadas) -->
+
 <!doctype html>
 <html lang="pt-BR">
 
@@ -23,11 +25,8 @@
       <!-- Series -->
       <div class="card-container">
         <div class="d-flex justify-content-center" id="series-buttons">
-          <button class="btn text-dark fw-bold px-4 py-2 mx-1 my-1" data-serie="ouro" id="btn-serie-ouro">SÉRIE
-            OURO</button>
-          <button class="btn text-dark fw-bold px-4 py-2 mx-1 my-1" data-serie="prata" id="btn-serie-prata">SÉRIE
-            PRATA</button>
-          <button class="btn text-dark fw-bold px-4 py-2 mx-1 my-1" data-serie="master" id="btn-serie-master">SÉRIE MASTER</button>
+          <button class="btn text-dark fw-bold px-4 py-2 mx-1 my-1" data-serie="ouro" id="btn-serie-ouro">SÉRIE OURO</button>
+          <button class="btn text-dark fw-bold px-4 py-2 mx-1 my-1" data-serie="prata" id="btn-serie-prata">SÉRIE PRATA</button>
           <!-- Adicione mais botões se houver mais séries -->
         </div>
       </div>
@@ -140,8 +139,7 @@
           <div class="p-3">
             <div class="text-center text-muted mb-3 game-info" style="font-size:0.85rem; line-height:1.4;">
               <div class="d-block d-md-none game-estadio">Estádio</div>
-              <div><span class="game-data">Data</span> • <strong class="game-hora">Hora</strong> • <span
-                  class="game-estadio">Estádio</span></div>
+              <div><span class="game-data">Data</span> • <strong class="game-hora">Hora</strong> • <span class="game-estadio">Estádio</span></div>
             </div>
             <div class="game-teams">
               <div class="game-team">
@@ -205,45 +203,13 @@
         </div>
       </template>
     </section>
-    <template id="game-row-template">
-      <div class="col-12 col-md-5 col-lg-3 card-content mb-3 mt-3">
-        <div class="p-3">
-          <div class="text-center text-muted mb-3 game-info" style="font-size:0.85rem; line-height:1.4;">
-            <div class="d-block d-md-none game-estadio">Estádio</div>
-            <div><span class="game-data">Data</span> • <strong class="game-hora">Hora</strong> • <span
-                class="game-estadio">Estádio</span></div>
-          </div>
-          <div class="game-teams">
-            <div class="game-team">
-              <img src="" alt="Time A" class="mb-1 game-imgA" style="width:40px;height:40px;object-fit:contain;">
-              <div class="game-nomeA"
-                style="font-size:0.95rem; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">
-                Time A</div>
-            </div>
-            <div class="game-score">
-              <div class="score-display" style="font-size:1.5rem; font-weight:bold;">
-                <span class="game-placarA">0</span>
-                <span style="font-size:1rem;">x</span>
-                <span class="game-placarB">0</span>
-              </div>
-            </div>
-            <div class="game-team">
-              <img src="" alt="Time B" class="mb-1 game-imgB" style="width:40px;height:40px;object-fit:contain;">
-              <div class="game-nomeB"
-                style="font-size:0.95rem; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">
-                Time B</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </template>
   </main>
 
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <script src="script.js" req></script>
+  <script type="module" src="script.js"></script>
 </body>
 
 </html>

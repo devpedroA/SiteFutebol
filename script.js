@@ -9,16 +9,20 @@ const CONFIG = {
 
 // ===== UTILITÁRIOS =====
 const Utils = {
-  firstName: str => str ? str.split(' ')[0] : '',
-  parseDateBR: dateString => {
+  // Converte data brasileira (DD/MM/AAAA) para objeto Date
+  parseDateBR(dateString) {
     const [day, month, year] = dateString.split('/');
     return new Date(`${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`);
   },
-  formatDate: dateString => {
+
+  // Formata data para exibição (substitui 2099 por "A DEFINIR")
+  formatDate(dateString) {
     const [day, month, year] = dateString.split('/');
     return year === '2099' ? 'A DEFINIR' : dateString;
   },
-  debounce: (func, timeout = 100) => {
+
+  // Debounce para otimizar eventos
+  debounce(func, timeout = 100) {
     let timer;
     return (...args) => {
       clearTimeout(timer);
@@ -40,14 +44,17 @@ const AppState = {
   data: null,
   getLastCompletedRodada(serie) {
     if (!this.data || !this.data[serie]?.rodadas) return 1;
+
     const currentDate = new Date();
+
+    // Para fins de demonstração, vamos considerar que todas as rodadas de 2025 são completadas
     const completedRodadas = this.data[serie].rodadas.filter(rodada => {
-      const [day, month, year] = rodada.data.split('/');
-      const rodadaDate = new Date(`${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`);
+      const rodadaDate = Utils.parseDateBR(rodada.data);
       return rodadaDate <= currentDate;
     });
     if (completedRodadas.length === 0) return 1;
-    return Math.max(...completedRodadas.map(r => r.rodada));
+    const maxRodada = Math.max(...completedRodadas.map(r => r.rodada));
+    return maxRodada;
   },
   changeSerie(newSerie) {
     this.currentSerie = newSerie;
@@ -59,9 +66,10 @@ const AppState = {
 const DataProcessor = {
   createTeamMap(serie, data) {
     const teamMap = {};
-    data[serie].times.forEach(team => {
+    AppState.data[serie].times.forEach(team => {
       teamMap[team.nome] = { ...team };
     });
+
     return teamMap;
   },
   resetTeamStats(team) {
@@ -100,13 +108,17 @@ const DataProcessor = {
     Object.values(teamMap).forEach(team => this.resetTeamStats(team));
     const lastRodada = getLastCompletedRodada(serie);
     const currentDate = new Date();
-    const completedRodadas = data[serie].rodadas.filter(rodada => {
+
+    const completedRodadas = AppState.data[serie].rodadas.filter(rodada => {
       const rodadaDate = Utils.parseDateBR(rodada.data);
       return rodada.rodada <= lastRodada && rodadaDate <= currentDate;
     });
+
+    // Processa todos os jogos
     completedRodadas.forEach(rodada => {
+      if (!rodada.jogos) return;
       rodada.jogos.forEach(jogo => {
-        if (jogo.placarA != null && jogo.placarB != null) {
+        if (jogo && jogo.placarA != null && jogo.placarB != null) {
           const teamA = teamMap[jogo.timeA];
           const teamB = teamMap[jogo.timeB];
           if (teamA && teamB) {
@@ -121,6 +133,8 @@ const DataProcessor = {
         }
       });
     });
+
+    // Calcula saldo de gols
     Object.values(teamMap).forEach(team => {
       team.saldo = team.golsPro - team.golsContra;
     });
@@ -140,20 +154,6 @@ const DataProcessor = {
   }
 };
 
-// ===== RESOLUÇÃO DE URL DE DADOS (GitHub Raw + fallbacks) =====
-function resolveDataUrls(filename) {
-  const owner = 'devpedroA';
-  const repo = 'SiteFutebol';
-  const urls = [];
-  try {
-    urls.push(new URL(filename, window.location.href).href);
-    urls.push(`https://raw.githubusercontent.com/${owner}/${repo}/main/${filename}`);
-    urls.push(`https://cdn.jsdelivr.net/gh/${owner}/${repo}@main/${filename}`);
-    urls.push(`https://${owner}.github.io/${repo}/${filename}`);
-  } catch (e) { /* ignore */ }
-  return Array.from(new Set(urls));
-}
-
 // ===== INTERFACE DO USUÁRIO =====
 const UI = {
   // Atualiza imagem do banner baseado no tamanho da tela
@@ -164,12 +164,6 @@ const UI = {
     img.src = isMobile ? CONFIG.BANNER_IMAGES.mobile : CONFIG.BANNER_IMAGES.desktop;
   },
 
-  updateRodadaLabel() {
-    const label = document.getElementById('rodada-atual');
-    if (label) {
-      label.textContent = `${AppState.currentRodada}ª RODADA`;
-    }
-  },
 
   updateSerieButtons() {
     // Ativa/desativa botões conforme a série atual
@@ -218,23 +212,6 @@ const UI = {
     }
   },
 
-  updateRodadaLabel() {
-    const label = document.getElementById('rodada-atual');
-    if (!label || !AppState.data || !AppState.data[AppState.currentSerie]) return;
-    const rodadasComNumero = AppState.data[AppState.currentSerie].rodadas.filter(r => r.rodada === AppState.currentRodada);
-    let rodadaNome = '';
-    if (rodadasComNumero.length > 0) {
-      if (rodadasComNumero.length === 1) {
-        rodadaNome = rodadasComNumero[0].nome ? ` - ${rodadasComNumero[0].nome}` : '';
-      } else {
-        // Múltiplas rodadas com mesmo número - mostrar todas
-        const nomes = rodadasComNumero.map(r => r.nome).filter(n => n).join(' / ');
-        rodadaNome = nomes ? ` - ${nomes}` : '';
-      }
-    }
-    label.textContent = `${AppState.currentRodada}ª RODADA${rodadaNome}`;
-  },
-
   hideLoading() {
     // Remove o spinner da tabela
     const tbody = document.getElementById('tabela-body');
@@ -253,11 +230,16 @@ const UI = {
 const Renderer = {
   renderTable(serie) {
     const tbody = document.getElementById('tabela-body');
+    console.log('Renderizando tabela para série:', serie);
+    console.log('AppState.data:', AppState.data);
+    console.log('Série disponível:', AppState.data?.[serie]);
+
     if (!AppState.data || !AppState.data[serie]) {
+      console.warn(`Série '${serie}' não encontrada. Séries disponíveis:`, Object.keys(AppState.data || {}));
       tbody.innerHTML = '<tr><td colspan="11" class="text-center">Série não encontrada</td></tr>';
       return;
     }
-    const teams = DataProcessor.sortTeams(DataProcessor.calculateTable(serie, AppState.data, AppState.getLastCompletedRodada.bind(AppState)));
+    const teams = DataProcessor.sortTeams(DataProcessor.calculateTable(serie));
     tbody.innerHTML = '';
     const template = document.getElementById('team-row-template');
     teams.forEach((team, i) => {
@@ -296,121 +278,44 @@ const Renderer = {
 
   renderGames(serie, rodada) {
     const container = document.getElementById('jogos-container');
+    console.log('Renderizando jogos para série:', serie, 'rodada:', rodada);
+    console.log('AppState.data:', AppState.data);
+    console.log('Série disponível:', AppState.data?.[serie]);
+
     if (!AppState.data || !AppState.data[serie]) {
+      console.warn(`Série '${serie}' não encontrada. Séries disponíveis:`, Object.keys(AppState.data || {}));
       container.innerHTML = '<p class="text-center text-muted">Série não encontrada.</p>';
       return;
     }
-    const rodadasComNumero = AppState.data[serie].rodadas.filter(r => r.rodada === rodada);
-    if (rodadasComNumero.length === 0) {
+    const rodadaObj = AppState.data[serie].rodadas.find(r => r.rodada === rodada);
+    if (!rodadaObj || rodadaObj.jogos.length === 0) {
       container.innerHTML = '<p class="text-center text-muted">Sem jogos para esta rodada.</p>';
       return;
     }
     container.innerHTML = '';
-    const teamMap = DataProcessor.createTeamMap(serie, AppState.data);
-
-    // Processar todas as rodadas com o mesmo número
-    rodadasComNumero.forEach((rodadaObj, rodadaIndex) => {
-      if (rodadaObj.jogos.length === 0) return;
-
-      // Adicionar título da rodada se houver múltiplas rodadas com mesmo número
-      if (rodadasComNumero.length > 1 && rodadaObj.nome) {
-        const titleDiv = document.createElement('div');
-        titleDiv.className = 'text-center mb-3';
-        titleDiv.innerHTML = `<h5 class="text-primary font-weight-bold">${rodadaObj.nome}</h5>`;
-        container.appendChild(titleDiv);
-      }
-
-      // Detect knockout round by nome
-      const knockout = rodadaObj.nome && /(Quartas|Semi Finais|Final)/i.test(rodadaObj.nome);
-      if (knockout) {
-        rodadaObj.jogos.forEach((game, idx) => {
-          const card = document.createElement('div');
-          card.className = 'bracket-game mb-4 p-3';
-          card.style.border = '2px solid #43e97b';
-          card.style.borderRadius = '1rem';
-          card.style.background = '#f8f9fa';
-          card.style.maxWidth = '400px';
-          card.style.margin = '0 auto';
-
-          // Teams and score
-          const teamA = teamMap[game.timeA] || {};
-          const teamB = teamMap[game.timeB] || {};
-          const placarA = game.placarA;
-          const placarB = game.placarB;
-
-          // Winner logic
-          let winner = null;
-          if (placarA > placarB) winner = 'A';
-          else if (placarB > placarA) winner = 'B';
-          // Penalty logic (if draw and penalty fields exist)
-          let penaltyInfo = '';
-          if (placarA === placarB && game.penaltisA !== undefined && game.penaltisB !== undefined) {
-            penaltyInfo = `<div class="text-center mt-2"><span style='font-weight:bold;'>Pênaltis:</span> <span class='${game.penaltisA > game.penaltisB ? 'text-success' : ''}'>${game.penaltisA}</span> x <span class='${game.penaltisB > game.penaltisA ? 'text-success' : ''}'>${game.penaltisB}</span></div>`;
-            if (game.penaltisA > game.penaltisB) winner = 'A';
-            else if (game.penaltisB > game.penaltisA) winner = 'B';
-          }
-
-          // Lógica para destacar o vencedor em verde apenas na série ouro
-          const highlightA = (serie === 'ouro' && winner === 'A') ? 'color:#1b8f3c;font-weight:bold;' : '';
-          const highlightB = (serie === 'ouro' && winner === 'B') ? 'color:#1b8f3c;font-weight:bold;' : '';
-          card.innerHTML = `
-            <div class="text-center text-muted mb-2" style="font-size:0.95rem;">${Utils.formatDate(rodadaObj.data)} • <strong>${game.hora}</strong> • ${game.estadio}</div>
-            <div class="d-flex align-items-center justify-content-between">
-              <div class="d-flex align-items-center">
-                <img src="${teamA.imagem || ''}" alt="${game.timeA}" style="width:40px;height:40px;object-fit:contain;" class="mr-2">
-                <span style="font-size:1.1rem;${highlightA}">${Utils.firstName(game.timeA)}</span>
-              </div>
-              <div class="score-display mx-2" style="font-size:1.5rem; font-weight:bold;">
-                <span>${placarA}</span>
-                <span style="font-size:1rem;">x</span>
-                <span>${placarB}</span>
-              </div>
-              <div class="d-flex align-items-center">
-                <span style="font-size:1.1rem;${highlightB}">${Utils.firstName(game.timeB)}</span>
-                <img src="${teamB.imagem || ''}" alt="${game.timeB}" style="width:40px;height:40px;object-fit:contain;" class="ml-2">
-              </div>
-            </div>
-            ${penaltyInfo}
-          `;
-          container.appendChild(card);
-        });
-      } else {
-        const template = document.getElementById('game-row-template');
-        for (let i = 0; i < rodadaObj.jogos.length; i += 3) {
-          const rowDiv = document.createElement('div');
-          rowDiv.className = 'row justify-content-around w-100 mb-4';
-          const gamesSlice = rodadaObj.jogos.slice(i, i + 3);
-          gamesSlice.forEach(game => {
-            const card = template.content.firstElementChild.cloneNode(true);
-            card.querySelector('.game-data').textContent = Utils.formatDate(rodadaObj.data);
-            card.querySelector('.game-hora').textContent = game.hora;
-            card.querySelectorAll('.game-estadio').forEach(e => e.textContent = game.estadio);
-            card.querySelector('.game-imgA').src = teamMap[game.timeA]?.imagem || '';
-            card.querySelector('.game-imgA').alt = game.timeA;
-            card.querySelector('.game-nomeA').textContent = game.timeA;
-            card.querySelector('.game-imgB').src = teamMap[game.timeB]?.imagem || '';
-            card.querySelector('.game-imgB').alt = game.timeB;
-            card.querySelector('.game-nomeB').textContent = game.timeB;
-            card.querySelector('.game-placarA').textContent = game.placarA;
-            card.querySelector('.game-placarB').textContent = game.placarB;
-            rowDiv.appendChild(card);
-          });
-          container.appendChild(rowDiv);
-        }
-      }
-    });
-
-    // Ajuste visual para knockout games
-    if (rodadasComNumero.some(r => r.nome && /(Quartas|Semifinal|Final)/i.test(r.nome))) {
-      const style = document.createElement('style');
-      style.textContent = `
-        .bracket-game { margin-top: 2rem !important; margin-bottom: 0 !important; }
-        @media (min-width: 768px) {
-          #jogos-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; }
-          .bracket-game { flex: 1 1 350px; min-width: 320px; }
-        }
-      `;
-      document.head.appendChild(style);
+    const teamMap = DataProcessor.createTeamMap(serie);
+    const template = document.getElementById('game-card-template');
+    // Agrupar de 3 em 3
+    for (let i = 0; i < rodadaObj.jogos.length; i += 3) {
+      const rowDiv = document.createElement('div');
+      rowDiv.className = 'row justify-content-around w-100 mb-4';
+      const gamesSlice = rodadaObj.jogos.slice(i, i + 3);
+      gamesSlice.forEach(game => {
+        const card = template.content.firstElementChild.cloneNode(true);
+        card.querySelector('.game-data').textContent = Utils.formatDate(rodadaObj.data);
+        card.querySelector('.game-hora').textContent = game.hora;
+        card.querySelectorAll('.game-estadio').forEach(e => e.textContent = game.estadio);
+        card.querySelector('.game-imgA').src = teamMap[game.timeA]?.imagem || '';
+        card.querySelector('.game-imgA').alt = game.timeA;
+        card.querySelector('.game-nomeA').textContent = game.timeA;
+        card.querySelector('.game-imgB').src = teamMap[game.timeB]?.imagem || '';
+        card.querySelector('.game-imgB').alt = game.timeB;
+        card.querySelector('.game-nomeB').textContent = game.timeB;
+        card.querySelector('.game-placarA').textContent = game.placarA;
+        card.querySelector('.game-placarB').textContent = game.placarB;
+        rowDiv.appendChild(card);
+      });
+      container.appendChild(rowDiv);
     }
   },
 
@@ -429,7 +334,9 @@ const Renderer = {
     const template = document.getElementById('artilheiro-template');
     const teamMap = DataProcessor.createTeamMap(serie, AppState.data);
 
-    const sortedArtilheiros = [...AppState.data[serie].artilheiros]
+    const artilheiros = AppState.data[serie]?.artilheiros || [];
+    const sortedArtilheiros = [...artilheiros]
+      .filter(a => a && a.nome)
       .sort((a, b) => (b.gols || 0) - (a.gols || 0) || (a.nome || '').localeCompare(b.nome || ''));
 
     sortedArtilheiros.forEach((artilheiro, index) => {
@@ -463,13 +370,16 @@ const Renderer = {
     const template = document.getElementById('goleiro-template');
     const teamMap = DataProcessor.createTeamMap(serie, AppState.data);
 
-    const sortedGoleiros = [...AppState.data[serie].goleiros]
+    const goleiros = AppState.data[serie]?.goleiros || [];
+    const sortedGoleiros = [...goleiros]
       .map(g => {
+        if (!g) return null;
         const partidas = typeof g.partidas === 'number' ? g.partidas : parseFloat(g.partidas) || 0;
         const golsSofridos = typeof g.golsSofridos === 'number' ? g.golsSofridos : parseFloat(g.golsSofridos) || 0;
         const media = partidas > 0 ? golsSofridos / partidas : Number.POSITIVE_INFINITY;
         return { ...g, partidas, golsSofridos, media };
       })
+      .filter(g => g !== null)
       .sort((a, b) => {
         if (a.media !== b.media) return a.media - b.media; // menor média primeiro
         if (a.partidas !== b.partidas) return b.partidas - a.partidas; // mais partidas primeiro
@@ -546,12 +456,13 @@ const App = {
       if (artilheiros) applyScrollableLimit(artilheiros, '.artilheiro-item');
       if (goleiros) applyScrollableLimit(goleiros, '.goleiro-item');
     }, 150));
+
     try {
       UI.showLoading();
 
       // Carregamento com fallback: GitHub Raw → jsDelivr → GitHub Pages → relativo
       const fetchJSONWithFallback = async (filename) => {
-        const urls = resolveDataUrls(filename);
+        const urls = Renderer.resolveDataUrls(filename);
         let lastError;
         for (const url of urls) {
           try {
@@ -572,24 +483,21 @@ const App = {
         fetchJSONWithFallback('goleiros.json')
       ]);
 
-      // Combina os dados em uma estrutura unificada
-      AppState.data = {};
+        // Combina os dados em uma estrutura unificada
+        AppState.data = {};
 
-      // Para cada série (ouro e prata)
-      const series = Object.keys(timesData);
-      series.forEach(serie => {
-        AppState.data[serie] = {
-          times: timesData[serie]?.times || [],
-          rodadas: rodadasData[serie]?.rodadas || [],
-          artilheiros: artilhariaData[serie]?.artilheiros || [],
-          goleiros: goleirosData[serie]?.goleiros || []
-        };
-      });
+        // Para cada série (ouro e prata)
+        const series = Object.keys(timesData);
+        series.forEach(serie => {
+          AppState.data[serie] = {
+            times: timesData[serie]?.times || [],
+            rodadas: rodadasData[serie]?.rodadas || [],
+            artilheiros: artilhariaData[serie]?.artilheiros || [],
+            goleiros: goleirosData[serie]?.goleiros || []
+          };
+        });
 
-      // SEMPRE inicia na menor rodada disponível (1) ou na última rodada do array
-      const rodadas = AppState.data[AppState.currentSerie]?.rodadas || [];
-      const maxRodada = rodadas.length > 0 ? Math.max(...rodadas.map(r => r.rodada)) : 1;
-      AppState.currentRodada = maxRodada;
+      AppState.currentRodada = AppState.getLastCompletedRodada(AppState.currentSerie);
       this.setupRodadaNavigation();
       UI.updateBannerImage();
       Renderer.renderSerieButtons();
@@ -602,6 +510,7 @@ const App = {
         <tr><td colspan="11" class="text-center">
           <div class="alert alert-danger">
             Erro ao carregar dados: ${error.message}
+            <br><small>Verifique se os arquivos JSON estão disponíveis ou se a API está funcionando</small>
           </div>
         </td></tr>
       `;

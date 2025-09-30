@@ -49,6 +49,107 @@ h5{font-size:1.1rem}
 0%{transform:rotate(0deg)}
 100%{transform:rotate(360deg)}
 }
+
+/* ===== ESTILOS PARA DATAS E HORÁRIOS ===== */
+.game-info {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 8px;
+  padding: 8px 12px;
+  border: 1px solid #dee2e6;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.game-info i {
+  color: #6c757d;
+  font-size: 0.8rem;
+}
+
+.game-data {
+  color: #495057;
+  font-weight: 500;
+}
+
+.game-hora {
+  color: #007bff;
+  font-weight: 600;
+}
+
+.game-estadio {
+  color: #6c757d;
+  font-style: italic;
+}
+
+/* Melhorar a aparência dos cards de jogos */
+.card-content {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card-content:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* Estilo para as informações da rodada */
+.rodada-info {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0,123,255,0.3);
+}
+
+.rodada-info h4 {
+  margin: 0;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Estilo para resultado de pênaltis */
+.penalty-result {
+  color: #dc3545;
+  font-weight: 600;
+  font-size: 0.9em;
+  margin-left: 4px;
+  display: inline;
+  vertical-align: baseline;
+}
+
+/* Estilo simplificado para informações do jogo */
+.game-info {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 8px;
+  padding: 8px 12px;
+  border: 1px solid #dee2e6;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  margin-bottom: 12px;
+}
+
+/* Alinhamento dos nomes dos times */
+.game-team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-team img {
+  margin-bottom: 4px;
+}
+
+.game-nomeA, .game-nomeB {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.4;
+  text-align: center;
+  min-height: 1.4em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 #tabela-container .loading-spinner{min-height:300px}
 #jogos-container .loading-spinner{min-height:200px}
 .artilheiro-item,.goleiro-item{transition:transform 0.2s,box-shadow .2s;border:1px solid #e9ecef}
