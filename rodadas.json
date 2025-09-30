@@ -169,7 +169,7 @@
             "estadio": "Sede",
             "hora": "08:30",
             "cartoesAmarelosA": 3,
-            "cartoesVermelhosA":2,
+            "cartoesVermelhosA": 2,
             "cartoesAmarelosB": 4,
             "cartoesVermelhosB": 0
           },
@@ -271,7 +271,7 @@
             "estadio": "Jardim Paulista",
             "hora": "08:30",
             "cartoesAmarelosA": 2,
-            "cartoesVermelhosA":1,
+            "cartoesVermelhosA": 1,
             "cartoesAmarelosB": 2,
             "cartoesVermelhosB": 1
           },
@@ -788,8 +788,8 @@
           {
             "timeA": "Sport Campina",
             "timeB": "Tchuruu",
-            "placarA": 0,
-            "placarB": 0,
+            "placarA": 1,
+            "placarB": 3,
             "estadio": "Sede",
             "hora": "08:30",
             "cartoesAmarelosA": 0,
@@ -800,8 +800,8 @@
           {
             "timeA": "Parceria",
             "timeB": "C.A.D.B",
-            "placarA": 0,
-            "placarB": 0,
+            "placarA": 1,
+            "placarB": 3,
             "estadio": "Santa Rosa",
             "hora": "08:30",
             "cartoesAmarelosA": 0,
@@ -812,8 +812,8 @@
           {
             "timeA": "Braguense",
             "timeB": "Araçatuba",
-            "placarA": 0,
-            "placarB": 0,
+            "placarA": 2,
+            "placarB": 3,
             "estadio": "Jardim Paulista",
             "hora": "08:30",
             "cartoesAmarelosA": 0,
@@ -824,8 +824,8 @@
           {
             "timeA": "Engenho",
             "timeB": "Peñarol",
-            "placarA": 0,
-            "placarB": 0,
+            "placarA": 1,
+            "placarB": 2,
             "estadio": "Sede",
             "hora": "10:30",
             "cartoesAmarelosA": 0,
@@ -836,8 +836,8 @@
           {
             "timeA": "Esperafico",
             "timeB": "Terra Boa",
-            "placarA": 0,
-            "placarB": 0,
+            "placarA": 4,
+            "placarB": 3,
             "estadio": "Santa Rosa",
             "hora": "10:30",
             "cartoesAmarelosA": 0,
@@ -848,10 +848,67 @@
           {
             "timeA": "Fox",
             "timeB": "Juventus",
-            "placarA": 0,
-            "placarB": 0,
+            "placarA": 2,
+            "placarB": 1,
             "estadio": "Jardim Paulista",
             "hora": "10:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          }
+        ]
+      },
+      {
+        "data": "14/09/2025",
+        "rodada": 12,
+        "nome": "Semi Finais",
+        "jogos": [
+          {
+            "timeA": "Peñarol",
+            "timeB": "Fox",
+            "placarA": 1,
+            "placarB": 1,
+            "penaltisA": 5,
+            "penaltisB": 3,
+            "estadio": "Sede",
+            "hora": "10:00",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Parceria",
+            "timeB": "Tchuruu",
+            "placarA": 1,
+            "placarB": 0,
+            "penaltisA": 0,
+            "penaltisB": 0,
+            "estadio": "Jardim Paulista",
+            "hora": "10:00",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          }
+        ]
+      }
+      ,
+      {
+        "data": "14/09/2025",
+        "rodada": 13,
+        "nome": "Final",
+        "jogos": [
+          {
+            "timeA": "Parceria",
+            "timeB": "Fox",
+            "placarA": 0,
+            "placarB": 1,
+            "penaltisA": 0,
+            "penaltisB": 0,
+            "estadio": "Sede",
+            "hora": "10:00",
             "cartoesAmarelosA": 0,
             "cartoesVermelhosA": 0,
             "cartoesAmarelosB": 0,
@@ -1330,8 +1387,7 @@
             "cartoesVermelhosB": 0
           }
         ]
-      }
-      ,
+      },
       {
         "data": "24/08/2025",
         "rodada": 7,
@@ -1417,8 +1473,8 @@
           {
             "timeA": "Entre Parents F.C",
             "timeB": "Gileade F.C",
-            "placarA": 0,
-            "placarB": 0,
+            "placarA": 2,
+            "placarB": 1,
             "estadio": "Jardim Paulista",
             "hora": "13:00",
             "cartoesAmarelosA": 0,
@@ -1429,8 +1485,8 @@
           {
             "timeA": "Motta F.C",
             "timeB": "Parma Campina",
-            "placarA": 0,
-            "placarB": 0,
+            "placarA": 2,
+            "placarB": 4,
             "estadio": "Santa Rosa",
             "hora": "13:00",
             "cartoesAmarelosA": 0,
@@ -1441,10 +1497,523 @@
           {
             "timeA": "Panelinha Campina",
             "timeB": "Marfran Esporte Clube",
+            "placarA": 2,
+            "placarB": 3,
+            "estadio": "Jardim Paulista",
+            "hora": "15:00",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          }
+        ]
+      },
+      {
+        "data": "07/09/2025",
+        "nome": "Quartas de finais",
+        "rodada": 9,
+        "jogos": [
+          {
+            "timeA": "Parma Campina",
+            "timeB": "Hookah Futebol Clube",
+            "placarA": 0,
+            "placarB": 0,
+            "penaltisA": 3,
+            "penaltisB": 1,
+            "estadio": "Sede",
+            "hora": "13:00",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Redbull Campina",
+            "timeB": "America Campinense F.C",
+            "placarA": 3,
+            "placarB": 2,
+            "penaltisA": 0,
+            "penaltisB": 0,
+            "estadio": "Sede",
+            "hora": "15:00",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Eucaliptus F.C",
+            "timeB": "Marfran Esporte Clube",
+            "placarA": 3,
+            "placarB": 0,
+            "penaltisA": 0,
+            "penaltisB": 0,
+            "estadio": "Jardim Paulista",
+            "hora": "13:00",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Deportivo Campina Fc",
+            "timeB": "Campinense Futebol Clube",
+            "placarA": 1,
+            "placarB": 1,
+            "penaltisA": 3,
+            "penaltisB": 1,
+            "estadio": "Jardim Paulista",
+            "hora": "15:00",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          }
+        ]
+      },
+      {
+        "data": "07/09/2025",
+        "nome": "Semi Finais",
+        "rodada": 10,
+        "jogos": [
+          {
+            "timeA": "Eucaliptus F.C",
+            "timeB": "Deportivo Campina Fc",
+            "placarA": 2,
+            "placarB": 1,
+            "penaltisA": 0,
+            "penaltisB": 0,
+            "estadio": "Sede",
+            "hora": "13:00",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Redbull Campina",
+            "timeB": "Parma Campina",
+            "placarA": 2,
+            "placarB": 1,
+            "penaltisA": 0,
+            "penaltisB": 0,
+            "estadio": "Sede",
+            "hora": "15:00",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          }
+        ]
+      },
+      {
+        "data": "07/09/2025",
+        "nome": "Final",
+        "rodada": 11,
+        "jogos": [
+          {
+            "timeA": "Redbull Campina",
+            "timeB": "Eucaliptus F.C",
+            "placarA": 1,
+            "placarB": 1,
+            "penaltisA": 6,
+            "penaltisB": 5,
+            "estadio": "Sede",
+            "hora": "13:00",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          }
+        ]
+      }
+    ]
+  },
+  "master": {
+    "rodadas": [
+      {
+        "data": "28/09/2025",
+        "rodada": 1,
+        "jogos": [
+          {
+            "timeA": "Engenho F.C",
+            "timeB": "Juventus F.C",
             "placarA": 0,
             "placarB": 0,
             "estadio": "Jardim Paulista",
-            "hora": "15:00",
+            "hora": "08:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Araçatuba F.C",
+            "timeB": "Eucaliptus F.C",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Jardim Paulista",
+            "hora": "10:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Campinense F.C",
+            "timeB": "Esperafico F.C",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Jardim Paulista",
+            "hora": "13:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Tchuruu F.C",
+            "timeB": "FOX F.C",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Sede",
+            "hora": "08:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Braguense E.C",
+            "timeB": "Skemetrepy´s F.C",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Sede",
+            "hora": "10:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Londrininha F.C",
+            "timeB": "America Campinense F.C",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Sede",
+            "hora": "13:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          }
+        ]
+      },
+      {
+        "data": "05/10/2025",
+        "rodada": 2,
+        "jogos": [
+          {
+            "timeA": "Juventus F.C",
+            "timeB": "Campinense F.C",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Sede",
+            "hora": "08:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Engenho F.C",
+            "timeB": "Araçatuba F.C",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Sede",
+            "hora": "10:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Eucaliptus F.C",
+            "timeB": "Esperafico F.C",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Sede",
+            "hora": "13:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Tchuruu F.C",
+            "timeB": "Braguense E.C",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Jardim Paulista",
+            "hora": "08:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Skemetrepy´s F.C",
+            "timeB": "Londrininha F.C",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Jardim Paulista",
+            "hora": "10:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "America Campinense F.C",
+            "timeB": "FOX F.C",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Jardim Paulista",
+            "hora": "13:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          }
+        ]
+      },
+      {
+        "data": "19/10/2025",
+        "rodada": 3,
+        "jogos": [
+          {
+            "timeA": "Eucaliptus F.C",
+            "timeB": "Engenho F.C",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Jardim Paulista",
+            "hora": "08:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Juventus F.C",
+            "timeB": "Esperafico F.C",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Jardim Paulista",
+            "hora": "10:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Araçatuba F.C",
+            "timeB": "Campinense F.C",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Jardim Paulista",
+            "hora": "13:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Braguense E.C",
+            "timeB": "America Campinense F.C",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Sede",
+            "hora": "08:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "FOX F.C",
+            "timeB": "Londrininha F.C",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Sede",
+            "hora": "10:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Skemetrepy´s F.C",
+            "timeB": "Tchuruu F.C",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Sede",
+            "hora": "13:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          }
+        ]
+      },
+      {
+        "data": "26/10/2025",
+        "rodada": 4,
+        "jogos": [
+          {
+            "timeA": "Eucaliptus F.C",
+            "timeB": "Juventus F.C",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Sede",
+            "hora": "08:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Araçatuba F.C",
+            "timeB": "Esperafico F.C",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Sede",
+            "hora": "10:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Campinense F.C",
+            "timeB": "Engenho F.C",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Sede",
+            "hora": "13:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "FOX F.C",
+            "timeB": "Skemetrepy´s F.C",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Jardim Paulista",
+            "hora": "08:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Londrininha F.C",
+            "timeB": "Braguense E.C",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Jardim Paulista",
+            "hora": "10:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "America Campinense F.C",
+            "timeB": "Tchuruu F.C",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Jardim Paulista",
+            "hora": "13:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          }
+        ]
+      },
+      {
+        "data": "09/11/2025",
+        "rodada": 5,
+        "jogos": [
+          {
+            "timeA": "Esperafico F.C",
+            "timeB": "Engenho F.C",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Jardim Paulista",
+            "hora": "08:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Juventus F.C",
+            "timeB": "Araçatuba F.C",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Jardim Paulista",
+            "hora": "10:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Campinense F.C",
+            "timeB": "Eucaliptus F.C",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Jardim Paulista",
+            "hora": "13:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Braguense E.C",
+            "timeB": "FOX F.C",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Sede",
+            "hora": "10:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "Londrininha F.C",
+            "timeB": "Tchuruu F.C",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Sede",
+            "hora": "10:30",
+            "cartoesAmarelosA": 0,
+            "cartoesVermelhosA": 0,
+            "cartoesAmarelosB": 0,
+            "cartoesVermelhosB": 0
+          },
+          {
+            "timeA": "America Campinense F.C",
+            "timeB": "Skemetrepy´s F.C",
+            "placarA": 0,
+            "placarB": 0,
+            "estadio": "Sede",
+            "hora": "13:30",
             "cartoesAmarelosA": 0,
             "cartoesVermelhosA": 0,
             "cartoesAmarelosB": 0,
@@ -1455,4 +2024,3 @@
     ]
   }
 }
-
