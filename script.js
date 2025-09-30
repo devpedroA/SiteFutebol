@@ -320,17 +320,19 @@ const Renderer = {
         container.appendChild(titleDiv);
       }
 
-      // Detect knockout round by nome
+      // Detect knockout round by nome - usar mesmo estilo dos cards normais
       const knockout = rodadaObj.nome && /(Quartas|Semi Finais|Final)/i.test(rodadaObj.nome);
       if (knockout) {
+        // Criar grid container para rodadas especiais (mesmo estilo dos jogos normais)
+        const gridContainer = document.createElement('div');
+        gridContainer.className = 'games-grid';
+
         rodadaObj.jogos.forEach((game, idx) => {
-          const card = document.createElement('div');
-          card.className = 'bracket-game mb-4 p-3';
-          card.style.border = '2px solid #43e97b';
-          card.style.borderRadius = '1rem';
-          card.style.background = '#f8f9fa';
-          card.style.maxWidth = '400px';
-          card.style.margin = '0 auto';
+          const gameCard = document.createElement('div');
+          gameCard.className = 'game-card';
+
+          // Adicionar classe especial para rodadas knockout
+          gameCard.classList.add('knockout-card');
 
           // Teams and score
           const teamA = teamMap[game.timeA] || {};
@@ -342,61 +344,93 @@ const Renderer = {
           let winner = null;
           if (placarA > placarB) winner = 'A';
           else if (placarB > placarA) winner = 'B';
+
           // Penalty logic (if draw and penalty fields exist)
           let penaltyInfo = '';
           if (placarA === placarB && game.penaltisA !== undefined && game.penaltisB !== undefined) {
-            penaltyInfo = `<div class="text-center mt-2"><span style='font-weight:bold;'>Pênaltis:</span> <span class='${game.penaltisA > game.penaltisB ? 'text-success' : ''}'>${game.penaltisA}</span> x <span class='${game.penaltisB > game.penaltisA ? 'text-success' : ''}'>${game.penaltisB}</span></div>`;
+            penaltyInfo = `<div class="penalty-info"><span class="penalty-label">Pênaltis:</span> <span class="penalty-score ${game.penaltisA > game.penaltisB ? 'winner' : ''}">${game.penaltisA}</span> x <span class="penalty-score ${game.penaltisB > game.penaltisA ? 'winner' : ''}">${game.penaltisB}</span></div>`;
             if (game.penaltisA > game.penaltisB) winner = 'A';
             else if (game.penaltisB > game.penaltisA) winner = 'B';
           }
 
           // Lógica para destacar o vencedor em verde apenas na série ouro
-          const highlightA = (serie === 'ouro' && winner === 'A') ? 'color:#1b8f3c;font-weight:bold;' : '';
-          const highlightB = (serie === 'ouro' && winner === 'B') ? 'color:#1b8f3c;font-weight:bold;' : '';
-          card.innerHTML = `
-            <div class="text-center text-muted mb-2" style="font-size:0.95rem;">${Utils.formatDate(rodadaObj.data)} • <strong>${game.hora}</strong> • ${game.estadio}</div>
-            <div class="d-flex align-items-center justify-content-between">
-              <div class="d-flex align-items-center">
-                <img src="${teamA.imagem || ''}" alt="${game.timeA}" style="width:40px;height:40px;object-fit:contain;" class="mr-2">
-                <span style="font-size:1.1rem;${highlightA}">${Utils.firstName(game.timeA)}</span>
+          const highlightA = (serie === 'ouro' && winner === 'A') ? 'winner' : '';
+          const highlightB = (serie === 'ouro' && winner === 'B') ? 'winner' : '';
+
+          gameCard.innerHTML = `
+            <div class="game-header">
+              <span class="game-data">${Utils.formatDate(rodadaObj.data)}</span>
+              <span class="game-hora">${game.hora}</span>
+              <span class="game-estadio">${game.estadio}</span>
+            </div>
+            
+            <div class="game-teams">
+              <div class="game-team">
+                <img src="${teamA.imagem || ''}" alt="${game.timeA}" class="game-imgA">
+                <div class="game-nomeA ${highlightA}">${Utils.firstName(game.timeA)}</div>
               </div>
-              <div class="score-display mx-2" style="font-size:1.5rem; font-weight:bold;">
-                <span>${placarA}</span>
-                <span style="font-size:1rem;">x</span>
-                <span>${placarB}</span>
+              
+              <div class="game-score">
+                <div class="score-display">
+                  <span>${placarA}</span>
+                  <span>x</span>
+                  <span>${placarB}</span>
+                </div>
               </div>
-              <div class="d-flex align-items-center">
-                <span style="font-size:1.1rem;${highlightB}">${Utils.firstName(game.timeB)}</span>
-                <img src="${teamB.imagem || ''}" alt="${game.timeB}" style="width:40px;height:40px;object-fit:contain;" class="ml-2">
+              
+              <div class="game-team">
+                <img src="${teamB.imagem || ''}" alt="${game.timeB}" class="game-imgB">
+                <div class="game-nomeB ${highlightB}">${Utils.firstName(game.timeB)}</div>
               </div>
             </div>
             ${penaltyInfo}
           `;
-          container.appendChild(card);
+
+          gridContainer.appendChild(gameCard);
         });
+
+        container.appendChild(gridContainer);
       } else {
-        const template = document.getElementById('game-row-template');
-        for (let i = 0; i < rodadaObj.jogos.length; i += 3) {
-          const rowDiv = document.createElement('div');
-          rowDiv.className = 'row justify-content-around w-100 mb-4';
-          const gamesSlice = rodadaObj.jogos.slice(i, i + 3);
-          gamesSlice.forEach(game => {
-            const card = template.content.firstElementChild.cloneNode(true);
-            card.querySelector('.game-data').textContent = Utils.formatDate(rodadaObj.data);
-            card.querySelector('.game-hora').textContent = game.hora;
-            card.querySelectorAll('.game-estadio').forEach(e => e.textContent = game.estadio);
-            card.querySelector('.game-imgA').src = teamMap[game.timeA]?.imagem || '';
-            card.querySelector('.game-imgA').alt = game.timeA;
-            card.querySelector('.game-nomeA').textContent = game.timeA;
-            card.querySelector('.game-imgB').src = teamMap[game.timeB]?.imagem || '';
-            card.querySelector('.game-imgB').alt = game.timeB;
-            card.querySelector('.game-nomeB').textContent = game.timeB;
-            card.querySelector('.game-placarA').textContent = game.placarA;
-            card.querySelector('.game-placarB').textContent = game.placarB;
-            rowDiv.appendChild(card);
-          });
-          container.appendChild(rowDiv);
-        }
+        // Criar grid container para jogos normais
+        const gridContainer = document.createElement('div');
+        gridContainer.className = 'games-grid';
+
+        rodadaObj.jogos.forEach(game => {
+          const gameCard = document.createElement('div');
+          gameCard.className = 'game-card';
+
+          gameCard.innerHTML = `
+            <div class="game-header">
+              <span class="game-data">${Utils.formatDate(rodadaObj.data)}</span>
+              <span class="game-hora">${game.hora}</span>
+              <span class="game-estadio">${game.estadio}</span>
+            </div>
+            
+            <div class="game-teams">
+              <div class="game-team">
+                <img src="${teamMap[game.timeA]?.imagem || ''}" alt="${game.timeA}" class="game-imgA">
+                <div class="game-nomeA">${game.timeA}</div>
+              </div>
+              
+              <div class="game-score">
+                <div class="score-display">
+                  <span>${game.placarA}</span>
+                  <span>x</span>
+                  <span>${game.placarB}</span>
+                </div>
+              </div>
+              
+              <div class="game-team">
+                <img src="${teamMap[game.timeB]?.imagem || ''}" alt="${game.timeB}" class="game-imgB">
+                <div class="game-nomeB">${game.timeB}</div>
+              </div>
+            </div>
+          `;
+
+          gridContainer.appendChild(gameCard);
+        });
+
+        container.appendChild(gridContainer);
       }
     });
 
@@ -449,7 +483,7 @@ const Renderer = {
     });
 
     // Após renderizar todos, limitar a altura ao tamanho dos 5 primeiros
-    applyScrollableLimit(container, '.artilheiro-item');
+    this.applyScrollableLimit(container, '.artilheiro-item');
   },
 
   renderGoleiros(serie) {
@@ -494,7 +528,7 @@ const Renderer = {
     });
 
     // Após renderizar todos, limitar a altura ao tamanho dos 5 primeiros
-    applyScrollableLimit(container, '.goleiro-item');
+    this.applyScrollableLimit(container, '.goleiro-item');
   }
 };
 
@@ -543,8 +577,8 @@ const App = {
     window.addEventListener("resize", Utils.debounce(() => {
       const artilheiros = document.getElementById('artilheiros-list');
       const goleiros = document.getElementById('goleiros-list');
-      if (artilheiros) applyScrollableLimit(artilheiros, '.artilheiro-item');
-      if (goleiros) applyScrollableLimit(goleiros, '.goleiro-item');
+      if (artilheiros) Renderer.applyScrollableLimit(artilheiros, '.artilheiro-item');
+      if (goleiros) Renderer.applyScrollableLimit(goleiros, '.goleiro-item');
     }, 150));
     try {
       UI.showLoading();
@@ -555,7 +589,7 @@ const App = {
         let lastError;
         for (const url of urls) {
           try {
-            const res = await fetch(url, { cache: 'no-cache' });
+            const res = await fetch(url + '?v=' + Date.now(), { cache: 'no-cache' });
             if (res.ok) return res.json();
             lastError = new Error(`HTTP ${res.status}`);
           } catch (e) {
@@ -575,7 +609,7 @@ const App = {
       // Combina os dados em uma estrutura unificada
       AppState.data = {};
 
-      // Para cada série (ouro e prata)
+      // Para cada série (ouro, prata e master)
       const series = Object.keys(timesData);
       series.forEach(serie => {
         AppState.data[serie] = {
@@ -618,7 +652,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ===== UTILITÁRIO DE SCROLL PARA LISTAS =====
-function applyScrollableLimit(listContainer, itemSelector) {
+Renderer.applyScrollableLimit = function (listContainer, itemSelector) {
   try {
     if (!listContainer) return;
     const items = listContainer.querySelectorAll(itemSelector);
@@ -640,4 +674,4 @@ function applyScrollableLimit(listContainer, itemSelector) {
   } catch (e) {
     console.warn('Falha ao aplicar limite rolável:', e);
   }
-}
+};

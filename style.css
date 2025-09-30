@@ -127,28 +127,313 @@ h5{font-size:1.1rem}
   margin-bottom: 12px;
 }
 
-/* Alinhamento dos nomes dos times */
+/* ===== MELHORIAS PARA CARDS DE JOGOS ===== */
+.game-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.game-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  border-color: #43e97b;
+}
+
+/* Informações do jogo (data, hora, estádio) - TUDO NA MESMA LINHA */
+.game-header {
+  text-align: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.game-data {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+  margin: 0;
+}
+
+.game-hora {
+  font-size: 1.1rem;
+  color: #1b8f3c;
+  font-weight: 700;
+  margin: 0;
+}
+
+.game-estadio {
+  font-size: 0.85rem;
+  color: #888;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Layout dos times */
+.game-teams {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  gap: 16px;
+}
+
 .game-team {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex: 1;
+  min-width: 0; /* Permite que o flex item encolha */
 }
 
 .game-team img {
-  margin-bottom: 4px;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .game-nomeA, .game-nomeB {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  line-height: 1.3;
+  word-wrap: break-word;
+  hyphens: auto;
+  max-width: 100%;
+  padding: 0 4px;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  min-height: 2.6em;
   display: flex;
   align-items: center;
   justify-content: center;
-  line-height: 1.4;
-  text-align: center;
-  min-height: 1.4em;
-  white-space: nowrap;
+}
+
+/* Placar central - NA MESMA LINHA */
+.game-score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  padding: 0 8px;
+}
+
+.score-display {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1b8f3c;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Responsividade para mobile */
+@media (max-width: 768px) {
+  .game-card {
+    padding: 16px;
+    margin-bottom: 16px;
+    min-height: 180px;
+  }
+  
+  .game-teams {
+    gap: 12px;
+  }
+  
+  .game-team img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .game-nomeA, .game-nomeB {
+    font-size: 0.8rem;
+  }
+  
+  .score-display {
+    font-size: 1.5rem;
+  }
+  
+  .game-data {
+    font-size: 0.8rem;
+  }
+  
+  .game-hora {
+    font-size: 1rem;
+  }
+  
+  .game-estadio {
+    font-size: 0.75rem;
+  }
+}
+
+/* Layout em grid responsivo */
+.games-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  gap: 20px !important;
+  margin: 20px auto !important;
+  padding: 0 20px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  justify-content: center !important;
+}
+
+@media (min-width: 768px) {
+  .games-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .games-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .games-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    padding: 0 15px !important;
+    margin: 15px auto !important;
+  }
+}
+
+/* Melhorias adicionais para os cards */
+.game-card {
+  position: relative;
   overflow: hidden;
-  text-overflow: ellipsis;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Garantir que o container dos jogos não interfira no grid */
+#jogos-container {
+  width: 100%;
+  max-width: 100%;
+  overflow: visible;
+}
+
+#jogos-container .games-grid {
+  display: grid !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+}
+
+/* Forçar que os cards não quebrem para nova linha desnecessariamente */
+.game-card {
+  display: block !important;
+  float: none !important;
+  clear: none !important;
+}
+
+/* Remover qualquer flexbox que possa estar interferindo */
+#jogos-container {
+  display: block !important;
+  flex-direction: unset !important;
+  flex-wrap: unset !important;
+}
+
+/* Estilos para rodadas especiais (Quartas, Semi, Final) */
+.knockout-card {
+  border: 2px solid #43e97b !important;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+  box-shadow: 0 4px 15px rgba(67, 233, 123, 0.2) !important;
+}
+
+.knockout-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(67, 233, 123, 0.3) !important;
+}
+
+/* Estilos para vencedores */
+.game-nomeA.winner, .game-nomeB.winner {
+  color: #1b8f3c !important;
+  font-weight: 700 !important;
+  text-shadow: 0 1px 2px rgba(27, 143, 60, 0.3);
+}
+
+/* Estilos para informações de pênaltis */
+.penalty-info {
+  text-align: center;
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.penalty-label {
+  font-weight: 600;
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.penalty-score {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9rem;
+  margin: 0 4px;
+}
+
+.penalty-score.winner {
+  color: #1b8f3c !important;
+  font-weight: 700 !important;
+}
+
+.game-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.game-card:hover::before {
+  opacity: 1;
+}
+
+/* Animação suave para os elementos internos */
+.game-team img {
+  transition: transform 0.3s ease;
+}
+
+.game-card:hover .game-team img {
+  transform: scale(1.05);
+}
+
+.score-display {
+  transition: all 0.3s ease;
+}
+
+.game-card:hover .score-display {
+  transform: scale(1.1);
+  color: #1b8f3c;
 }
 #tabela-container .loading-spinner{min-height:300px}
 #jogos-container .loading-spinner{min-height:200px}

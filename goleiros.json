@@ -82,6 +82,11 @@
       { "nome": "NELSON DA LUZ SANTOS", "time": "Santa Rosa", "partidas": 4, "golsSofridos": 6 },
       { "nome": "MAGNO BERTOTTI", "time": "Santa Rosa", "partidas": 1, "golsSofridos": 4 }
     ]
+  },
+  "master": {
+    "goleiros": [
+
+    ]
   }
 }
 

@@ -220,6 +220,11 @@
       { "nome": "MATEUS DA ROSA SANTOS", "time": "Vila Sapo F.C", "gols": 1 },
       { "nome": "ALEXSANDRO ALVES DO S. DE RAMOS", "time": "Vila Sapo F.C", "gols": 2 }
     ]
+  },
+  "master": {
+    "artilheiros": [
+
+    ]
   }
 }
 
